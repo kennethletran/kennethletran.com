@@ -1,0 +1,26 @@
+:root {
+  // Colors
+  --bg-color: hsl(210, 40%, 10%);
+  --bg-color2: hsl(210, 39%, 16%);
+  --primary-color: hsl(168, 100%, 50%);
+  --text-color: hsl(38, 22%, 90%);
+  --container-bg-color: hsl(186, 60%, 13%);
+  --selection: hsl(336, 100%, 50%);
+
+  // Transitions and Animations
+  // look into cubic beziers for custom timings
+  --basic-timing: ease-in-out;
+  --duration-short: 250ms;
+
+  font-size: 10px;
+}
+:root[user-color-mode="light"] {
+  // for ideas on how to implement in future, see sarah fossheim portfolio github
+  --bg-color: hsl(38, 22%, 90%);
+  --primary-color: hsl(336, 100%, 50%);
+  --text-color: hsl(210, 39%, 16%);
+}
+
+body {
+  background-color: var(--bg-color);
+}

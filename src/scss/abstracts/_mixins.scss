@@ -1,1 +1,32 @@
 // place mixins for color themes, pseudo-elements, and media queries
+
+@use 'sass:map';
+
+// Breakpoints for Media Queries
+$breakpoints: (
+  // 640px, 1024px, 1200px
+  small: 64rem,
+  medium: 102.4rem,
+  large: 120rem
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// Pseudo-elements
+@mixin pseudo($loc: before, $content: "", $pos: absolute, $top: 0, $left: 0) {
+  position: relative;
+
+  &::#{$loc} {
+    content: $content;
+    position: $pos;
+    top: $top;
+    left: $left;
+    @content;
+  }
+}
