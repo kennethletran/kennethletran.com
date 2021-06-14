@@ -1,10 +1,10 @@
 :root {
   // Colors
-  --bg-color: hsl(210, 40%, 10%);
-  --bg-color2: hsl(210, 39%, 16%);
+  --bg-color: hsl(210, 39%, 16%);
+  --container-bg-color: hsl(188, 50%, 20%);
+  --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
-  --container-bg-color: hsl(186, 60%, 13%);
   --selection: hsl(336, 100%, 50%);
 
   // Transitions and Animations
@@ -14,13 +14,25 @@
 
   font-size: 10px;
 }
-:root[user-color-mode="light"] {
-  // for ideas on how to implement in future, see sarah fossheim portfolio github
-  --bg-color: hsl(38, 22%, 90%);
-  --primary-color: hsl(336, 100%, 50%);
-  --text-color: hsl(210, 39%, 16%);
-}
-
 body {
   background-color: var(--bg-color);
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url("/src/assets/background.gif");
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // z-index: 999;
+    will-change: auto;
+    pointer-events: none;
+    @media (prefers-reduced-motion) {
+      background-image: none;
+    }
+  }
 }

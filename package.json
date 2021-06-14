@@ -10,7 +10,7 @@
     "url": "github.com/kennethletran/kennethletran.com.git"
   },
   "scripts": {
-    "watch": "sass --watch src/scss/main.scss:dist/css",
+    "watch": "sass --watch src/scss/main.scss:dist/styles.css",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
