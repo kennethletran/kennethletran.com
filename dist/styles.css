@@ -176,6 +176,14 @@ body::before {
   }
 }
 
+.hide-mobile {
+  display: none;
+}
+
+.hide-desktop {
+  display: none;
+}
+
 .hero__picture {
   width: 500px;
 }
@@ -193,6 +201,10 @@ body::before {
   -webkit-text-stroke-width: 0.15rem;
   -webkit-text-stroke-color: var(--decoration-color);
   -webkit-text-fill-color: transparent;
+}
+
+.projects__card__screenshot img {
+  width: 400px;
 }
 
 /*# sourceMappingURL=styles.css.map */
