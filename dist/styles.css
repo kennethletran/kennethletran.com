@@ -188,6 +188,15 @@ body::before {
   width: 500px;
 }
 
+.skills__list {
+  list-style: none;
+  display: flex;
+}
+.skills__list__items {
+  width: 40px;
+  height: 40px;
+}
+
 .menu__modal {
   display: flex;
   width: 60%;
@@ -205,6 +214,10 @@ body::before {
 
 .projects__card__screenshot img {
   width: 400px;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,11 @@
+.skills {
+  &__list {
+    list-style: none;
+    display: flex;
+
+    &__items {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
