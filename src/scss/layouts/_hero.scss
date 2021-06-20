@@ -1,5 +1,37 @@
 .hero {
+  margin-bottom: 15rem;
+
   &__picture {
     width: 500px;
+    position: relative;
+  }
+  &__headline {
+    display: inline-block;
+    position: relative;
+    top: -7rem;
+    padding: 0 0.5rem;
+    color: var(--text-color);
+
+    &--subheadline {
+      font-size: 3rem;
+      color: var(--bg-color);
+      letter-spacing: 0.3rem;
+    }
+  }
+  &__introduction {
+    padding: 0 0.5rem;
+
+    &:first-of-type {
+      margin-top: -3rem;
+    }
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+  &__button {
+    margin: 3rem 1rem;
+  }
+  &__deco {
+    top: 25%;
   }
 }

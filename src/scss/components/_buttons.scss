@@ -1,1 +1,93 @@
 // add disabled effect and small modal with info as to why it is disabled for Home Clean Housekeeping GitHub link
+@use '../base/mixins' as *;
+
+.button-container {
+  position: relative;
+  margin-left: 1rem;
+}
+button {
+  display: inline-block;
+  appearance: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  padding: 1.5rem 2.5rem;
+  font-family: "Kanit", sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  line-height: 1;
+  background-color: var(--primary-color);
+  cursor: pointer;
+}
+.cta {
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: background-color 250ms ease-in-out, color 450ms ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -5%;
+    left: -125%;
+    height: 115%;
+    width: 115%;
+    background-color: var(--container-bg-color);
+    transform: skew(-25deg);
+    transition: transform 200ms ease-in;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+
+    &::before {
+      transform: skew(-25deg) translateX(100%);
+    }
+  }
+}
+.corners {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--bg-color);
+  border: 0.25rem solid var(--primary-color);
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--bg-color);
+  }
+
+  &.top-block {
+    top: 20%;
+    left: 38%;
+    border-left: 0;
+    border-bottom: 0;
+
+    &::before {
+      top: 10px;
+      @include breakpoint-up(small) {
+        left: 18.75%;
+      }
+    }
+  }
+
+  &.bottom-block {
+    bottom: 20%;
+    left: 0.5%;
+    border-top: 0;
+    border-right: 0;
+
+    &::before {
+      bottom: 10px;
+      left: -5px;
+    }
+  }
+}

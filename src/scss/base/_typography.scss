@@ -32,7 +32,7 @@
 body {
   font-family: "Kanit", sans-serif;
   font-weight: 500;
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: var(--text-color);
 }
 h1,
@@ -57,6 +57,10 @@ h3 {
   font-weight: 800;
   font-size: 2.4rem;
   letter-spacing: 0.1rem;
+}
+.subheadline--italic {
+  font-style: italic;
+  font-weight: 500;
 }
 ::selection {
   background-color: var(--selection);

@@ -1,0 +1,16 @@
+// place mixins for color themes, pseudo-elements, and media queries
+@use 'sass:map';
+
+// Breakpoints for Media Queries
+$breakpoints: (
+  // 640px, 1024px, 1200px
+  small: 40em,
+  medium: 65em,
+  large: 75em
+);
+
+@mixin breakpoint-up($size) {
+  @media only screen and (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}

@@ -40,11 +40,11 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00FFCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </li>
-          <li class="menu__socials__items">
+          <!-- <li class="menu__socials__items">
             <a href="http://www.instagram.com/kentaayy/">Instagram
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00FFCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
             </a>
-          </li>
+          </li> -->
           <li class="menu__socials__items">
             <a href="assets/Kenneth Le-Tran Resume.pdf" target="_blank" rel="noopener">Resume</a>
           </li>
@@ -60,7 +60,11 @@
           <input class="contact__form__email" id="email" type="email" name="email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" required>
           <label for="message">Message</label>
           <textarea class="contact__form__message" name="message" form="contact" cols="20" rows="10" required></textarea>
-          <button class="contact__form__button cta" type="submit">Send</button>
+          <div class="button-container">
+            <button class="contact__form__button cta" type="submit">Send</button>
+            <div class="corners top-block"></div>
+            <div class="corners bottom-block"></div>
+          </div>
         </form>
       </div>
     </nav>
@@ -68,20 +72,24 @@
 
   <main>
     <section class="hero">
-      <h1 class="hero__headline">
-        <span class="hero__headline--subheadline">Hello there, I'm</span>
-        <span class="hero__headline--headline">Kenneth Le-Tran</span>
-      </h1>
-      <p class="hero__introduction">A front end developer based in Texas, motivated by the thrill of crafting expressive, memorable user experiences.</p>
-      <p class="hero__introduction">I strive to build responsive, immersive websites that blend design concepts with modern web technologies.</p>
-      <p class="hero__introduction">I'm open to full-time and freelance opportunities. I'd love to join a team that's passionate about what they create.</p>
-      <button class="hero__button cta">Contact</button>
       <picture class="hero__picture">
         <source srcset="assets/personal-picture-hero-compressed.webp" type="image/webp">
         <source srcset="assets/personal-picture-hero-compressed.jpg" type="image/jpeg"> 
         <img src="assets/personal-picture-hero-compressed.jpg" alt="picture of Kenneth Le-Tran">
       </picture>
-      <span class="transparent">01. introduction</span>
+      <h1 class="hero__headline">
+        <span class="hero__headline--subheadline hide-mobile">Hello there, I'm</span>
+        <span class="hero__headline--headline">Kenneth Le-Tran</span>
+      </h1>
+      <p class="hero__introduction">A front end developer based in Texas, motivated by the thrill of crafting expressive, memorable user experiences.</p>
+      <p class="hero__introduction">I strive to build responsive, immersive websites that blend design concepts with modern web technologies.</p>
+      <p class="hero__introduction">I'm open to full-time and freelance opportunities. I'd love to join a team that's passionate about what they create.</p>
+      <div class="button-container">
+        <button class="hero__button cta">Contact</button>
+        <div class="corners top-block"></div>
+        <div class="corners bottom-block"></div>
+      </div>
+      <span class="hero__deco transparent hide-mobile">01. introduction</span>
     </section>
     <section class="skills">
       <h2 class="skills__headline">Skills</h2>
@@ -129,7 +137,7 @@
           </li>
         </ul>
       </div>
-      <span class="transparent">02. experience</span>
+      <span class="skills__deco transparent hide-mobile">02. experience</span>
     </section>
     <section class="projects">
       <h2 class="projects__headline">Projects</h2>
@@ -176,7 +184,7 @@
           </div>
         </div>
       </article>
-      <span class="transparent">03. playground</span>
+      <span class="projects__deco transparent hide-mobile">03. playground</span>
     </section>
     <footer class="footer">
       <h2 class="footer__headline">
@@ -202,15 +210,15 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00FFCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 1 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
           </li>
-          <li class="footer__socials__items">
+          <!-- <li class="footer__socials__items">
             <a href="http://www.instagram.com/kentaayy/">Instagram
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#00FFCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/></svg>
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
       <p class="footer__copyright">Kenneth Le-Tran &copy; 2021</p>
-      <span class="transparent">04. conclusion</span>
+      <span class="footer__deco transparent hide-mobile">04. conclusion</span>
     </footer>
   </main>
 

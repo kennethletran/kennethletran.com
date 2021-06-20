@@ -6,4 +6,7 @@
   -webkit-text-stroke-width: 0.15rem;
   -webkit-text-stroke-color: var(--decoration-color);
   -webkit-text-fill-color: transparent;
+  position: absolute;
+  left: 0;
+  z-index: -1;
 }
