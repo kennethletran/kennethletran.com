@@ -1,3 +1,16 @@
 ::-webkit-scrollbar {
-  display: none;
+  background-color: var(--bg-color);
+  width: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border: 1px solid var(--bg-color);
+  &:hover {
+    background-color: var(--scrollbar-hover);
+  }
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) var(--bg-color);
 }
