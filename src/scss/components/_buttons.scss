@@ -27,7 +27,7 @@ button {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: background-color 250ms ease-in-out, color 450ms ease-in-out;
+  transition: background-color var(--duration-short) var(--basic-timing), color 450ms var(--basic-timing);
 
   &::before {
     content: "";
@@ -66,22 +66,22 @@ button {
   }
 
   &.top-block {
-    top: 20%;
-    left: 38%;
+    top: 42px;
+    left: 161px;
     border-left: 0;
     border-bottom: 0;
 
     &::before {
       top: 10px;
       @include breakpoint-up(small) {
-        left: 18.75%;
+        left: 10px;
       }
     }
   }
 
   &.bottom-block {
-    bottom: 20%;
-    left: 0.5%;
+    bottom: -8px;
+    left: 3px;
     border-top: 0;
     border-right: 0;
 

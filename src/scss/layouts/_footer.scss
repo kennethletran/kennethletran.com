@@ -1,0 +1,16 @@
+.footer {
+  &__headline {
+    line-height: 1.1;
+    letter-spacing: .1rem;
+    margin-bottom: 2rem;
+
+    &--subheadline {
+      font-size: 2.8rem;
+      color: var(--text-color);
+    }
+
+    &--headline {
+      display: block;
+    }
+  }
+}

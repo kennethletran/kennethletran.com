@@ -38,15 +38,33 @@ body {
     }
   }
 }
-@include breakpoint-up(small) {
-  body {
-    background-color: white;
+
+// Hiding content on certain viewports
+.hide-mobile {
+  display: none;
+  @include breakpoint-up(small) {
+    display: initial;
+  }
+}
+.hide-desktop {
+  @include breakpoint-up(small) {
+    display: none;
   }
 }
 
-.hide-mobile {
-  display: none;
+// Spacing
+.text-padding {
+  padding: 0 1.2rem;
 }
-.hide-desktop {
-  display: none;
+
+.section-spacer {
+  margin-bottom: 15rem;
+}
+
+.element-spacer {
+  margin-bottom: 8rem;
+}
+
+.headline-spacer {
+  margin-bottom: .75rem;
 }

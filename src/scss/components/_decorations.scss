@@ -1,0 +1,71 @@
+@use '../base/mixins' as *;
+.spoon {
+  position: absolute;
+  stroke: var(--decoration-color);
+  top: 33%;
+  left: 30%;
+  z-index: -100;
+  opacity: .4;
+}
+.transparent {
+  font-size: 10rem;
+  font-weight: 900;
+  letter-spacing: 1.5rem;
+  text-transform: uppercase;
+  -webkit-text-stroke-width: 0.15rem;
+  -webkit-text-stroke-color: var(--decoration-color);
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+.decorations {
+  height: 100%;
+  width: 100%;
+
+  &__col {
+    position: fixed;
+    z-index: -99;
+    background-color: var(--decoration-color);
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: 30%;
+
+    @include breakpoint-up(small) {
+      left: 15%;
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: -99;
+      background-color: var(--decoration-color);
+      height: 100%;
+      width: 2px;
+      top: 0;
+      left: 50%;
+      display: none;
+
+      @include breakpoint-up(small) {
+        display: initial;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: fixed;
+      z-index: -99;
+      background-color: var(--decoration-color);
+      height: 100%;
+      width: 2px;
+      top: 0;
+      left: 85%;
+      display: none;
+
+      @include breakpoint-up(small) {
+        display: initial;
+      }
+    }
+  }
+}
