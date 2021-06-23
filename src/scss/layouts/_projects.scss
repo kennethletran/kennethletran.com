@@ -1,0 +1,15 @@
+.projects {
+  &__links {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  &__link {
+    font-size: 0;
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}

@@ -13,4 +13,29 @@
       display: block;
     }
   }
+
+  &__info {
+    margin-bottom: 3rem;
+  }
+  
+  &__socials {
+    margin-bottom: 3rem;
+
+    &__list {
+      list-style: none;
+      justify-content: start;
+      display: flex;
+      gap: 5rem;
+      margin-left: -3rem;
+    }
+
+    &__items {
+      font-size: 0;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  }
 }

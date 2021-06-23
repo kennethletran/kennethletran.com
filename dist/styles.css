@@ -260,6 +260,20 @@ body::before {
   fill: var(--primary-color);
 }
 
+.projects__links {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.projects__link {
+  font-size: 0;
+}
+.projects__link svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
 .menu__modal {
   display: flex;
   width: 60%;
@@ -277,6 +291,26 @@ body::before {
 }
 .footer__headline--headline {
   display: block;
+}
+.footer__info {
+  margin-bottom: 3rem;
+}
+.footer__socials {
+  margin-bottom: 3rem;
+}
+.footer__socials__list {
+  list-style: none;
+  justify-content: start;
+  display: flex;
+  gap: 5rem;
+  margin-left: -3rem;
+}
+.footer__socials__items {
+  font-size: 0;
+}
+.footer__socials__items svg {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .spoon {
