@@ -1,9 +1,8 @@
 @use '../base/mixins' as *;
 
 .hero {
-
   &__picture {
-    width: 500px;
+    width: 639px;
     position: relative;
   }
   &__headline {
@@ -15,6 +14,7 @@
     &--subheadline {
       font-size: 2.8rem;
       letter-spacing: 0.1rem;
+      display: block;
 
       @include breakpoint-up(small) {
         font-size: 3rem;

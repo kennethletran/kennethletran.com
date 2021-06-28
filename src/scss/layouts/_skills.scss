@@ -1,7 +1,48 @@
 .skills {
+  &__container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 2rem 0 2rem 2rem;
+    width: 330px;
+
+    &__headline {
+      font-weight: 600;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      margin-left: 1rem;
+      letter-spacing: 1px;
+
+      &::before {
+        content: "//";
+        position: absolute;
+        top: 0;
+        left: -1.25rem;
+        letter-spacing: -4px;
+      }
+      &::after {
+        content: "_";
+        position: absolute;
+        top: -2px;
+        // create an animation to make this blink -- can just transition opacity
+      }
+    }
+  }
   &__list {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    margin-right: 2rem;
+    padding: 0;
+
+    &:last-of-type {
+      align-self: center;
+    }
+
+    &--first {
+      margin-left: 2rem;
+    }
 
     &__items {
       width: 40px;

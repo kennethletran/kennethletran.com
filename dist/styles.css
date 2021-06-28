@@ -220,7 +220,7 @@ body::before {
 }
 
 .hero__picture {
-  width: 500px;
+  width: 639px;
   position: relative;
 }
 .hero__headline {
@@ -232,6 +232,7 @@ body::before {
 .hero__headline--subheadline {
   font-size: 2.8rem;
   letter-spacing: 0.1rem;
+  display: block;
 }
 @media only screen and (min-width: 40em) {
   .hero__headline--subheadline {
@@ -251,9 +252,45 @@ body::before {
   top: 25%;
 }
 
+.skills__container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  padding: 2rem 0 2rem 2rem;
+  width: 330px;
+}
+.skills__container__headline {
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-left: 1rem;
+  letter-spacing: 1px;
+}
+.skills__container__headline::before {
+  content: "//";
+  position: absolute;
+  top: 0;
+  left: -1.25rem;
+  letter-spacing: -4px;
+}
+.skills__container__headline::after {
+  content: "_";
+  position: absolute;
+  top: -2px;
+}
 .skills__list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-right: 2rem;
+  padding: 0;
+}
+.skills__list:last-of-type {
+  align-self: center;
+}
+.skills__list--first {
+  margin-left: 2rem;
 }
 .skills__list__items {
   width: 40px;
@@ -304,7 +341,8 @@ body::before {
   justify-content: start;
   display: flex;
   gap: 5rem;
-  margin-left: -3rem;
+  padding: 0;
+  margin-left: 1.5rem;
 }
 .footer__socials__items {
   font-size: 0;
@@ -313,11 +351,14 @@ body::before {
   width: 2.5rem;
   height: 2.5rem;
 }
+.footer__copyright {
+  margin-bottom: 1rem;
+}
 
 .spoon {
   position: absolute;
   stroke: var(--decoration-color);
-  top: 33%;
+  top: 31%;
   left: 30%;
   z-index: -100;
   opacity: 0.4;
@@ -477,6 +518,35 @@ button {
 
 .projects__card__screenshot img {
   width: 400px;
+}
+
+.skills__container {
+  background-color: var(--container-bg-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.skills__container::before {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+  top: -3px;
+  left: -3px;
+  height: 2rem;
+  width: 2rem;
+  z-index: -99;
+}
+.skills__container--proficient {
+  width: 334px;
+}
+.skills__container--proficient::before {
+  box-shadow: 0 217px 0 var(--primary-color), 320px 0 var(--primary-color), 320px 217px 0 var(--primary-color);
+}
+.skills__container--learning::before {
+  box-shadow: 0 141px 0 var(--primary-color), 316px 0 var(--primary-color), 316px 141px 0 var(--primary-color);
+}
+.skills__container--learning .skills__container__headline::after {
+  left: 135px;
 }
 
 ::-webkit-scrollbar {
