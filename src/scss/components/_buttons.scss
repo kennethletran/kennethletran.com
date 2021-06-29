@@ -3,7 +3,7 @@
 
 .button-container {
   position: relative;
-  margin-left: 1rem;
+  margin: 0 2rem;
 }
 button {
   display: inline-block;
@@ -27,7 +27,8 @@ button {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: background-color var(--duration-short) var(--basic-timing), color 450ms var(--basic-timing);
+  transition: background-color var(--duration-short) var(--basic-timing),
+    color 450ms var(--basic-timing);
 
   &::before {
     content: "";

@@ -55,12 +55,12 @@ body {
 }
 
 // Spacing
-.text-padding {
-  padding: 0 1.2rem;
+// TODO: create media queries to make spacing larger on desktop
+.content-spacer {
+  padding: 0 2rem;
 }
-
 .section-spacer {
-  margin-bottom: 15rem;
+  margin-bottom: 10rem;
 }
 
 .element-spacer {

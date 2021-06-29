@@ -1,15 +1,51 @@
 .projects {
-  &__links {
-    padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "image image"
+      "title icon"
+      "info .";
   }
+
+  &__card {
+    grid-area: image;
+
+    a {
+      display: grid;
+      place-items: center;
+    }
+
+    &__screenshot {
+      source,
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__title {
+    grid-area: title;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
   &__link {
+    grid-area: icon;
     font-size: 0;
+
     svg {
       width: 2.5rem;
-      height: 2.5rem;
+      height: 3rem;
     }
+  }
+
+  &__info {
+    grid-area: info;
   }
 }
