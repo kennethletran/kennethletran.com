@@ -14,7 +14,7 @@
     left: -2px;
     height: 2rem;
     width: 2rem;
-    z-index: -99;
+    z-index: -1;
   }
 
   &--proficient {
@@ -32,7 +32,7 @@
     }
     .skills__container__headline {
       &::after {
-        left: 135px;
+        left: 143px;
       }
     }
   }

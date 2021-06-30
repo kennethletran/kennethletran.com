@@ -47,7 +47,7 @@
       left: 50%;
       display: none;
 
-      @include breakpoint-up(small) {
+      @include breakpoint-up(medium) {
         display: initial;
       }
     }
