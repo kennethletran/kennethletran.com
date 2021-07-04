@@ -3,8 +3,9 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  place-self: center;
 
-  // have to create media queries for each container -- due to how the corners were created
+  // TODO: create media queries for each device changing the width due to the pseudo elements not being responsive
 
   &::before {
     content: "";
@@ -19,20 +20,20 @@
 
   &--proficient {
     &::before {
-      top: -2.5px;
-      box-shadow: 0 215.5px 0 var(--primary-color),
-        304.5px 0 var(--primary-color), 304.5px 215.5px 0 var(--primary-color);
+      top: -2px;
+      box-shadow: 0 196px 0 var(--primary-color), 304px 0 var(--primary-color),
+        304px 196px 0 var(--primary-color);
     }
   }
 
   &--learning {
     &::before {
-      box-shadow: 0 139px 0 var(--primary-color), 304.5px 0 var(--primary-color),
-        304.5px 139px 0 var(--primary-color);
+      box-shadow: 0 124px 0 var(--primary-color), 304px 0 var(--primary-color),
+        304px 124px 0 var(--primary-color);
     }
     .skills__container__headline {
       &::after {
-        left: 143px;
+        left: 125px;
       }
     }
   }

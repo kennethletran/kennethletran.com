@@ -1,9 +1,12 @@
 .skills {
+  display: grid;
+
   &__container {
     margin-left: 2rem;
     margin-right: 2rem;
     padding: 2rem 0 2rem 2rem;
     width: 320px;
+    // display: grid;
 
     &__headline {
       font-weight: 600;

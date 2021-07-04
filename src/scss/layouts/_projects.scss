@@ -1,19 +1,18 @@
 .projects {
   &__container {
     display: grid;
-    grid-template-columns: 1fr 5rem;
+    grid-template-columns: 1fr 3rem;
     grid-template-rows: auto;
     grid-template-areas:
       "image image"
       "title icon"
       "info .";
     grid-row-gap: 1rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   &__card {
     grid-area: image;
+    margin-bottom: 1.25rem;
 
     a {
       display: grid;
@@ -33,6 +32,10 @@
 
   &__title {
     grid-area: title;
+
+    &:nth-of-type(1) {
+      grid-column: 1 / span 2;
+    }
 
     a {
       text-decoration: none;

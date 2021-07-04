@@ -1,11 +1,17 @@
+@use '../base/mixins' as *;
+
+// TODO: create media queries for each device changing the width due to the pseudo elements not being responsive
+
 .projects {
   &__card {
-    width: 320px;
-    width: 350px;
-    height: 175px;
+    // width: 320px;
+    height: 200px;
+
+    @include breakpoint-up(xsmall) {
+      height: 250px;
+      width: 440px;
+    }
     position: relative;
-    // vertices beginning from top right and counterclockwise
-    // 1st choice
     clip-path: polygon(
       100% 0%,
       0% 0%,
@@ -14,8 +20,8 @@
       1% 80%,
       0% 85%,
       0% 100%,
-      90% 100%,
-      100% 89%
+      93% 100%,
+      100% 91%
     );
     clip-path: polygon(
       100% 0%,
@@ -25,15 +31,14 @@
       1% 85%,
       0% 88%,
       0% 100%,
-      95% 100%,
-      100% 90%
+      93% 100%,
+      100% 91%
     );
     background-color: var(--container-bg-color);
-    // border: .5px solid var(--primary-color);
     place-self: center;
     display: flex;
     justify-content: center;
-    padding-left: 3rem;
+    padding: 0 2rem;
 
     &::before {
       content: "";
@@ -43,18 +48,46 @@
       height: 100%;
       width: 4%;
       background-color: var(--primary-color);
-      box-shadow: 337px -171px 0 -1px var(--primary-color),
-        342px -158px 0 -5px var(--primary-color);
+
+      @include breakpoint-up(xsmall) {
+        box-shadow: 423px -246px 0 -1px var(--primary-color),
+          431px -230px 0 -5px var(--primary-color);
+      }
     }
     &::after {
       content: "";
       position: absolute;
-      right: 0;
-      bottom: -42%;
-      height: 93%;
+      right: 8px;
+      bottom: -10%;
+      height: 26%;
       width: 4%;
-      transform: rotate(44deg);
+      transform: rotate(52deg);
       background-color: var(--primary-color);
+
+      // 405px viewport
+      @media (min-width: 25.3125em) {
+        right: 8px;
+        bottom: -10%;
+        height: 26%;
+        width: 4%;
+        transform: rotate(54deg);
+      }
+
+      @media (min-width: 27.5em) {
+        right: 8px;
+        bottom: -10%;
+        height: 26%;
+        width: 4%;
+        transform: rotate(56deg);
+      }
+
+      @media (min-width: 30em) {
+        right: 8px;
+        bottom: -10%;
+        height: 26%;
+        width: 4%;
+        transform: rotate(52deg);
+      }
     }
   }
 }

@@ -21,6 +21,8 @@
 body {
   background-color: var(--bg-color);
   position: relative;
+  overflow-x: hidden;
+
   &::before {
     content: "";
     background-image: url("/src/assets/background.gif");
@@ -68,5 +70,5 @@ body {
 }
 
 .headline-spacer {
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }

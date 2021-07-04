@@ -51,12 +51,19 @@ button {
     }
   }
 }
+
+.cta:hover + .corners,
+.cta:hover + .corners + .corners {
+  border-color: var(--container-bg-color);
+}
+
 .corners {
   position: absolute;
   width: 3rem;
   height: 3rem;
   background-color: var(--bg-color);
   border: 0.25rem solid var(--primary-color);
+  transition: border-color var(--duration-short) var(--basic-timing);
 
   &:before {
     content: "";

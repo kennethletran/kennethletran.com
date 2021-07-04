@@ -1,11 +1,12 @@
 .footer {
   &__headline {
-    line-height: 1.1;
+    line-height: 1;
     letter-spacing: 0.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     &--subheadline {
-      font-size: 2.8rem;
+      font-size: 2rem;
+      font-weight: 800;
       color: var(--text-color);
     }
 
@@ -27,7 +28,7 @@
       display: flex;
       gap: 5rem;
       padding: 0;
-      margin-left: 1.5rem;
+      margin-left: 2rem;
     }
 
     &__items {
@@ -40,6 +41,7 @@
     }
   }
   &__copyright {
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
 }

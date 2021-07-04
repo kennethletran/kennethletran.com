@@ -1,4 +1,6 @@
 @use '../base/mixins' as *;
+
+// TODO: check valorant decorations - see if absolute values are used for positioning properties,maybe change top to an absolute value and keep left as a %
 .spoon {
   position: absolute;
   stroke: var(--decoration-color);
