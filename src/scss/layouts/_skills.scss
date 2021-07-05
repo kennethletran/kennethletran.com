@@ -2,10 +2,8 @@
   display: grid;
 
   &__container {
-    margin-left: 2rem;
-    margin-right: 2rem;
     padding: 2rem 0 2rem 2rem;
-    width: 320px;
+    // width: 320px;
     // display: grid;
 
     &__headline {
@@ -15,12 +13,13 @@
       display: inline-block;
       margin-left: 1rem;
       letter-spacing: 1px;
+      padding: 0 2rem;
 
       &::before {
         content: "//";
         position: absolute;
         top: 0;
-        left: -1.25rem;
+        left: 0;
         letter-spacing: -4px;
       }
       &::after {
@@ -31,6 +30,11 @@
       }
     }
   }
+
+  p {
+    margin-bottom: 6rem;
+  }
+
   &__list {
     list-style: none;
     display: flex;

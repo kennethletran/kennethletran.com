@@ -5,14 +5,12 @@
   position: relative;
   place-self: center;
 
-  // TODO: create media queries for each device changing the width due to the pseudo elements not being responsive
-
   &::before {
     content: "";
     position: absolute;
     background-color: var(--primary-color);
-    top: -2px;
-    left: -2px;
+    top: -3px;
+    left: -3.5px;
     height: 2rem;
     width: 2rem;
     z-index: -1;
@@ -20,16 +18,15 @@
 
   &--proficient {
     &::before {
-      top: -2px;
-      box-shadow: 0 196px 0 var(--primary-color), 304px 0 var(--primary-color),
-        304px 196px 0 var(--primary-color);
+      box-shadow: 0 199px 0 var(--primary-color), 282px 0 var(--primary-color),
+        282px 199px 0 var(--primary-color);
     }
   }
 
   &--learning {
     &::before {
-      box-shadow: 0 124px 0 var(--primary-color), 304px 0 var(--primary-color),
-        304px 124px 0 var(--primary-color);
+      box-shadow: 0 127px 0 var(--primary-color), 282px 0 var(--primary-color),
+        282px 127px 0 var(--primary-color);
     }
     .skills__container__headline {
       &::after {

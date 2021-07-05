@@ -205,7 +205,7 @@ body::before {
 }
 
 .content-spacer {
-  padding: 0 2rem;
+  padding: 0 3rem;
 }
 
 .section-spacer {
@@ -221,7 +221,7 @@ body::before {
 }
 
 .hero__picture {
-  width: 639px;
+  width: 100%;
   position: relative;
 }
 .hero__headline {
@@ -257,10 +257,7 @@ body::before {
   display: grid;
 }
 .skills__container {
-  margin-left: 2rem;
-  margin-right: 2rem;
   padding: 2rem 0 2rem 2rem;
-  width: 320px;
 }
 .skills__container__headline {
   font-weight: 600;
@@ -269,18 +266,22 @@ body::before {
   display: inline-block;
   margin-left: 1rem;
   letter-spacing: 1px;
+  padding: 0 2rem;
 }
 .skills__container__headline::before {
   content: "//";
   position: absolute;
   top: 0;
-  left: -1.25rem;
+  left: 0;
   letter-spacing: -4px;
 }
 .skills__container__headline::after {
   content: "_";
   position: absolute;
   top: -2px;
+}
+.skills p {
+  margin-bottom: 6rem;
 }
 .skills__list {
   list-style: none;
@@ -590,7 +591,7 @@ button {
   bottom: -10%;
   height: 26%;
   width: 4%;
-  transform: rotate(52deg);
+  transform: rotate(49.5deg);
   background-color: var(--primary-color);
 }
 @media (min-width: 25.3125em) {
@@ -632,18 +633,17 @@ button {
   content: "";
   position: absolute;
   background-color: var(--primary-color);
-  top: -2px;
-  left: -2px;
+  top: -3px;
+  left: -3.5px;
   height: 2rem;
   width: 2rem;
   z-index: -1;
 }
 .skills__container--proficient::before {
-  top: -2px;
-  box-shadow: 0 196px 0 var(--primary-color), 304px 0 var(--primary-color), 304px 196px 0 var(--primary-color);
+  box-shadow: 0 199px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 199px 0 var(--primary-color);
 }
 .skills__container--learning::before {
-  box-shadow: 0 124px 0 var(--primary-color), 304px 0 var(--primary-color), 304px 124px 0 var(--primary-color);
+  box-shadow: 0 127px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 127px 0 var(--primary-color);
 }
 .skills__container--learning .skills__container__headline::after {
   left: 125px;
