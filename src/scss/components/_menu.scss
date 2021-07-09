@@ -1,0 +1,59 @@
+.menu__button {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  z-index: 950;
+  cursor: pointer;
+
+  &:hover span,
+  &:focus-within span,
+  &:active span {
+    background-color: var(--selection-color);
+  }
+
+  span {
+    display: inline-block;
+    background-color: var(--text-color);
+    width: 2.5rem;
+    height: 1.75px;
+    align-self: flex-end;
+    transition: all var(--duration-short) var(--basic-timing);
+
+    &:nth-of-type(2) {
+      width: 1.85rem;
+    }
+    &:nth-of-type(3) {
+      width: 1.2rem;
+    }
+  }
+  &.menu--open {
+    transform: translate3d(-3px, -6px, 0);
+    span {
+      &:nth-of-type(1) {
+        // TODO: optimize these transforms
+        transform: rotate(-135deg) translate3d(-7px, -9px, 0);
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        width: 2.5rem;
+        transform: rotate(-45deg) translate3d(2px, -4px, 0);
+      }
+    }
+    &:hover,
+    &:focus-within,
+    &:active {
+      span {
+        background-color: var(--selection-color);
+      }
+    }
+  }
+}

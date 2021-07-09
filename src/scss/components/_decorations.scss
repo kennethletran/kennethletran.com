@@ -1,14 +1,34 @@
 @use '../base/mixins' as *;
 
-// TODO: check valorant decorations - see if absolute values are used for positioning properties,maybe change top to an absolute value and keep left as a %
-.spoon {
+// TODO: change decorations to have absolute values
+.deco {
   position: absolute;
-  stroke: var(--decoration-color);
-  top: 31%;
-  left: 30%;
-  z-index: -100;
-  opacity: 0.4;
+  z-index: -90;
+  opacity: 0.3;
+
+  &__spoon {
+    top: 31%;
+    // left: 30%;
+    left: 9rem;
+    opacity: 1;
+    stroke: var(--decoration-color);
+  }
+
+  &__notch {
+    top: 53%;
+    left: 7.8rem;
+    fill: none;
+  }
+  &__diamond {
+    bottom: 10%;
+    left: 7rem;
+  }
+  &__diamond-notch {
+    bottom: 10.67%;
+    left: 7.8rem;
+  }
 }
+
 .transparent {
   font-size: 10rem;
   font-weight: 900;
@@ -32,7 +52,8 @@
     height: 100%;
     width: 2px;
     top: 0;
-    left: 30%;
+    // left: 30%;
+    left: 9rem;
 
     @include breakpoint-up(small) {
       left: 15%;

@@ -1,5 +1,66 @@
-.menu__modal {
-  display: flex;
-  width: 60%;
-  display: none;
+.menu {
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--container-bg-color);
+    opacity: 0;
+    // transform: translate3d(0, -100%, 0);
+    z-index: 900;
+    pointer-events: none;
+    transition: transform var(--duration-short) var(--basic-timing);
+    // width for large screen viewport
+    // width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.modal--open {
+      opacity: 1;
+      // transform: translate3d(0, 100%, 0);
+      pointer-events: initial;
+    }
+  }
+
+  &__socials {
+    order: 2;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    &__items svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    &__items a {
+      text-decoration: none;
+    }
+
+    &__items:not(:last-of-type) {
+      font-size: 0;
+    }
+    &__items:last-of-type a {
+      font-size: 3rem;
+      display: inline-block;
+      padding-top: 0.25rem;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: var(--primary-color);
+      -webkit-text-stroke-width: 1px;
+    }
+  }
+
+  &__form {
+    order: 1;
+  }
+}
+// prevent scroll & keep position of window while modal is open
+body.prevent-scroll {
+  position: fixed;
+  overflow-y: hidden;
 }

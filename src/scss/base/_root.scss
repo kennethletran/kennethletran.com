@@ -7,13 +7,14 @@
   --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
-  --selection: hsl(336, 100%, 50%);
+  --selection-color: hsl(336, 100%, 50%);
   --scrollbar-hover: hsl(168, 100%, 30%);
 
   // Transitions and Animations
   // look into cubic beziers for custom timings
   --basic-timing: ease-in-out;
   --duration-short: 250ms;
+  --duration-medium: 450ms;
 
   font-size: 10px;
 }
@@ -58,7 +59,7 @@ body {
 
 // Spacing
 // TODO: create media queries to make spacing larger on desktop
-.content-spacer {
+.side-spacer {
   padding: 0 3rem;
 }
 .section-spacer {

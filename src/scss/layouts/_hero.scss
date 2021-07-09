@@ -5,17 +5,21 @@
     // width: 639px;
     width: 100%;
     position: relative;
+    padding: 0;
   }
   &__headline {
     position: relative;
-    top: -11rem;
+    top: -8rem;
     color: var(--bg-color);
     line-height: 1;
 
+    &--headline {
+      padding: 0 2rem;
+    }
     &--subheadline {
       font-size: 2.8rem;
       letter-spacing: 0.1rem;
-      display: block;
+      // display: block;
 
       @include breakpoint-up(small) {
         font-size: 3rem;
@@ -23,9 +27,9 @@
     }
   }
   &__introduction {
-    &:first-of-type {
-      margin-top: -4rem;
-    }
+    // &:first-of-type {
+    //   margin-top: -4rem;
+    // }
     &:not(:last-of-type) {
       margin-bottom: 2rem;
     }
