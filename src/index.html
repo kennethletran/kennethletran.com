@@ -19,7 +19,12 @@
       type="image/x-icon"
       sizes="32x32"
     />
+    <!-- For live server environment -->
     <link rel="stylesheet" href="/dist/styles.css" />
+
+    <!-- deploy environment -->
+    <!-- TODO: doesn't work, link to sass in js file not html to utilize parcel -->
+    <!-- <link rel="stylesheet" href="../dist/styles.css" /> -->
 
     <title>Kenneth Le-Tran | Front End Developer</title>
   </head>
@@ -189,9 +194,9 @@
       <section class="hero section-spacer">
         <picture class="hero__picture">
           <source srcset="assets/personal-image.webp" type="image/webp" />
-          <source srcset="assets/personal-image.jpg" type="image/jpeg" />
+          <source srcset="assets/personal-image.png" type="image/jpeg" />
           <img
-            src="assets/personal-image.jpg"
+            src="assets/personal-image.png"
             alt="picture of Kenneth Le-Tran"
           />
         </picture>

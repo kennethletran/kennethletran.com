@@ -23,7 +23,7 @@ form {
 
 .contact__form {
   &__button {
-    margin: 2rem;
+    margin: 2rem 1rem 3rem;
 
     .cta::before {
       background-color: var(--bg-color);
@@ -37,6 +37,10 @@ form {
     &.top-block {
       top: -8px;
       left: 86px;
+
+      &::before {
+        right: -5px;
+      }
     }
 
     &.bottom-block {
@@ -53,7 +57,6 @@ form {
     background-color: var(--container-bg-color);
     appearance: none;
     border: none;
-    color: var(--bg-color);
     font-size: 2rem;
 
     &:focus {

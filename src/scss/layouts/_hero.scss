@@ -1,6 +1,9 @@
 @use '../base/mixins' as *;
 
 .hero {
+  display: flex;
+  flex-direction: column;
+
   &__picture {
     // width: 639px;
     width: 100%;
@@ -9,13 +12,20 @@
   }
   &__headline {
     position: relative;
-    top: -8rem;
+    top: -7.5rem;
     color: var(--bg-color);
     line-height: 1;
+    align-self: center;
 
     &--headline {
       padding: 0 2rem;
+      font-size: 3.8rem;
+
+      @media (min-width: 23.4375em) {
+        font-size: 4rem;
+      }
     }
+
     &--subheadline {
       font-size: 2.8rem;
       letter-spacing: 0.1rem;
@@ -35,9 +45,6 @@
     }
   }
   &__button {
-    margin: 5rem 0 0 1rem;
-  }
-  &__deco {
-    top: 25%;
+    margin: 5rem 0 0 2rem;
   }
 }

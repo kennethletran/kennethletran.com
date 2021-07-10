@@ -48,10 +48,12 @@
     &__items:last-of-type a {
       font-size: 3rem;
       display: inline-block;
-      padding-top: 0.25rem;
+      // padding-top: 0.25rem;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-color: var(--primary-color);
       -webkit-text-stroke-width: 1px;
+      letter-spacing: 0.75px;
+      text-transform: lowercase;
     }
   }
 

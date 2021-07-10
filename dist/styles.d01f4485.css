@@ -76,25 +76,25 @@ select {
 }
 @font-face {
   font-family: "Kanit";
-  src: url("/src//fonts/Kanit-Medium.woff2") format("woff2");
+  src: url("/f269adca63077c4054b1d2a3f481654d.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
 @font-face {
   font-family: "Kanit";
-  src: url("/src/fonts/Kanit-SemiBold.woff2") format("woff2");
+  src: url("/b181866181d615238a377deb8da1f4af.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 @font-face {
   font-family: "Kanit";
-  src: url("/src/fonts/Kanit-ExtraBold.woff2") format("woff2");
+  src: url("/c211bb50b6009da98c6062f86d217ad1.woff2") format("woff2");
   font-weight: 800;
   font-display: swap;
 }
 @font-face {
   font-family: "Kanit";
-  src: url("/src/fonts/Kanit-Black.woff2") format("woff2");
+  src: url("/d47015c92128c01a18b636e7dd1bec46.woff2") format("woff2");
   font-weight: 900;
   font-display: swap;
 }
@@ -153,7 +153,7 @@ h3 {
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
   --selection-color: hsl(336, 100%, 50%);
-  --scrollbar-hover-color: hsl(168, 100%, 30%);
+  --scrollbar-hover: hsl(168, 100%, 30%);
   --basic-timing: ease-in-out;
   --duration-short: 250ms;
   --duration-medium: 450ms;
@@ -167,7 +167,7 @@ body {
 }
 body::before {
   content: "";
-  background-image: url("/src/assets/background.gif");
+  background-image: url("/5d957c08d9a1811910c6be2dea0c230c.gif");
   position: fixed;
   width: 100%;
   height: 100%;
@@ -217,10 +217,6 @@ body::before {
   margin-bottom: 0.25rem;
 }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-}
 .hero__picture {
   width: 100%;
   position: relative;
@@ -228,19 +224,12 @@ body::before {
 }
 .hero__headline {
   position: relative;
-  top: -7.5rem;
+  top: -8rem;
   color: var(--bg-color);
   line-height: 1;
-  align-self: center;
 }
 .hero__headline--headline {
   padding: 0 2rem;
-  font-size: 3.8rem;
-}
-@media (min-width: 23.4375em) {
-  .hero__headline--headline {
-    font-size: 4rem;
-  }
 }
 .hero__headline--subheadline {
   font-size: 2.8rem;
@@ -255,7 +244,10 @@ body::before {
   margin-bottom: 2rem;
 }
 .hero__button {
-  margin: 5rem 0 0 2rem;
+  margin: 5rem 0 0 1rem;
+}
+.hero__deco {
+  top: 25%;
 }
 
 .skills {
@@ -385,11 +377,10 @@ body::before {
 .menu__socials__items:last-of-type a {
   font-size: 3rem;
   display: inline-block;
+  padding-top: 0.25rem;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: var(--primary-color);
   -webkit-text-stroke-width: 1px;
-  letter-spacing: 0.75px;
-  text-transform: lowercase;
 }
 .menu__form {
   order: 1;
@@ -548,7 +539,6 @@ button {
   line-height: 1;
   background-color: var(--primary-color);
   cursor: pointer;
-  color: var(--bg-color);
 }
 
 .cta {
@@ -599,13 +589,12 @@ button {
 }
 .corners.top-block {
   top: 42px;
-  left: 171px;
+  left: 161px;
   border-left: 0;
   border-bottom: 0;
 }
 .corners.top-block::before {
   top: 10px;
-  left: 5px;
 }
 @media only screen and (min-width: 40em) {
   .corners.top-block::before {
@@ -614,7 +603,7 @@ button {
 }
 .corners.bottom-block {
   bottom: -8px;
-  left: 12px;
+  left: 2px;
   border-top: 0;
   border-right: 0;
 }
@@ -724,7 +713,7 @@ button {
   border: 1px solid var(--bg-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-hover-color);
+  background-color: var(--scrollbar-hover);
 }
 
 html {
@@ -804,7 +793,7 @@ form {
 }
 
 .contact__form__button {
-  margin: 2rem 1rem 3rem;
+  margin: 2rem;
 }
 .contact__form__button .cta::before {
   background-color: var(--bg-color);
@@ -817,9 +806,6 @@ form {
   top: -8px;
   left: 86px;
 }
-.contact__form__corners.top-block::before {
-  right: -5px;
-}
 .contact__form__corners.bottom-block {
   left: -8px;
 }
@@ -831,6 +817,7 @@ form {
   background-color: var(--container-bg-color);
   appearance: none;
   border: none;
+  color: var(--bg-color);
   font-size: 2rem;
 }
 .contact__form input:focus,
@@ -873,4 +860,7 @@ form {
   width: 100%;
 }
 
-/*# sourceMappingURL=styles.css.map */
+
+
+
+/*# sourceMappingURL=/styles.d01f4485.css.map */

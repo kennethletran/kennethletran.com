@@ -21,6 +21,7 @@ button {
   line-height: 1;
   background-color: var(--primary-color);
   cursor: pointer;
+  color: var(--bg-color);
 }
 .cta {
   clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
@@ -75,12 +76,13 @@ button {
 
   &.top-block {
     top: 42px;
-    left: 161px;
+    left: 171px;
     border-left: 0;
     border-bottom: 0;
 
     &::before {
       top: 10px;
+      left: 5px;
       @include breakpoint-up(small) {
         left: 10px;
       }
@@ -89,7 +91,7 @@ button {
 
   &.bottom-block {
     bottom: -8px;
-    left: 2px;
+    left: 12px;
     border-top: 0;
     border-right: 0;
 
