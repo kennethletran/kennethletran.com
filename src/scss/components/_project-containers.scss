@@ -48,11 +48,6 @@
       height: 100%;
       width: 4%;
       background-color: var(--primary-color);
-
-      //   @include breakpoint-up(xsmall) {
-      //     box-shadow: 423px -246px 0 -1px var(--primary-color),
-      //       431px -230px 0 -5px var(--primary-color);
-      //   }
     }
     &::after {
       content: "";

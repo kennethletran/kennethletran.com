@@ -189,13 +189,13 @@ body::before {
 .hide-mobile {
   display: none;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   .hide-mobile {
     display: initial;
   }
 }
 
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   .hide-desktop {
     display: none;
   }
@@ -204,9 +204,10 @@ body::before {
 .side-spacer {
   padding: 0 3rem;
 }
-
-.section-spacer {
-  margin-bottom: 10rem;
+@media only screen and (min-width: 40em) {
+  .side-spacer {
+    padding: 0 6rem;
+  }
 }
 
 .element-spacer {
@@ -217,9 +218,15 @@ body::before {
   margin-bottom: 0.25rem;
 }
 
+.section-container {
+  margin: 8rem auto;
+  max-width: min(640px, 100%);
+}
+
 .hero {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 .hero__picture {
   width: 100%;
@@ -347,18 +354,25 @@ body::before {
 
 .menu__modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  width: 80%;
   background-color: var(--container-bg-color);
   opacity: 0;
+  transform: translate3d(-50%, -50%, 0);
   z-index: 900;
   pointer-events: none;
-  transition: transform var(--duration-short) var(--basic-timing);
+  transition: all var(--duration-short) var(--basic-timing);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+@media only screen and (min-width: 48em) {
+  .menu__modal {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .menu__modal.modal--open {
   opacity: 1;
@@ -366,11 +380,25 @@ body::before {
 }
 .menu__socials {
   order: 2;
+  min-width: 30%;
+}
+@media only screen and (min-width: 48em) {
+  .menu__socials {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+  }
 }
 .menu__socials__list {
   display: flex;
   align-items: center;
   gap: 3rem;
+}
+@media only screen and (min-width: 48em) {
+  .menu__socials__list {
+    flex-direction: column;
+    gap: 6rem;
+  }
 }
 .menu__socials__items svg {
   width: 2.5rem;
@@ -394,12 +422,20 @@ body::before {
 .menu__form {
   order: 1;
 }
+@media only screen and (min-width: 48em) {
+  .menu__form {
+    order: 2;
+  }
+}
 
 body.prevent-scroll {
   position: fixed;
   overflow-y: hidden;
 }
 
+.footer {
+  margin-bottom: 0;
+}
 .footer__headline {
   line-height: 1;
   letter-spacing: 0.1rem;
@@ -444,23 +480,64 @@ body.prevent-scroll {
   opacity: 0.3;
 }
 .deco__spoon {
-  top: 31%;
+  top: 94rem;
   left: 9rem;
   opacity: 1;
   stroke: var(--decoration-color);
 }
+@media (min-width: 25em) {
+  .deco__spoon {
+    top: 99rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .deco__spoon {
+    top: 33%;
+    left: 15%;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .deco__spoon {
+    top: 37%;
+  }
+}
 .deco__notch {
-  top: 53%;
+  top: 165rem;
   left: 7.8rem;
-  fill: none;
+}
+@media (min-width: 25em) {
+  .deco__notch {
+    top: 171rem;
+  }
+}
+@media only screen and (min-width: 30em) {
+  .deco__notch {
+    left: 13.25%;
+  }
+}
+@media only screen and (min-width: 40em) {
+  .deco__notch {
+    top: 55%;
+  }
 }
 .deco__diamond {
-  bottom: 10%;
+  bottom: 31rem;
   left: 7rem;
 }
+@media only screen and (min-width: 30em) {
+  .deco__diamond {
+    opacity: 0;
+  }
+}
 .deco__diamond-notch {
-  bottom: 10.67%;
+  bottom: 33rem;
   left: 7.8rem;
+}
+@media only screen and (min-width: 30em) {
+  .deco__diamond-notch {
+    bottom: 9.15%;
+    left: 13.25%;
+  }
 }
 
 .transparent {
@@ -482,14 +559,14 @@ body.prevent-scroll {
 }
 .decorations__col {
   position: fixed;
-  z-index: -99;
+  z-index: -999;
   background-color: var(--decoration-color);
   height: 100%;
   width: 2px;
   top: 0;
   left: 9rem;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 30em) {
   .decorations__col {
     left: 15%;
   }
@@ -518,7 +595,7 @@ body.prevent-scroll {
   height: 100%;
   width: 2px;
   top: 0;
-  left: 85%;
+  right: 15%;
   display: none;
 }
 @media only screen and (min-width: 40em) {
@@ -530,6 +607,11 @@ body.prevent-scroll {
 .button-container {
   position: relative;
   margin: 0 2rem;
+}
+@media only screen and (min-width: 40em) {
+  .button-container {
+    margin: 0 4.75rem;
+  }
 }
 
 button {
@@ -735,7 +817,7 @@ html {
 .menu__button {
   position: fixed;
   top: 1.5rem;
-  right: 1.5rem;
+  right: 2rem;
   height: 4rem;
   width: 4rem;
   display: flex;
@@ -753,7 +835,7 @@ html {
   display: inline-block;
   background-color: var(--text-color);
   width: 2.5rem;
-  height: 1.75px;
+  height: 2px;
   align-self: flex-end;
   transition: all var(--duration-short) var(--basic-timing);
 }
@@ -765,6 +847,12 @@ html {
 }
 .menu__button.menu--open {
   transform: translate3d(-3px, -6px, 0);
+}
+@media only screen and (min-width: 48em) {
+  .menu__button.menu--open {
+    top: 12%;
+    right: 12%;
+  }
 }
 .menu__button.menu--open span:nth-of-type(1) {
   transform: rotate(-135deg) translate3d(-7px, -9px, 0);

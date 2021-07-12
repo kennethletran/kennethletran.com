@@ -47,12 +47,12 @@ body {
 // Hiding content on certain viewports
 .hide-mobile {
   display: none;
-  @include breakpoint-up(small) {
+  @include breakpoint-up(medium) {
     display: initial;
   }
 }
 .hide-desktop {
-  @include breakpoint-up(small) {
+  @include breakpoint-up(medium) {
     display: none;
   }
 }
@@ -61,9 +61,10 @@ body {
 // TODO: create media queries to make spacing larger on desktop
 .side-spacer {
   padding: 0 3rem;
-}
-.section-spacer {
-  margin-bottom: 10rem;
+
+  @include breakpoint-up(small) {
+    padding: 0 6rem;
+  }
 }
 
 .element-spacer {
@@ -72,4 +73,11 @@ body {
 
 .headline-spacer {
   margin-bottom: 0.25rem;
+}
+
+// Sizing
+
+.section-container {
+  margin: 8rem auto;
+  max-width: min(640px, 100%);
 }

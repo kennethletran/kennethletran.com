@@ -1,31 +1,70 @@
 @use '../base/mixins' as *;
 
-// TODO: change decorations to have absolute values
+// TODO: decorations' positions - left should be % starting from small viewport up and top should be absolute
+
 .deco {
   position: absolute;
   z-index: -90;
   opacity: 0.3;
 
   &__spoon {
-    top: 31%;
-    // left: 30%;
+    top: 94rem;
     left: 9rem;
     opacity: 1;
     stroke: var(--decoration-color);
+
+    @media (min-width: 25em) {
+      top: 99rem;
+    }
+
+    @include breakpoint-up(xsmall) {
+      top: 33%;
+      left: 15%;
+    }
+
+    @include breakpoint-up(small) {
+      top: 37%;
+    }
   }
 
   &__notch {
-    top: 53%;
+    top: 165rem;
     left: 7.8rem;
-    fill: none;
+
+    @media (min-width: 25em) {
+      top: 171rem;
+    }
+
+    @include breakpoint-up(xsmall) {
+      left: 13.25%;
+    }
+
+    @include breakpoint-up(small) {
+      top: 55%;
+    }
   }
+
   &__diamond {
-    bottom: 10%;
+    bottom: 31rem;
     left: 7rem;
+
+    @include breakpoint-up(xsmall) {
+      opacity: 0;
+    }
   }
+
   &__diamond-notch {
-    bottom: 10.67%;
+    bottom: 33rem;
     left: 7.8rem;
+
+    @include breakpoint-up(xsmall) {
+      bottom: 9.15%;
+      left: 13.25%;
+    }
+
+    // @include breakpoint-up(small) {
+    //   bottom: 9.15%;
+    // }
   }
 }
 
@@ -47,15 +86,14 @@
 
   &__col {
     position: fixed;
-    z-index: -99;
+    z-index: -999;
     background-color: var(--decoration-color);
     height: 100%;
     width: 2px;
     top: 0;
-    // left: 30%;
     left: 9rem;
 
-    @include breakpoint-up(small) {
+    @include breakpoint-up(xsmall) {
       left: 15%;
     }
 
@@ -70,7 +108,7 @@
       left: 50%;
       display: none;
 
-      @include breakpoint-up(medium) {
+      @include breakpoint-up(large) {
         display: initial;
       }
     }
@@ -83,7 +121,7 @@
       height: 100%;
       width: 2px;
       top: 0;
-      left: 85%;
+      right: 15%;
       display: none;
 
       @include breakpoint-up(small) {

@@ -1,21 +1,26 @@
+@use '../base/mixins' as *;
+
 .menu {
   &__modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 80%;
     background-color: var(--container-bg-color);
     opacity: 0;
-    // transform: translate3d(0, -100%, 0);
+    transform: translate3d(-50%, -50%, 0);
     z-index: 900;
     pointer-events: none;
-    transition: transform var(--duration-short) var(--basic-timing);
-    // width for large screen viewport
-    // width: 60%;
+    transition: all var(--duration-short) var(--basic-timing);
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      align-items: center;
+    }
 
     &.modal--open {
       opacity: 1;
@@ -26,11 +31,23 @@
 
   &__socials {
     order: 2;
+    min-width: 30%;
+
+    @include breakpoint-up(medium) {
+      order: 1;
+      display: flex;
+      flex-direction: column;
+    }
 
     &__list {
       display: flex;
       align-items: center;
       gap: 3rem;
+
+      @include breakpoint-up(medium) {
+        flex-direction: column;
+        gap: 6rem;
+      }
     }
 
     &__items svg {
@@ -59,9 +76,13 @@
 
   &__form {
     order: 1;
+
+    @include breakpoint-up(medium) {
+      order: 2;
+    }
   }
 }
-// prevent scroll & keep position of window while modal is open
+// TODO: keep position of window while modal is open - refer to CSStricks article
 body.prevent-scroll {
   position: fixed;
   overflow-y: hidden;

@@ -4,6 +4,10 @@
 .button-container {
   position: relative;
   margin: 0 2rem;
+
+  @include breakpoint-up(small) {
+    margin: 0 4.75rem;
+  }
 }
 button {
   display: inline-block;
