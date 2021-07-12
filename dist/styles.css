@@ -28,10 +28,6 @@ ol {
 }
 
 /* Set core root defaults */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -378,6 +374,11 @@ body::before {
     align-items: center;
   }
 }
+@media only screen and (min-width: 75em) {
+  .menu__modal {
+    width: 60%;
+  }
+}
 .menu__modal.modal--open {
   opacity: 1;
   pointer-events: initial;
@@ -396,7 +397,7 @@ body::before {
 @media only screen and (min-width: 48em) {
   .menu__socials {
     min-width: 30%;
-    padding-left: 0;
+    padding-left: 3rem;
   }
 }
 .menu__socials__list {
@@ -444,13 +445,19 @@ body::before {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-color: var(--primary-color);
   -webkit-text-stroke-width: 1px;
-  letter-spacing: 0.75px;
+  letter-spacing: 1.75px;
   text-transform: lowercase;
 }
 @media only screen and (min-width: 40em) {
   .menu__socials__items:last-of-type a {
     font-size: 2rem;
     -webkit-text-stroke-width: 0.5px;
+    letter-spacing: 1px;
+  }
+  @-moz-document url-prefix() {
+    .menu__socials__items:last-of-type a {
+      -webkit-text-stroke-width: 0.8px;
+    }
   }
 }
 @media only screen and (min-width: 48em) {
@@ -469,12 +476,19 @@ body::before {
 }
 
 body.prevent-scroll {
-  position: fixed;
-  overflow-y: hidden;
+  padding-right: 0.4rem;
+}
+@-moz-document url-prefix() {
+  body.prevent-scroll {
+    padding-right: 0.75rem;
+  }
 }
 
 .footer {
   margin-bottom: 0;
+}
+.footer > * {
+  margin-bottom: 3rem;
 }
 .footer__headline {
   line-height: 1;
@@ -488,12 +502,6 @@ body.prevent-scroll {
 }
 .footer__headline--headline {
   display: block;
-}
-.footer__info {
-  margin-bottom: 3rem;
-}
-.footer__socials {
-  margin-bottom: 3rem;
 }
 .footer__socials__list {
   list-style: none;
@@ -895,14 +903,14 @@ html {
   }
 }
 .menu__button.menu--open span:nth-of-type(1) {
-  transform: rotate(-135deg) translate3d(-7px, -9px, 0);
+  transform: rotate(-135deg) translate3d(-7px, -9.5px, 0);
 }
 .menu__button.menu--open span:nth-of-type(2) {
   opacity: 0;
 }
 .menu__button.menu--open span:nth-of-type(3) {
   width: 2.5rem;
-  transform: rotate(-45deg) translate3d(2px, -4px, 0);
+  transform: rotate(-45deg) translate3d(2px, -4.5px, 0);
 }
 .menu__button.menu--open:hover span, .menu__button.menu--open:focus-within span, .menu__button.menu--open:active span {
   background-color: var(--selection-color);

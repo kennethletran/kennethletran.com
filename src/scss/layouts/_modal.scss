@@ -26,6 +26,11 @@
       align-items: center;
     }
 
+    @include breakpoint-up(xlarge) {
+      // play with this value a bit more -- in the 60-75 range; can also adjust min-width of socials section
+      width: 60%;
+    }
+
     &.modal--open {
       opacity: 1;
       // transform: translate3d(0, 100%, 0);
@@ -46,7 +51,7 @@
 
     @include breakpoint-up(medium) {
       min-width: 30%;
-      padding-left: 0;
+      padding-left: 3rem;
     }
 
     &__list {
@@ -94,12 +99,17 @@
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-color: var(--primary-color);
       -webkit-text-stroke-width: 1px;
-      letter-spacing: 0.75px;
+      letter-spacing: 1.75px;
       text-transform: lowercase;
 
       @include breakpoint-up(small) {
         font-size: 2rem;
         -webkit-text-stroke-width: 0.5px;
+        letter-spacing: 1px;
+
+        @-moz-document url-prefix() {
+          -webkit-text-stroke-width: 0.8px;
+        }
       }
 
       @include breakpoint-up(medium) {
@@ -117,8 +127,13 @@
     }
   }
 }
-// TODO: keep position of window while modal is open - refer to CSStricks article
+
+// add overlay and click outside modal to cancel function - refer to wes bos' modal exercise
+
 body.prevent-scroll {
-  position: fixed;
-  overflow-y: hidden;
+  padding-right: 0.4rem;
+
+  @-moz-document url-prefix() {
+    padding-right: 0.75rem;
+  }
 }

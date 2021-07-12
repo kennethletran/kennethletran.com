@@ -1,6 +1,10 @@
 .footer {
   margin-bottom: 0;
 
+  & > * {
+    margin-bottom: 3rem;
+  }
+
   &__headline {
     line-height: 1;
     letter-spacing: 0.1rem;
@@ -17,13 +21,7 @@
     }
   }
 
-  &__info {
-    margin-bottom: 3rem;
-  }
-
   &__socials {
-    margin-bottom: 3rem;
-
     &__list {
       list-style: none;
       justify-content: start;
