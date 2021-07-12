@@ -38,7 +38,7 @@
   &.menu--open {
     transform: translate3d(-3px, -6px, 0);
 
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(small) {
       top: 12%;
       right: 12%;
     }
