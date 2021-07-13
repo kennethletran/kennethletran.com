@@ -18,7 +18,7 @@
     }
   }
   &__modal--outer {
-    background: hsla(0, 0, 0, 0.8);
+    background: hsla(210, 39%, 16%, 0.8);
     opacity: 0;
   }
   &__modal--inner {
@@ -85,9 +85,10 @@
       font-size: 0;
     }
     &__items:last-of-type a {
+      font-family: "Kanit", var(--fallback-font);
+      font-weight: 700;
       font-size: 3rem;
       display: inline-block;
-      // padding-top: 0.25rem;
       -webkit-text-fill-color: transparent;
       -webkit-text-stroke-color: var(--primary-color);
       -webkit-text-stroke-width: 1px;

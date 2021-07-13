@@ -1,8 +1,15 @@
 @use '../base/mixins' as *;
 
 @font-face {
+  font-family: "Lexend";
+  src: url("/src/fonts/Lexend.woff2") format("woff2 supports variations"),
+    url("/src/fonts/Lexend.woff2") format("woff2-variations");
+  font-weight: 100 800;
+}
+
+@font-face {
   font-family: "Kanit";
-  src: url("/src//fonts/Kanit-Medium.woff2") format("woff2");
+  src: url("/src/fonts/Kanit-Medium.woff2") format("woff2");
   font-weight: 500;
   font-display: swap;
 }
@@ -31,12 +38,15 @@
   font-weight: 900;
   font-display: swap;
 }
-
 body {
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
+  font-family: "Lexend", var(--fallback-font);
   font-size: 1.6em;
   color: var(--text-color);
+  font-variation-settings: "wght" 465, "LXND" 56;
+
+  @include breakpoint-up(medium) {
+    font-size: 1.8rem;
+  }
 }
 h1,
 h2,
@@ -48,6 +58,7 @@ a {
 }
 
 h1 {
+  font-family: "Kanit", var(--fallback-font);
   font-weight: 900;
   font-size: 4rem;
   letter-spacing: 0.1rem;
@@ -57,18 +68,32 @@ h1 {
   }
 }
 h2 {
+  font-family: "Kanit", var(--fallback-font);
   font-weight: 800;
   font-size: 3rem;
 }
 h3 {
+  font-family: "Kanit", var(--fallback-font);
   font-weight: 600;
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
 .subheadline--italic {
+  font-family: "Kanit", var(--fallback-font);
   font-style: italic;
   font-weight: 500;
+  font-size: 1.6rem;
+  text-transform: lowercase;
+
+  @include breakpoint-up(medium) {
+    font-size: 1.8rem;
+  }
 }
+
+form {
+  font-variation-settings: "wght" 650, "LXND" 56;
+}
+
 ::selection {
   background-color: var(--selection-color);
   color: var(--text-color);

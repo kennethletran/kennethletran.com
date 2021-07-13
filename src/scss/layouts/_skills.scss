@@ -7,21 +7,19 @@
     // display: grid;
 
     &__headline {
-      font-weight: 600;
+      // font-weight: 600;
       text-transform: uppercase;
       position: relative;
       display: inline-block;
-      margin-left: 1rem;
-      letter-spacing: 1px;
-      padding: 0 2rem;
+      font-variation-settings: "wght" 750;
 
-      &::before {
-        content: "//";
-        position: absolute;
-        top: 0;
-        left: 0;
-        letter-spacing: -4px;
-      }
+      // &::before {
+      //   content: "//";
+      //   position: absolute;
+      //   top: -1px;
+      //   left: 0;
+      //   letter-spacing: -4px;
+      // }
       &::after {
         content: "_";
         position: absolute;
