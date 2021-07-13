@@ -71,9 +71,10 @@ select {
   }
 }
 @font-face {
-  font-family: "Lexend";
-  src: url("/src/fonts/Lexend.woff2") format("woff2 supports variations"), url("/src/fonts/Lexend.woff2") format("woff2-variations");
-  font-weight: 100 800;
+  font-family: "Kanit";
+  src: url("/src/fonts/Kanit-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
 }
 @font-face {
   font-family: "Kanit";
@@ -100,10 +101,10 @@ select {
   font-display: swap;
 }
 body {
-  font-family: "Lexend", var(--fallback-font);
+  font-family: "Kanit", var(--fallback-font);
   font-size: 1.6em;
+  font-weight: 400;
   color: var(--text-color);
-  font-variation-settings: "wght" 465, "LXND" 56;
 }
 @media only screen and (min-width: 48em) {
   body {
@@ -148,7 +149,6 @@ h3 {
 .subheadline--italic {
   font-family: "Kanit", var(--fallback-font);
   font-style: italic;
-  font-weight: 500;
   font-size: 1.6rem;
   text-transform: lowercase;
 }
@@ -156,10 +156,6 @@ h3 {
   .subheadline--italic {
     font-size: 1.8rem;
   }
-}
-
-form {
-  font-variation-settings: "wght" 650, "LXND" 56;
 }
 
 ::selection {
@@ -299,7 +295,6 @@ body::before {
   text-transform: uppercase;
   position: relative;
   display: inline-block;
-  font-variation-settings: "wght" 750;
 }
 .skills__container__headline::after {
   content: "_";
@@ -674,7 +669,7 @@ button {
   padding: 0;
   text-decoration: none;
   padding: 1.5rem 2.5rem;
-  font-family: "Kanit", sans-serif;
+  font-family: "Kanit", var(--fallback-font);
   font-weight: 800;
   font-size: 2rem;
   text-transform: uppercase;

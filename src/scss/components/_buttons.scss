@@ -17,7 +17,7 @@ button {
   padding: 0;
   text-decoration: none;
   padding: 1.5rem 2.5rem;
-  font-family: "Kanit", sans-serif;
+  font-family: "Kanit", var(--fallback-font);
   font-weight: 800;
   font-size: 2rem;
   text-transform: uppercase;
