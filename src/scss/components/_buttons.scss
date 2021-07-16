@@ -3,7 +3,7 @@
 
 .button-container {
   position: relative;
-  margin: 0 2rem;
+  margin: 0 -1rem;
 
   @include breakpoint-up(small) {
     margin: 0 4.75rem;

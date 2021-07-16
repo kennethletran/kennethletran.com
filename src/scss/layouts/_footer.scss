@@ -16,7 +16,6 @@
       font-size: 2rem;
       font-size: 1.8rem;
       font-weight: 600;
-      text-transform: lowercase;
       color: var(--text-color);
     }
 
@@ -28,14 +27,18 @@
   &__socials {
     &__list {
       list-style: none;
+      height: 3.5rem;
+      align-items: center;
       justify-content: start;
       display: flex;
       gap: 3rem;
       padding: 0;
+      margin: 0;
     }
 
     &__items {
       font-size: 0;
+      letter-spacing: 0;
 
       svg {
         width: 3.1rem;
@@ -44,6 +47,7 @@
     }
   }
   &__copyright {
+    font-family: "Kanit", var(--fallback-font);
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
   }

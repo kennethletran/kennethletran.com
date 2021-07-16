@@ -36,7 +36,7 @@
     }
   }
   &.menu--open {
-    transform: translate3d(-3px, -6px, 0);
+    transform: translate3d(-3px, -3px, 0);
 
     @include breakpoint-up(medium) {
       top: 12%;

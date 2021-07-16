@@ -7,12 +7,12 @@
       "image image"
       "title icon"
       "info .";
-    grid-row-gap: 1rem;
+    // grid-row-gap: 1rem;
   }
 
   &__card {
     grid-area: image;
-    margin-bottom: 1.25rem;
+    margin-bottom: 2rem;
 
     a {
       display: grid;

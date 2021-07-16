@@ -3,49 +3,47 @@
 .hero {
   display: flex;
   flex-direction: column;
-  margin-top: 0;
 
-  &__picture {
-    // width: 639px;
-    width: 100%;
+  &__picture__container {
     position: relative;
-    padding: 0;
+    margin-bottom: 3rem;
   }
+
+  // &__picture {
+  //   width: 639px;
+  //   width: 100%;
+  // }
   &__headline {
-    position: relative;
-    top: -7.5rem;
-    color: var(--bg-color);
     line-height: 1;
-    align-self: center;
 
     &--headline {
-      padding: 0 2rem;
-      font-size: 3.8rem;
+      margin: 1rem 0 0 -0.4rem;
+      font-size: 5rem;
+      display: block;
 
-      @media (min-width: 23.4375em) {
-        font-size: 4rem;
+      &:last-of-type {
+        margin: 0 0 3rem -0.4rem;
       }
     }
 
     &--subheadline {
-      font-size: 2.8rem;
-      letter-spacing: 0.1rem;
-      // display: block;
-
-      @include breakpoint-up(small) {
-        font-size: 3rem;
-      }
+      display: block;
+      font-size: 1.8rem;
+      font-family: "Kanit", var(--fallback-font);
+      font-weight: 800;
+      letter-spacing: 0.2rem;
+      color: var(--text-color);
+      text-transform: uppercase;
     }
   }
   &__introduction {
-    // &:first-of-type {
-    //   margin-top: -4rem;
-    // }
     &:not(:last-of-type) {
       margin-bottom: 2rem;
     }
   }
   &__button {
-    margin: 5rem 0 0 2rem;
+    button {
+      margin: 5rem 0 0 2rem;
+    }
   }
 }

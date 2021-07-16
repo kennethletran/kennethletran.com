@@ -31,7 +31,7 @@
 
   <body>
     <header>
-      <div class="menu__button">
+      <div class="menu__button" aria-label="menu">
         <span></span>
         <span></span>
         <span></span>
@@ -149,7 +149,6 @@
               id="contact"
               aria-label="send a message"
             >
-              <!-- <label for="name">Name</label> -->
               <input
                 class="contact__form__name"
                 id="name"
@@ -159,9 +158,8 @@
                 autocorrect="off"
                 placeholder="Name"
               />
-              <span class="contact__form__border"></span>
+              <span class="contact__form__border" aria-hidden="true"></span>
 
-              <!-- <label for="email">Email</label> -->
               <input
                 class="contact__form__email"
                 id="email"
@@ -174,9 +172,8 @@
                 placeholder="Email"
                 required
               />
-              <span class="contact__form__border"></span>
+              <span class="contact__form__border" aria-hidden="true"></span>
 
-              <!-- <label for="message">Message</label> -->
               <textarea
                 class="contact__form__message"
                 name="message"
@@ -186,12 +183,18 @@
                 placeholder="Message"
                 required
               ></textarea>
-              <span class="contact__form__border"></span>
+              <span class="contact__form__border" aria-hidden="true"></span>
 
               <div class="contact__form__button button-container">
                 <button class="cta" type="submit">Send</button>
-                <div class="contact__form__corners corners top-block"></div>
-                <div class="contact__form__corners corners bottom-block"></div>
+                <div
+                  class="contact__form__corners corners top-block"
+                  aria-hidden="true"
+                ></div>
+                <div
+                  class="contact__form__corners corners bottom-block"
+                  aria-hidden="true"
+                ></div>
               </div>
             </form>
           </div>
@@ -200,42 +203,57 @@
     </header>
 
     <main>
-      <section class="hero section-container">
-        <picture class="hero__picture">
-          <source srcset="assets/personal-image.webp" type="image/webp" />
-          <source srcset="assets/personal-image.png" type="image/jpeg" />
+      <section class="hero section-container side-spacer">
+        <h1 class="hero__headline">
+          <span class="hero__headline--subheadline">Front End Developer</span>
+          <span class="hero__headline--headline">Kenneth</span>
+          <span class="hero__headline--headline">Le-Tran</span>
+        </h1>
+        <div class="hero__picture__container">
           <img
+            class="hero__picture glitch-picture back"
             src="assets/personal-image.png"
             alt="picture of Kenneth Le-Tran"
           />
-        </picture>
-        <h1 class="hero__headline">
-          <span class="hero__headline--subheadline hide-mobile"
-            >Hello there, I'm</span
-          >
-          <span class="hero__headline--headline">Kenneth Le-Tran</span>
-        </h1>
-        <!-- Change text to appeal to potential clients rather than recruiters/tech savvy ppl -->
-        <p class="hero__introduction side-spacer">
-          I'm a design-minded, front end developer, building bold user
-          experiences that create a lasting impression.
+          <img
+            class="hero__picture glitch-picture front-3"
+            src="assets/personal-image.png"
+            alt="picture of Kenneth Le-Tran"
+          />
+          <img
+            class="hero__picture glitch-picture front-2"
+            src="assets/personal-image.png"
+            alt="picture of Kenneth Le-Tran"
+          />
+          <img
+            class="hero__picture glitch-picture front"
+            src="assets/personal-image.png"
+            alt="picture of Kenneth Le-Tran"
+          />
+        </div>
+        <p class="hero__introduction">
+          Hi, I'm Kenneth, a front end developer, here to help companies express
+          their visual identity on the internet.
         </p>
-        <p class="hero__introduction side-spacer">
-          I help brands express their visual identity on the world wide web by
-          crafting responsive, immersive websites that blend design concepts
-          with modern web technologies.
+        <p class="hero__introduction">
+          At the intersection of UX/UI design and front end development, I build
+          compelling stories in the form of websites.
         </p>
-        <p class="hero__introduction side-spacer">
-          I'm open to full-time or freelance opportunities and would love to
-          join a team that's passionate about what they create.
+        <p class="hero__introduction">
+          I strive to blend your brand's vision with impactful design resulting
+          in a beautiful and bold user experience.
         </p>
-        <div class="button-container">
-          <button class="hero__button cta">let's chat</button>
+        <p class="hero__introduction">
+          I'm available for freelance and full-time opportunities.
+        </p>
+        <div class="hero__button button-container">
+          <button class="cta">let's chat</button>
           <div class="corners top-block"></div>
           <div class="corners bottom-block"></div>
         </div>
         <svg
           class="deco deco__spoon"
+          aria-hidden="true"
           width="97"
           height="42"
           viewBox="0 0 97 42"
@@ -246,7 +264,7 @@
           <path d="M67 13L55.1416 1H0" />
         </svg>
 
-        <!-- <span class="hero__deco transparent hide-mobile">01. introduction</span> -->
+        <!-- <span class="hero__deco transparent hide-mobile" aria-hidden="true">01. introduction</span> -->
       </section>
       <section class="skills section-container side-spacer">
         <h2 class="skills__headline headline-spacer">Skills</h2>
@@ -360,6 +378,7 @@
         </div>
         <svg
           class="deco deco__notch"
+          aria-hidden="true"
           width="25"
           height="2"
           viewBox="0 0 25 2"
@@ -367,32 +386,28 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect width="25" height="2" fill="#274058" />
-          <!-- <rect x="12" width="2" height="2" fill="#192939" /> -->
         </svg>
 
-        <!-- <span class="skills__deco transparent hide-mobile">02. experience</span> -->
+        <!-- <span class="skills__deco transparent hide-mobile" aria-hidden="true">02. experience</span> -->
       </section>
       <section class="projects section-container side-spacer">
         <h2 class="projects__headline headline-spacer">Projects</h2>
         <p class="subheadline--italic element-spacer">
-          A selection of web experiences I've designed and developed, ranging
-          from client work to side projects
+          A selection of web experiences, ranging from client work to personal
+          projects
         </p>
         <article class="projects__container element-spacer">
           <div class="projects__card">
             <a href="https://elizaphotography.netlify.app/">
-              <picture class="projects__card__screenshot">
-                <source srcset="assets/em-screenshot.webp" type="image/webp" />
-                <source srcset="assets/em-screenshot.jpg" type="image/jpeg" />
-                <img
-                  src="assets/em-screenshot.jpg"
-                  loading="lazy"
-                  alt="screenshot of Eliza Meadows Photography landing page"
-                />
-              </picture>
+              <img
+                class="projects__card__screenshot"
+                src="assets/em-screenshot.jpg"
+                loading="lazy"
+                alt="screenshot of Eliza Meadows Photography landing page"
+              />
             </a>
           </div>
-          <h3 class="projects__title">
+          <h3 class="projects__title headline-spacer">
             <a href="https://elizaphotography.netlify.app/">Eliza Meadows</a>
           </h3>
           <a
@@ -421,29 +436,26 @@
         <article class="projects__container element-spacer">
           <div class="projects__card">
             <a href="http://homecleanhouston.com">
-              <picture class="projects__card__screenshot">
-                <source srcset="assets/hch-screenshot.webp" type="image/webp" />
-                <source srcset="assets/hch-screenshot.jpg" type="image/jpeg" />
-                <img
-                  src="assets/hch-screenshot.jpg"
-                  loading="lazy"
-                  alt="screenshot of Home Clean Housekeeping landing page"
-                />
-              </picture>
+              <img
+                class="projects__card__screenshot"
+                src="assets/hch-screenshot.jpg"
+                loading="lazy"
+                alt="screenshot of Home Clean Housekeeping landing page"
+              />
             </a>
           </div>
-          <h3 class="projects__title">
+          <h3 class="projects__title headline-spacer">
             <a href="http://homecleanhouston.com">Home Clean Housekeeping</a>
           </h3>
           <p class="projects__info">
             Home Clean Housekeeping is a cleaning company based in Houston, TX.
-            The problem they faced was a lack of visual identity as well as an
-            online presence. This website is the result of their vision that I
-            designed, developed, and deployed.
+            The company needed a website to address their lack of online
+            presence as well as visual identity.
           </p>
         </article>
         <svg
           class="deco deco__diamond"
+          aria-hidden="true"
           width="43"
           height="43"
           viewBox="0 0 43 43"
@@ -461,6 +473,7 @@
         </svg>
         <svg
           class="deco deco__diamond-notch"
+          aria-hidden="true"
           width="25"
           height="1.5"
           viewBox="0 0 25 2"
@@ -468,20 +481,19 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <rect width="25" height="2" fill="#274058" />
-          <!-- <rect x="12" width="2" height="2" fill="#192939" /> -->
         </svg>
 
-        <!-- <span class="projects__deco transparent hide-mobile">03. playground</span> -->
+        <!-- <span class="projects__deco transparent hide-mobile" aria-hidden="true">03. playground</span> -->
       </section>
       <footer class="footer section-container side-spacer">
         <h2 class="footer__headline">
-          <span class="footer__headline--subheadline">Want more info?</span>
+          <span class="footer__headline--subheadline">Curious?</span>
           <span class="footer__headline--headline">Let's Connect</span>
         </h2>
         <p class="footer__info">
-          I'm always down for a chat, send a message to
+          For professional or casual chitchat, send me a message at
           <a href="mailto:kenneth.letran@gmail.com">kenneth.letran@gmail.com</a>
-          or hit me up on one of my socials.
+          or one of my socials.
         </p>
         <div class="footer__socials">
           <ul class="footer__socials__list">
@@ -574,9 +586,9 @@
           </ul>
         </div>
         <p class="footer__copyright">Kenneth Le-Tran &copy; 2021</p>
-        <!-- <span class="footer__deco transparent hide-mobile">04. conclusion</span> -->
+        <!-- <span class="footer__deco transparent hide-mobile" aria-hidden="true">04. conclusion</span> -->
       </footer>
-      <div class="decorations">
+      <div class="decorations" aria-hidden="true">
         <div class="decorations__col"></div>
       </div>
     </main>

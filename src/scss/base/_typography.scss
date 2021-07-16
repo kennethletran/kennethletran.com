@@ -1,6 +1,11 @@
 @use '../base/mixins' as *;
 
 @font-face {
+  font-family: "Michroma";
+  src: url("/src/fonts/Michroma.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
   font-family: "Kanit";
   src: url("/src/fonts/Kanit-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -32,9 +37,10 @@
 }
 body {
   font-family: "Kanit", var(--fallback-font);
-  font-size: 1.6em;
+  font-size: 1.8em;
   font-weight: 400;
   color: var(--text-color);
+  letter-spacing: 0.1rem;
 
   @include breakpoint-up(medium) {
     font-size: 1.8rem;
@@ -50,15 +56,8 @@ a {
 }
 
 h1 {
-  font-family: "Kanit", var(--fallback-font);
-  font-weight: 900;
-  font-size: 4rem;
-  letter-spacing: 0.1rem;
-  // text-transform: uppercase;
-
-  @include breakpoint-up(small) {
-    font-size: 4.4rem;
-  }
+  font-family: "Michroma", var(--fallback-font);
+  font-weight: 400;
 }
 h2 {
   font-family: "Kanit", var(--fallback-font);
@@ -67,8 +66,9 @@ h2 {
   // text-transform: uppercase;
 }
 h3 {
-  font-family: "Kanit", var(--fallback-font);
-  font-weight: 600;
+  // font-family: "Kanit", var(--fallback-font);
+  font-family: "Michroma", var(--fallback-font);
+  font-weight: 400;
   font-size: 2rem;
   letter-spacing: 0.1rem;
 }
