@@ -14,6 +14,11 @@
   z-index: 950;
   cursor: pointer;
 
+  @include breakpoint-up(medium) {
+    top: 3rem;
+    right: 4rem;
+  }
+
   &:hover span,
   &:focus-within span,
   &:active span {

@@ -43,19 +43,21 @@ body {
     z-index: 999;
     will-change: auto;
     pointer-events: none;
+
     @media (prefers-reduced-motion) {
       background-image: none;
     }
   }
 }
 
-// Hiding content on certain viewports
+// Hiding content on viewports smaller than tablet
 .hide-mobile {
   display: none;
   @include breakpoint-up(medium) {
     display: initial;
   }
 }
+// Hiding content on viewports larger than tablet
 .hide-desktop {
   @include breakpoint-up(medium) {
     display: none;
@@ -63,12 +65,15 @@ body {
 }
 
 // Spacing
-// TODO: create media queries to make spacing larger on desktop
 .side-spacer {
   padding: 0 3rem;
 
-  @include breakpoint-up(small) {
+  @include breakpoint-up(xsmall) {
     padding: 0 6rem;
+  }
+
+  @include breakpoint-up(medium) {
+    padding: 0 3rem;
   }
 }
 
@@ -78,11 +83,19 @@ body {
 
 .headline-spacer {
   margin-bottom: 0.25rem;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 0.5rem;
+  }
 }
 
 // Sizing
 
 .section-container {
-  margin: 8rem auto;
+  margin: 8rem auto 16rem;
   max-width: min(640px, 100%);
+
+  @include breakpoint-up(medium) {
+    max-width: min(900px, 100%);
+  }
 }

@@ -8,14 +8,10 @@
   opacity: 0.3;
 
   &__spoon {
-    top: 94rem;
+    top: 113rem;
     left: 9rem;
     opacity: 1;
     stroke: var(--decoration-color);
-
-    @media (min-width: 25em) {
-      top: 99rem;
-    }
 
     @include breakpoint-up(xsmall) {
       top: 33%;
@@ -23,29 +19,25 @@
     }
 
     @include breakpoint-up(small) {
-      top: 37%;
+      top: 36%;
     }
   }
 
   &__notch {
-    top: 165rem;
+    top: 195rem;
     left: 7.8rem;
-
-    @media (min-width: 25em) {
-      top: 171rem;
-    }
 
     @include breakpoint-up(xsmall) {
       left: 13.25%;
     }
 
     @include breakpoint-up(small) {
-      top: 55%;
+      top: 57%;
     }
   }
 
   &__diamond {
-    bottom: 31rem;
+    bottom: 37rem;
     left: 7rem;
 
     @include breakpoint-up(xsmall) {
@@ -54,7 +46,7 @@
   }
 
   &__diamond-notch {
-    bottom: 33rem;
+    bottom: 39rem;
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {
@@ -67,7 +59,9 @@
     // }
   }
 }
-
+.reversed {
+  transform: scaleX(-1);
+}
 .transparent {
   font-size: 10rem;
   font-weight: 900;
@@ -79,6 +73,7 @@
   position: absolute;
   left: 0;
   z-index: -1;
+  display: none;
 }
 .decorations {
   height: 100%;
@@ -108,7 +103,7 @@
       left: 50%;
       display: none;
 
-      @include breakpoint-up(large) {
+      @include breakpoint-up(medium) {
         display: initial;
       }
     }

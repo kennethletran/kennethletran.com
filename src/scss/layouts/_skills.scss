@@ -11,17 +11,10 @@
       position: relative;
       display: inline-block;
 
-      // &::before {
-      //   content: "//";
-      //   position: absolute;
-      //   top: -1px;
-      //   left: 0;
-      //   letter-spacing: -4px;
-      // }
       &::after {
         content: "_";
         position: absolute;
-        top: -2px;
+        top: -1px;
         // create an animation to make this blink -- can just transition opacity
       }
     }

@@ -37,14 +37,15 @@
 }
 body {
   font-family: "Kanit", var(--fallback-font);
-  font-size: 1.8em;
+  font-size: 1.6em;
+  // font-size: 1.8em;
   font-weight: 400;
   color: var(--text-color);
   letter-spacing: 0.1rem;
 
-  @include breakpoint-up(medium) {
-    font-size: 1.8rem;
-  }
+  // @include breakpoint-up(medium) {
+  //   font-size: 2rem;
+  // }
 }
 h1,
 h2,
@@ -63,7 +64,10 @@ h2 {
   font-family: "Kanit", var(--fallback-font);
   font-weight: 800;
   font-size: 3rem;
-  // text-transform: uppercase;
+
+  @include breakpoint-up(medium) {
+    font-size: 3.4rem;
+  }
 }
 h3 {
   // font-family: "Kanit", var(--fallback-font);
@@ -71,16 +75,16 @@ h3 {
   font-weight: 400;
   font-size: 2rem;
   letter-spacing: 0.1rem;
+
+  @include breakpoint-up(medium) {
+    font-size: 2.4rem;
+  }
 }
 .subheadline--italic {
   font-family: "Kanit", var(--fallback-font);
   font-style: italic;
-  font-size: 1.6rem;
+  letter-spacing: 0;
   text-transform: lowercase;
-
-  @include breakpoint-up(medium) {
-    font-size: 1.8rem;
-  }
 }
 
 ::selection {

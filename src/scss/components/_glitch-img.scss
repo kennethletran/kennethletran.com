@@ -11,7 +11,11 @@
 .front-3 {
   z-index: 3;
   // animation: img-glitch-3 750ms linear 1000ms infinite alternate-reverse;
-  animation: glitch-animation-2 1500ms linear 1000ms infinite alternate-reverse;
+  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 .front-2 {
   z-index: 2;
@@ -19,8 +23,9 @@
 .front {
   z-index: 1;
 }
-@keyframes glitch-animation-2 {
+@keyframes glitch-animation-3 {
   $steps: 30;
+  $steps: 3;
 
   @for $i from 0 through $steps {
     #{percentage($i * 1 / $steps)} {
@@ -49,67 +54,7 @@
 }
 // opacity: random(10) / 10;
 // random(100) / 100 * 100% random(100) / 100 * 100%
-@keyframes img-glitch-3 {
-  // clip-path starting from top-left to bottom-left
-  0% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1);
-    top: 0;
-    left: 0;
-  }
-  10% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1.03);
-    left: -1rem;
-    // bottom: 7rem;
-  }
-  20% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1.01);
-    // bottom: 7rem;
-  }
-  30% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1.01);
-    top: -2rem;
-  }
-  // 40% {
-  //   clip-path: polygon(0% 22%, 96% 22%, 96% 70%, 0% 70%);
-  //   transform: scale(1.01);
-  //   right: 15px;
-  // }
-  // 50% {
-  //   clip-path: polygon(0% 22%, 96% 22%, 96% 70%, 0% 70%);
-  //   transform: scale(1.04);
-  //   right: 10px;
-  // }
-  // 60% {
-  //   clip-path: polygon(0% 22%, 96% 22%, 96% 70%, 0% 70%);
-  //   left: 7px;
-  // }
-  // 70% {
-  //   clip-path: polygon(0% 22%, 96% 22%, 96% 70%, 0% 70%);
-  //   right: 2px;
-  // }
-  80% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1);
-    top: 0;
-    left: 0;
-  }
-  90% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1);
-    top: 0;
-    left: 0;
-  }
-  100% {
-    clip-path: polygon(0% 21%, 56% 21%, 56% 52%, 0% 52%);
-    transform: scale(1);
-    top: 0;
-    left: 0;
-  }
-}
+
 @keyframes img-glitch-2 {
 }
 @keyframes img-glitch-1 {

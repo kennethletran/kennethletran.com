@@ -8,7 +8,11 @@
 
     @include breakpoint-up(xsmall) {
       height: 250px;
-      width: 440px;
+      // width: 440px;
+    }
+    @include breakpoint-up(small) {
+      height: 275px;
+      // width: 520px;
     }
 
     position: relative;
@@ -61,27 +65,32 @@
 
       // 405px viewport
       @media (min-width: 25.3125em) {
-        right: 8px;
-        bottom: -10%;
-        height: 26%;
-        width: 4%;
-        transform: rotate(54deg);
+        transform: rotate(53deg);
       }
 
+      // 440px
       @media (min-width: 27.5em) {
-        right: 8px;
-        bottom: -10%;
-        height: 26%;
-        width: 4%;
-        transform: rotate(56deg);
+        transform: rotate(55deg);
       }
 
-      @media (min-width: 30em) {
-        right: 8px;
-        bottom: -10%;
-        height: 26%;
-        width: 4%;
-        transform: rotate(52deg);
+      // 480px
+      @include breakpoint-up(xsmall) {
+        transform: rotate(47deg);
+      }
+
+      // 500px
+      @media (min-width: 31.25em) {
+        transform: rotate(49deg);
+      }
+
+      // 535px
+      @media (min-width: 33.4375em) {
+        transform: rotate(51deg);
+      }
+
+      // 600px
+      @media (min-width: 37.5em) {
+        transform: rotate(54deg);
       }
     }
   }

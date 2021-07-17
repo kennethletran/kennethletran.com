@@ -25,12 +25,13 @@
 
   &--learning {
     &::before {
+      top: -3.25px;
       box-shadow: 0 127px 0 var(--primary-color), 282px 0 var(--primary-color),
         282px 127px 0 var(--primary-color);
     }
     .skills__container__headline {
       &::after {
-        left: 125px;
+        left: 161px;
       }
     }
   }
