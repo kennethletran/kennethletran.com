@@ -79,6 +79,10 @@ body {
 
 .element-spacer {
   margin-bottom: 8rem;
+
+  @include breakpoint-up(medium) {
+    margin-bottom: 10rem;
+  }
 }
 
 .headline-spacer {

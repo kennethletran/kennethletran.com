@@ -1,18 +1,18 @@
 @use '../base/mixins' as *;
 
-// TODO: create media queries for each device changing the width due to the pseudo elements not being responsive
-
 .projects {
   &__card {
     height: 200px;
+    margin-bottom: 2rem;
 
     @include breakpoint-up(xsmall) {
       height: 250px;
-      // width: 440px;
     }
-    @include breakpoint-up(small) {
-      height: 275px;
-      // width: 520px;
+
+    @include breakpoint-up(medium) {
+      height: 270px;
+      width: 450px;
+      margin-bottom: 0;
     }
 
     position: relative;

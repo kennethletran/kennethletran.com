@@ -1,3 +1,5 @@
+@use '../base/mixins' as *;
+
 .projects {
   &__container {
     display: grid;
@@ -7,12 +9,27 @@
       "image image"
       "title icon"
       "info .";
-    // grid-row-gap: 1rem;
+
+    @include breakpoint-up(medium) {
+      // max-width: 450px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "image title"
+        "image info"
+        "image link"
+        "image .";
+
+      grid-gap: 0 1em;
+
+      &:nth-of-type(2n) {
+        transform: scaleX(-1);
+        // margin-left: auto;
+      }
+    }
   }
 
   &__card {
     grid-area: image;
-    margin-bottom: 2rem;
 
     a {
       display: grid;
@@ -32,9 +49,10 @@
 
   &__title {
     grid-area: title;
+    grid-column: 1 / span 2;
 
-    &:nth-of-type(1) {
-      grid-column: 1 / span 2;
+    @include breakpoint-up(medium) {
+      grid-column: initial;
     }
 
     a {
@@ -46,6 +64,10 @@
     grid-area: icon;
     font-size: 0;
     letter-spacing: 0;
+
+    @include breakpoint-up(medium) {
+      grid-area: link;
+    }
 
     svg {
       width: 2.5rem;

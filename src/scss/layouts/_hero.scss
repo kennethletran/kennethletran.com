@@ -46,7 +46,7 @@
         margin: 0 0 2rem -0.4rem;
 
         @include breakpoint-up(medium) {
-          margin: 0;
+          margin-bottom: 0;
         }
       }
     }

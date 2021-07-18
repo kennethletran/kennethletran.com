@@ -237,6 +237,11 @@ body::before {
 .element-spacer {
   margin-bottom: 8rem;
 }
+@media only screen and (min-width: 48em) {
+  .element-spacer {
+    margin-bottom: 10rem;
+  }
+}
 
 .headline-spacer {
   margin-bottom: 0.25rem;
@@ -295,7 +300,7 @@ body::before {
 }
 @media only screen and (min-width: 48em) {
   .hero__headline--headline:last-of-type {
-    margin: 0;
+    margin-bottom: 0;
   }
 }
 .hero__headline--subheadline {
@@ -354,14 +359,13 @@ body::before {
   text-transform: uppercase;
   position: relative;
   display: inline-block;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
 }
 .skills__container__headline::after {
   content: "_";
   position: absolute;
   top: -1px;
-}
-.skills p {
-  margin-bottom: 6rem;
 }
 .skills__list {
   display: flex;
@@ -383,9 +387,18 @@ body::before {
   grid-template-rows: auto;
   grid-template-areas: "image image" "title icon" "info .";
 }
+@media only screen and (min-width: 48em) {
+  .projects__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "image title" "image info" "image link" "image .";
+    grid-gap: 0 1em;
+  }
+  .projects__container:nth-of-type(2n) {
+    transform: scaleX(-1);
+  }
+}
 .projects__card {
   grid-area: image;
-  margin-bottom: 2rem;
 }
 .projects__card a {
   display: grid;
@@ -400,9 +413,12 @@ body::before {
 }
 .projects__title {
   grid-area: title;
-}
-.projects__title:nth-of-type(1) {
   grid-column: 1/span 2;
+}
+@media only screen and (min-width: 48em) {
+  .projects__title {
+    grid-column: initial;
+  }
 }
 .projects__title a {
   text-decoration: none;
@@ -411,6 +427,11 @@ body::before {
   grid-area: icon;
   font-size: 0;
   letter-spacing: 0;
+}
+@media only screen and (min-width: 48em) {
+  .projects__link {
+    grid-area: link;
+  }
 }
 .projects__link svg {
   width: 2.5rem;
@@ -610,7 +631,7 @@ body.prevent-scroll {
   }
 }
 .deco__notch {
-  top: 195rem;
+  top: 247rem;
   left: 7.8rem;
 }
 @media only screen and (min-width: 30em) {
@@ -815,6 +836,7 @@ button {
 
 .projects__card {
   height: 200px;
+  margin-bottom: 2rem;
   position: relative;
   -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 52%, 1% 55%, 1% 85%, 0% 88%, 0% 100%, 93% 100%, 100% 91%);
   clip-path: polygon(100% 0%, 0% 0%, 0% 52%, 1% 55%, 1% 85%, 0% 88%, 0% 100%, 93% 100%, 100% 91%);
@@ -829,9 +851,11 @@ button {
     height: 250px;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 48em) {
   .projects__card {
-    height: 275px;
+    height: 270px;
+    width: 450px;
+    margin-bottom: 0;
   }
 }
 .projects__card::before {
@@ -902,14 +926,14 @@ button {
   z-index: -1;
 }
 .skills__container--proficient::before {
-  box-shadow: 0 199px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 199px 0 var(--primary-color);
+  box-shadow: 0 206px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 206px 0 var(--primary-color);
 }
 .skills__container--learning::before {
   top: -3.25px;
-  box-shadow: 0 127px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 127px 0 var(--primary-color);
+  box-shadow: 0 134px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 134px 0 var(--primary-color);
 }
 .skills__container--learning .skills__container__headline::after {
-  left: 161px;
+  left: 129px;
 }
 
 ::-webkit-scrollbar {
@@ -1126,24 +1150,24 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 35%, 100% 15%, 100% 27%, 0% 4%);
-    opacity: 0.8;
-    transform: translateX(-9px);
+    clip-path: polygon(0% 13%, 100% 24%, 100% 29%, 0% 32%);
+    opacity: 0.4;
+    transform: translateX(1px);
   }
   33.3333333333% {
-    clip-path: polygon(0% 38%, 100% 32%, 100% 5%, 0% 16%);
-    opacity: 0.8;
-    transform: translateX(-17px);
+    clip-path: polygon(0% 7%, 100% 9%, 100% 22%, 0% 29%);
+    opacity: 0.7;
+    transform: translateX(-16px);
   }
   66.6666666667% {
-    clip-path: polygon(0% 12%, 100% 15%, 100% 9%, 0% 33%);
-    opacity: 0.2;
-    transform: translateX(-9px);
+    clip-path: polygon(0% 21%, 100% 6%, 100% 40%, 0% 38%);
+    opacity: 0.1;
+    transform: translateX(-12px);
   }
   100% {
-    clip-path: polygon(0% 33%, 100% 35%, 100% 14%, 0% 7%);
-    opacity: 0.9;
-    transform: translateX(6px);
+    clip-path: polygon(0% 10%, 100% 33%, 100% 15%, 0% 5%);
+    opacity: 0.4;
+    transform: translateX(-13px);
   }
 }
 @keyframes img-glitch-2 {}

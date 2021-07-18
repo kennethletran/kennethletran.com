@@ -18,20 +18,20 @@
 
   &--proficient {
     &::before {
-      box-shadow: 0 199px 0 var(--primary-color), 282px 0 var(--primary-color),
-        282px 199px 0 var(--primary-color);
+      box-shadow: 0 206px 0 var(--primary-color), 282px 0 var(--primary-color),
+        282px 206px 0 var(--primary-color);
     }
   }
 
   &--learning {
     &::before {
       top: -3.25px;
-      box-shadow: 0 127px 0 var(--primary-color), 282px 0 var(--primary-color),
-        282px 127px 0 var(--primary-color);
+      box-shadow: 0 134px 0 var(--primary-color), 282px 0 var(--primary-color),
+        282px 134px 0 var(--primary-color);
     }
     .skills__container__headline {
       &::after {
-        left: 161px;
+        left: 129px;
       }
     }
   }

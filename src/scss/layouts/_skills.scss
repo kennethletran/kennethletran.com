@@ -10,6 +10,8 @@
       text-transform: uppercase;
       position: relative;
       display: inline-block;
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
 
       &::after {
         content: "_";
@@ -18,10 +20,6 @@
         // create an animation to make this blink -- can just transition opacity
       }
     }
-  }
-
-  p {
-    margin-bottom: 6rem;
   }
 
   &__list {
