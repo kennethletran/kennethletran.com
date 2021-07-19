@@ -78,10 +78,10 @@ body {
 }
 
 .element-spacer {
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 
   @include breakpoint-up(medium) {
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
   }
 }
 
@@ -96,10 +96,11 @@ body {
 // Sizing
 
 .section-container {
-  margin: 8rem auto 16rem;
+  margin: 8rem auto;
   max-width: min(640px, 100%);
 
   @include breakpoint-up(medium) {
+    margin-bottom: 16rem;
     max-width: min(900px, 100%);
   }
 }

@@ -6,7 +6,7 @@
     grid-template-columns: 1fr 3rem;
     grid-template-rows: auto;
     grid-template-areas:
-      "image image"
+      "card card"
       "title icon"
       "info .";
 
@@ -14,10 +14,10 @@
       // max-width: 450px;
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
-        "image title"
-        "image info"
-        "image link"
-        "image .";
+        "card title"
+        "card info"
+        "card link"
+        "card .";
 
       grid-gap: 0 1em;
 
@@ -29,7 +29,13 @@
   }
 
   &__card {
-    grid-area: image;
+    grid-area: card;
+
+    @include breakpoint-up(medium) {
+      &:nth-of-type(n + 1) {
+        transform: scaleX(-1);
+      }
+    }
 
     a {
       display: grid;
