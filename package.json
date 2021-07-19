@@ -3,7 +3,7 @@
   "description": "Kenneth Le-Tran portfolio",
   "version": "1.0.0",
   "author": "Kenneth Le-Tran <kenneth.letran@gmail.com>",
-  "main": "index.html",
+  "main": "main.js",
   "license": "ISC",
   "repository": {
     "type": "git",

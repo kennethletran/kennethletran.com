@@ -1,3 +1,5 @@
+import './scss/main.scss';
+
 // TODO: refactor into modules if code gets cluttered
 // Get DOM elements
 const menu = document.querySelector('.menu__button');
