@@ -1,3 +1,5 @@
+@use '../base/mixins' as *;
+
 .skills__container {
   background-color: var(--container-bg-color);
   display: flex;
@@ -20,6 +22,11 @@
     &::before {
       box-shadow: 0 206px 0 var(--primary-color), 282px 0 var(--primary-color),
         282px 206px 0 var(--primary-color);
+
+      @include breakpoint-up(medium) {
+        box-shadow: 0 217px 0 var(--primary-color), 282px 0 var(--primary-color),
+          282px 217px 0 var(--primary-color);
+      }
     }
   }
 
@@ -28,6 +35,11 @@
       top: -3.25px;
       box-shadow: 0 134px 0 var(--primary-color), 282px 0 var(--primary-color),
         282px 134px 0 var(--primary-color);
+
+      @include breakpoint-up(medium) {
+        box-shadow: 0 142px 0 var(--primary-color), 282px 0 var(--primary-color),
+          282px 142px 0 var(--primary-color);
+      }
     }
     .skills__container__headline {
       &::after {

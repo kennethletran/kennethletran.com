@@ -112,6 +112,11 @@ body {
   color: var(--text-color);
   letter-spacing: 0.1rem;
 }
+@media only screen and (min-width: 48em) {
+  body {
+    font-size: 1.8rem;
+  }
+}
 
 h1,
 h2,
@@ -235,11 +240,11 @@ body::before {
 }
 
 .element-spacer {
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 }
 @media only screen and (min-width: 48em) {
   .element-spacer {
-    margin-bottom: 10rem;
+    margin-bottom: 8rem;
   }
 }
 
@@ -253,11 +258,12 @@ body::before {
 }
 
 .section-container {
-  margin: 8rem auto 16rem;
+  margin: 8rem auto;
   max-width: min(640px, 100%);
 }
 @media only screen and (min-width: 48em) {
   .section-container {
+    margin-bottom: 16rem;
     max-width: min(900px, 100%);
   }
 }
@@ -273,6 +279,7 @@ body::before {
     grid-template-rows: auto;
     grid-template-areas: "headline image" "info image" "info2 image" "info3 image" "info4 image" "button image";
     grid-gap: 1em 3em;
+    grid-gap: 1.5em 3em;
     margin-top: 12rem;
   }
 }
@@ -284,6 +291,7 @@ body::before {
 @media only screen and (min-width: 48em) {
   .hero__picture__container {
     margin-bottom: 0;
+    place-self: center;
   }
 }
 .hero__headline {
@@ -318,6 +326,7 @@ body::before {
 @media only screen and (min-width: 48em) {
   .hero__introduction:nth-of-type(1) {
     margin-top: 1rem;
+    margin-top: 3rem;
   }
 }
 .hero__introduction:nth-of-type(2) {
@@ -355,12 +364,27 @@ body::before {
 .skills__container {
   padding: 2rem 0 2rem 2rem;
 }
+@media only screen and (min-width: 48em) {
+  .skills__container:nth-of-type(1) {
+    margin-right: auto;
+    margin-left: 2rem;
+  }
+  .skills__container:nth-of-type(2) {
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+}
 .skills__container__headline {
   text-transform: uppercase;
   position: relative;
   display: inline-block;
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .skills__container__headline {
+    font-size: 1.8rem;
+  }
 }
 .skills__container__headline::after {
   content: "_";
@@ -385,12 +409,12 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 3rem;
   grid-template-rows: auto;
-  grid-template-areas: "image image" "title icon" "info .";
+  grid-template-areas: "card card" "title icon" "info .";
 }
 @media only screen and (min-width: 48em) {
   .projects__container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "image title" "image info" "image link" "image .";
+    grid-template-areas: "card title" "card info" "card link" "card .";
     grid-gap: 0 1em;
   }
   .projects__container:nth-of-type(2n) {
@@ -398,7 +422,12 @@ body::before {
   }
 }
 .projects__card {
-  grid-area: image;
+  grid-area: card;
+}
+@media only screen and (min-width: 48em) {
+  .projects__card:nth-of-type(n + 1) {
+    transform: scaleX(-1);
+  }
 }
 .projects__card a {
   display: grid;
@@ -570,7 +599,6 @@ body.prevent-scroll {
 .footer__headline {
   line-height: 1;
   letter-spacing: 0.1rem;
-  margin-bottom: 1.5rem;
 }
 .footer__headline--subheadline {
   font-size: 2rem;
@@ -599,13 +627,19 @@ body.prevent-scroll {
   letter-spacing: 0;
 }
 .footer__socials__items svg {
-  width: 3.1rem;
-  height: 3.1rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .footer__copyright {
   font-family: "Kanit", var(--fallback-font);
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .footer__copyright {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .deco {
@@ -613,54 +647,124 @@ body.prevent-scroll {
   z-index: -90;
   opacity: 0.3;
 }
-.deco__spoon {
-  top: 113rem;
+.deco__cross {
+  opacity: 0;
+}
+@media only screen and (min-width: 48em) {
+  .deco__cross {
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-47%) scale(0.8);
+    opacity: 0.3;
+  }
+}
+.deco__spoon--hero {
+  top: 110rem;
   left: 9rem;
   opacity: 1;
   stroke: var(--decoration-color);
 }
 @media only screen and (min-width: 30em) {
-  .deco__spoon {
-    top: 33%;
+  .deco__spoon--hero {
+    top: 35%;
     left: 15%;
   }
 }
 @media only screen and (min-width: 40em) {
-  .deco__spoon {
-    top: 36%;
+  .deco__spoon--hero {
+    top: 38%;
   }
 }
-.deco__notch {
-  top: 247rem;
+@media only screen and (min-width: 48em) {
+  .deco__spoon--hero {
+    top: 28%;
+    left: 50%;
+  }
+}
+.deco__spoon--skills {
+  opacity: 0;
+  stroke: var(--decoration-color);
+}
+@media only screen and (min-width: 48em) {
+  .deco__spoon--skills {
+    top: 79%;
+    right: 50%;
+    opacity: 1;
+    transform: scale(-1);
+  }
+}
+.deco__notch--hero {
+  opacity: 0;
+  top: 21%;
+  right: 15%;
+  transform: translateX(50%);
+}
+@media only screen and (min-width: 48em) {
+  .deco__notch--hero {
+    opacity: 0.3;
+  }
+}
+.deco__notch--skills {
+  top: 221rem;
   left: 7.8rem;
 }
 @media only screen and (min-width: 30em) {
-  .deco__notch {
-    left: 13.25%;
+  .deco__notch--skills {
+    top: 228rem;
+    left: 15%;
+    transform: translateX(-50%);
   }
 }
 @media only screen and (min-width: 40em) {
-  .deco__notch {
-    top: 57%;
+  .deco__notch--skills {
+    top: 71%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .deco__notch--skills {
+    top: 67%;
   }
 }
 .deco__diamond {
-  bottom: 37rem;
+  bottom: 32rem;
   left: 7rem;
 }
 @media only screen and (min-width: 30em) {
   .deco__diamond {
-    opacity: 0;
+    bottom: 31rem;
+    left: 15%;
+    transform: translateX(-50%);
+  }
+}
+@media only screen and (min-width: 40em) {
+  .deco__diamond {
+    bottom: 10%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .deco__diamond {
+    bottom: 12%;
   }
 }
 .deco__diamond-notch {
-  bottom: 39rem;
+  bottom: 34rem;
   left: 7.8rem;
 }
 @media only screen and (min-width: 30em) {
   .deco__diamond-notch {
-    bottom: 9.15%;
-    left: 13.25%;
+    bottom: 11%;
+    left: 15%;
+    transform: translateX(-50%);
+  }
+}
+@media only screen and (min-width: 40em) {
+  .deco__diamond-notch {
+    bottom: 10.65%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .deco__diamond-notch {
+    bottom: 12.7%;
   }
 }
 
@@ -736,6 +840,11 @@ body.prevent-scroll {
 .button-container {
   position: relative;
   margin: 0 -1rem;
+}
+@media only screen and (min-width: 48em) {
+  .button-container {
+    margin-top: 2rem;
+  }
 }
 
 button {
@@ -907,6 +1016,16 @@ button {
     transform: rotate(54deg);
   }
 }
+@media (min-width: 39.6875em) {
+  .projects__card::after {
+    transform: rotate(56deg);
+  }
+}
+@media only screen and (min-width: 48em) {
+  .projects__card::after {
+    transform: rotate(51deg);
+  }
+}
 
 .skills__container {
   background-color: var(--container-bg-color);
@@ -928,9 +1047,19 @@ button {
 .skills__container--proficient::before {
   box-shadow: 0 206px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 206px 0 var(--primary-color);
 }
+@media only screen and (min-width: 48em) {
+  .skills__container--proficient::before {
+    box-shadow: 0 217px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 217px 0 var(--primary-color);
+  }
+}
 .skills__container--learning::before {
   top: -3.25px;
   box-shadow: 0 134px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 134px 0 var(--primary-color);
+}
+@media only screen and (min-width: 48em) {
+  .skills__container--learning::before {
+    box-shadow: 0 142px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 142px 0 var(--primary-color);
+  }
 }
 .skills__container--learning .skills__container__headline::after {
   left: 129px;
@@ -1150,24 +1279,24 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 13%, 100% 24%, 100% 29%, 0% 32%);
-    opacity: 0.4;
-    transform: translateX(1px);
+    clip-path: polygon(0% 28%, 100% 19%, 100% 29%, 0% 26%);
+    opacity: 0.9;
+    transform: translateX(4px);
   }
   33.3333333333% {
-    clip-path: polygon(0% 7%, 100% 9%, 100% 22%, 0% 29%);
-    opacity: 0.7;
-    transform: translateX(-16px);
+    clip-path: polygon(0% 10%, 100% 26%, 100% 4%, 0% 28%);
+    opacity: 0.8;
+    transform: translateX(-22px);
   }
   66.6666666667% {
-    clip-path: polygon(0% 21%, 100% 6%, 100% 40%, 0% 38%);
-    opacity: 0.1;
-    transform: translateX(-12px);
+    clip-path: polygon(0% 17%, 100% 13%, 100% 22%, 0% 29%);
+    opacity: 0.6;
+    transform: translateX(13px);
   }
   100% {
-    clip-path: polygon(0% 10%, 100% 33%, 100% 15%, 0% 5%);
-    opacity: 0.4;
-    transform: translateX(-13px);
+    clip-path: polygon(0% 5%, 100% 16%, 100% 25%, 0% 34%);
+    opacity: 0.7;
+    transform: translateX(-2px);
   }
 }
 @keyframes img-glitch-2 {}

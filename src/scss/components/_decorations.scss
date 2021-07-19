@@ -1,62 +1,119 @@
 @use '../base/mixins' as *;
 
-// TODO: decorations' positions - left should be % starting from small viewport up and top should be absolute
-
 .deco {
   position: absolute;
   z-index: -90;
   opacity: 0.3;
 
-  &__spoon {
-    top: 113rem;
+  &__cross {
+    opacity: 0;
+
+    @include breakpoint-up(medium) {
+      top: -5rem;
+      left: 50%;
+      transform: translateX(-47%) scale(0.8);
+      opacity: 0.3;
+    }
+  }
+
+  &__spoon--hero {
+    top: 110rem;
     left: 9rem;
     opacity: 1;
     stroke: var(--decoration-color);
 
     @include breakpoint-up(xsmall) {
-      top: 33%;
+      top: 35%;
       left: 15%;
     }
 
     @include breakpoint-up(small) {
-      top: 36%;
+      top: 38%;
+    }
+    @include breakpoint-up(medium) {
+      top: 28%;
+      left: 50%;
     }
   }
 
-  &__notch {
-    top: 247rem;
+  &__spoon--skills {
+    opacity: 0;
+    stroke: var(--decoration-color);
+
+    @include breakpoint-up(medium) {
+      top: 79%;
+      right: 50%;
+      opacity: 1;
+      transform: scale(-1);
+    }
+  }
+
+  &__notch--hero {
+    opacity: 0;
+    top: 21%;
+    right: 15%;
+    transform: translateX(50%);
+
+    @include breakpoint-up(medium) {
+      opacity: 0.3;
+    }
+  }
+
+  &__notch--skills {
+    top: 221rem;
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {
-      left: 13.25%;
+      top: 228rem;
+      left: 15%;
+      transform: translateX(-50%);
     }
 
     @include breakpoint-up(small) {
-      top: 57%;
+      top: 71%;
+    }
+
+    @include breakpoint-up(medium) {
+      top: 67%;
     }
   }
 
   &__diamond {
-    bottom: 37rem;
+    bottom: 32rem;
     left: 7rem;
 
     @include breakpoint-up(xsmall) {
-      opacity: 0;
+      bottom: 31rem;
+      left: 15%;
+      transform: translateX(-50%);
+    }
+
+    @include breakpoint-up(small) {
+      bottom: 10%;
+    }
+
+    @include breakpoint-up(medium) {
+      bottom: 12%;
     }
   }
 
   &__diamond-notch {
-    bottom: 39rem;
+    bottom: 34rem;
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {
-      bottom: 9.15%;
-      left: 13.25%;
+      bottom: 11%;
+      left: 15%;
+      transform: translateX(-50%);
     }
 
-    // @include breakpoint-up(small) {
-    //   bottom: 9.15%;
-    // }
+    @include breakpoint-up(small) {
+      bottom: 10.65%;
+    }
+
+    @include breakpoint-up(medium) {
+      bottom: 12.7%;
+    }
   }
 }
 .reversed {

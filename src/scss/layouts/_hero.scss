@@ -16,6 +16,7 @@
       "info4 image"
       "button image";
     grid-gap: 1em 3em;
+    grid-gap: 1.5em 3em;
     margin-top: 12rem;
   }
 
@@ -26,6 +27,7 @@
 
     @include breakpoint-up(medium) {
       margin-bottom: 0;
+      place-self: center;
     }
   }
 
@@ -67,6 +69,7 @@
 
       @include breakpoint-up(medium) {
         margin-top: 1rem;
+        margin-top: 3rem;
       }
     }
     &:nth-of-type(2) {

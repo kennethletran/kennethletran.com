@@ -38,14 +38,13 @@
 body {
   font-family: "Kanit", var(--fallback-font);
   font-size: 1.6em;
-  // font-size: 1.8em;
   font-weight: 400;
   color: var(--text-color);
   letter-spacing: 0.1rem;
 
-  // @include breakpoint-up(medium) {
-  //   font-size: 2rem;
-  // }
+  @include breakpoint-up(medium) {
+    font-size: 1.8rem;
+  }
 }
 h1,
 h2,
@@ -70,7 +69,6 @@ h2 {
   }
 }
 h3 {
-  // font-family: "Kanit", var(--fallback-font);
   font-family: "Michroma", var(--fallback-font);
   font-weight: 400;
   font-size: 2rem;
