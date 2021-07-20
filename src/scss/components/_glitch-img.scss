@@ -1,3 +1,8 @@
+// TODO: use math.div(random(10), 10) instead of random(10) / 10
+// TODO: use clip instead of clip-path even if it's deprecated
+// TODO: use setInterval on glitch animations so that they can be triggered via adding/removing class with a delay
+@use 'sass:math';
+
 .glitch-picture {
   &:not(.back) {
     position: absolute;
@@ -19,45 +24,57 @@
 }
 .front-2 {
   z-index: 2;
+  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 .front {
   z-index: 1;
+  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 }
 @keyframes glitch-animation-3 {
-  $steps: 30;
-  $steps: 3;
+  $steps: 20;
+  // $steps: 3;
 
   @for $i from 0 through $steps {
-    #{percentage($i * 1 / $steps)} {
+    #{(math.div($i * 1%, $steps))} {
       clip-path: polygon(
         // top left
         0%
-          (random(37) + 3) *
+          (random(30) + 5) *
           1%,
         // top right
         100%
-          (random(37) + 3) *
+          (random(30) + 5) *
           1%,
         // bottom right
-        100%
-          (random(37) + 3) *
+        0%
+          (random(30) + 5) *
           1%,
         // bottom left
         0%
-          (random(37) + 3) *
+          (random(30) + 5) *
           1%
       );
-      opacity: random(10) / 10;
-      transform: translateX(random(45) - 25 + px);
+      opacity: math.div(random(10), 10);
+      top: random(2) - 2 * 1%;
+      left: random(4) - 4 * 1%;
+      // transform: translateX(random(5) - 5 * 1%);
     }
   }
 }
 // opacity: random(10) / 10;
 // random(100) / 100 * 100% random(100) / 100 * 100%
 
-@keyframes img-glitch-2 {
+@keyframes glitch-animation-2 {
 }
-@keyframes img-glitch-1 {
+@keyframes glitch-animation-1 {
   0% {
   }
 }

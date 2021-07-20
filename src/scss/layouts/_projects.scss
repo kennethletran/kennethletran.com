@@ -22,20 +22,25 @@
       grid-gap: 0 1em;
 
       &:nth-of-type(2n) {
-        transform: scaleX(-1);
-        // margin-left: auto;
+        grid-template-areas:
+          "title card"
+          "info card"
+          "link card"
+          ". card";
+
+        & .projects__card {
+          transform: scaleX(-1);
+
+          & .projects__card__screenshot {
+            transform: scaleX(-1);
+          }
+        }
       }
     }
   }
 
   &__card {
     grid-area: card;
-
-    @include breakpoint-up(medium) {
-      &:nth-of-type(n + 1) {
-        transform: scaleX(-1);
-      }
-    }
 
     a {
       display: grid;
