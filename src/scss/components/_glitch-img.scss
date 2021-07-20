@@ -16,7 +16,7 @@
 .front-3 {
   z-index: 3;
   // animation: img-glitch-3 750ms linear 1000ms infinite alternate-reverse;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+  // animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 
   @media (prefers-reduced-motion) {
     animation: none;
@@ -24,7 +24,7 @@
 }
 .front-2 {
   z-index: 2;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+  // animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 
   @media (prefers-reduced-motion) {
     animation: none;
