@@ -32,7 +32,7 @@
 }
 .front {
   z-index: 1;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
+  // animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 
   @media (prefers-reduced-motion) {
     animation: none;
@@ -63,8 +63,9 @@
           1%
       );
       opacity: math.div(random(10), 10);
-      top: random(5) - 5 * 1%;
       left: random(4) - 4 * 1%;
+
+      // top: random(5) - 5 * 1%;
       // transform: translateX(random(5) - 5 * 1%);
     }
   }
