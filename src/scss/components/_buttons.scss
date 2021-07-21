@@ -109,3 +109,60 @@ button {
     }
   }
 }
+
+.project__button {
+  position: relative;
+  padding: 0.75rem 1.75rem;
+  font-family: "Kanit", var(--fallback-font);
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  letter-spacing: 0.05rem;
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 1;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0%;
+    height: 40%;
+    width: 110%;
+    border: 1px solid var(--primary-color);
+    z-index: -2;
+  }
+
+  &::before {
+    top: -10%;
+    border-bottom: 0;
+    transform: translateX(-5%) translateY(-10%);
+  }
+  &::after {
+    bottom: -10%;
+    border-top: 0;
+    transform: translateX(-5%) translateY(10%);
+  }
+
+  &--hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform var(--duration-short) var(--basic-timing);
+    transition: transform 150ms var(--basic-timing);
+    z-index: -1;
+  }
+  &:hover {
+    color: var(--bg-color);
+
+    .project__button--hover {
+      transform: scaleY(1);
+    }
+  }
+}

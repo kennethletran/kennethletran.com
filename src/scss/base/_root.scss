@@ -36,7 +36,7 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    opacity: 0.04;
+    opacity: 0.03;
     top: 0;
     left: 0;
     bottom: 0;
@@ -58,10 +58,18 @@ body {
     display: initial;
   }
 }
-// Hiding content on viewports larger than tablet
+
 .hide-desktop {
-  @include breakpoint-up(medium) {
+  @include breakpoint-up(large) {
     display: none;
+  }
+}
+
+// Showing content on viewports larger than tablet
+.show-desktop {
+  display: none;
+  @include breakpoint-up(large) {
+    display: initial;
   }
 }
 

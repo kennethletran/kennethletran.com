@@ -52,11 +52,11 @@
   &__copyright {
     font-family: "Kanit", var(--fallback-font);
     font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 
     @include breakpoint-up(medium) {
       font-size: 1.6rem;
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
     }
   }
 }

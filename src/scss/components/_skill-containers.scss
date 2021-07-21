@@ -44,6 +44,10 @@
     .skills__container__headline {
       &::after {
         left: 129px;
+
+        @include breakpoint-up(medium) {
+          left: 144px;
+        }
       }
     }
   }

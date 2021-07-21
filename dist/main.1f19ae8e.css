@@ -195,7 +195,7 @@ body::before {
   position: fixed;
   width: 100%;
   height: 100%;
-  opacity: 0.04;
+  opacity: 0.03;
   top: 0;
   left: 0;
   bottom: 0;
@@ -219,9 +219,18 @@ body::before {
   }
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 65em) {
   .hide-desktop {
     display: none;
+  }
+}
+
+.show-desktop {
+  display: none;
+}
+@media only screen and (min-width: 65em) {
+  .show-desktop {
+    display: initial;
   }
 }
 
@@ -427,6 +436,11 @@ body::before {
     transform: scaleX(-1);
   }
 }
+@media only screen and (min-width: 65em) {
+  .projects__container {
+    grid-gap: 0 3em;
+  }
+}
 .projects__card {
   grid-area: card;
 }
@@ -450,8 +464,14 @@ body::before {
     grid-column: initial;
   }
 }
-.projects__title a {
-  text-decoration: none;
+.projects__links {
+  grid-area: link;
+  grid-row: span 2;
+  align-self: end;
+  margin: 0 0 1rem 0.5rem;
+}
+.projects__links .project__button:nth-of-type(2) {
+  margin-left: 4rem;
 }
 .projects__link {
   grid-area: icon;
@@ -461,6 +481,15 @@ body::before {
 @media only screen and (min-width: 48em) {
   .projects__link {
     grid-area: link;
+    grid-row: span 2;
+    align-self: end;
+  }
+}
+@media only screen and (min-width: 65em) {
+  .projects__link {
+    font-size: initial;
+    letter-spacing: initial;
+    text-decoration: none;
   }
 }
 .projects__link svg {
@@ -634,12 +663,12 @@ body.prevent-scroll {
 .footer__copyright {
   font-family: "Kanit", var(--fallback-font);
   font-size: 1.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 @media only screen and (min-width: 48em) {
   .footer__copyright {
     font-size: 1.6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -944,6 +973,58 @@ button {
   left: -5px;
 }
 
+.project__button {
+  position: relative;
+  padding: 0.75rem 1.75rem;
+  font-family: "Kanit", var(--fallback-font);
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  letter-spacing: 0.05rem;
+  line-height: 1;
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 1;
+}
+.project__button::before, .project__button::after {
+  position: absolute;
+  content: "";
+  left: 0%;
+  height: 40%;
+  width: 110%;
+  border: 1px solid var(--primary-color);
+  z-index: -2;
+}
+.project__button::before {
+  top: -10%;
+  border-bottom: 0;
+  transform: translateX(-5%) translateY(-10%);
+}
+.project__button::after {
+  bottom: -10%;
+  border-top: 0;
+  transform: translateX(-5%) translateY(10%);
+}
+.project__button--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  transform: scaleY(0);
+  transition: transform var(--duration-short) var(--basic-timing);
+  transition: transform 150ms var(--basic-timing);
+  z-index: -1;
+}
+.project__button:hover {
+  color: var(--bg-color);
+}
+.project__button:hover .project__button--hover {
+  transform: scaleY(1);
+}
+
 .projects__card {
   height: 200px;
   margin-bottom: 2rem;
@@ -1064,6 +1145,11 @@ button {
 }
 .skills__container--learning .skills__container__headline::after {
   left: 129px;
+}
+@media only screen and (min-width: 48em) {
+  .skills__container--learning .skills__container__headline::after {
+    left: 144px;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -1262,7 +1348,6 @@ form {
 
 .front-3 {
   z-index: 3;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 }
 @media (prefers-reduced-motion) {
   .front-3 {
@@ -1272,7 +1357,6 @@ form {
 
 .front-2 {
   z-index: 2;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 }
 @media (prefers-reduced-motion) {
   .front-2 {
@@ -1282,7 +1366,6 @@ form {
 
 .front {
   z-index: 1;
-  animation: glitch-animation-3 1500ms linear 1000ms infinite alternate-reverse;
 }
 @media (prefers-reduced-motion) {
   .front {
@@ -1292,109 +1375,109 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 28%, 100% 8%, 0% 16%, 0% 35%);
-    opacity: 0.3;
-    left: -1%;
+    clip-path: polygon(0% 24%, 100% 20%, 0% 19%, 0% 31%);
+    opacity: 0.5;
+    left: -2%;
   }
   0.05% {
-    clip-path: polygon(0% 32%, 100% 10%, 0% 26%, 0% 29%);
-    opacity: 0.3;
-    left: 0%;
-  }
-  0.1% {
-    clip-path: polygon(0% 10%, 100% 32%, 0% 20%, 0% 24%);
-    opacity: 0.1;
-    left: -2%;
-  }
-  0.15% {
-    clip-path: polygon(0% 14%, 100% 23%, 0% 25%, 0% 24%);
-    opacity: 0.7;
-    left: 0%;
-  }
-  0.2% {
-    clip-path: polygon(0% 26%, 100% 8%, 0% 22%, 0% 22%);
-    opacity: 0.2;
-    left: -3%;
-  }
-  0.25% {
-    clip-path: polygon(0% 34%, 100% 16%, 0% 32%, 0% 28%);
-    opacity: 0.3;
-    left: 0%;
-  }
-  0.3% {
-    clip-path: polygon(0% 35%, 100% 16%, 0% 18%, 0% 14%);
-    opacity: 0.3;
-    left: -2%;
-  }
-  0.35% {
-    clip-path: polygon(0% 25%, 100% 26%, 0% 33%, 0% 18%);
-    opacity: 0.2;
-    left: -1%;
-  }
-  0.4% {
-    clip-path: polygon(0% 19%, 100% 26%, 0% 9%, 0% 14%);
-    opacity: 0.4;
-    left: -2%;
-  }
-  0.45% {
-    clip-path: polygon(0% 11%, 100% 14%, 0% 12%, 0% 7%);
-    opacity: 0.8;
-    left: -2%;
-  }
-  0.5% {
-    clip-path: polygon(0% 25%, 100% 20%, 0% 11%, 0% 8%);
+    clip-path: polygon(0% 11%, 100% 30%, 0% 31%, 0% 14%);
     opacity: 0.6;
     left: -3%;
   }
-  0.55% {
-    clip-path: polygon(0% 15%, 100% 13%, 0% 6%, 0% 30%);
+  0.1% {
+    clip-path: polygon(0% 8%, 100% 15%, 0% 17%, 0% 8%);
     opacity: 0.1;
     left: 0%;
   }
-  0.6% {
-    clip-path: polygon(0% 29%, 100% 7%, 0% 22%, 0% 19%);
-    opacity: 0.7;
-    left: 0%;
-  }
-  0.65% {
-    clip-path: polygon(0% 14%, 100% 9%, 0% 19%, 0% 15%);
-    opacity: 0.7;
-    left: 0%;
-  }
-  0.7% {
-    clip-path: polygon(0% 28%, 100% 14%, 0% 15%, 0% 10%);
-    opacity: 0.9;
-    left: 0%;
-  }
-  0.75% {
-    clip-path: polygon(0% 13%, 100% 34%, 0% 28%, 0% 35%);
-    opacity: 0.9;
-    left: -1%;
-  }
-  0.8% {
-    clip-path: polygon(0% 17%, 100% 17%, 0% 29%, 0% 8%);
-    opacity: 0.4;
-    left: 0%;
-  }
-  0.85% {
-    clip-path: polygon(0% 24%, 100% 24%, 0% 16%, 0% 20%);
+  0.15% {
+    clip-path: polygon(0% 15%, 100% 18%, 0% 15%, 0% 31%);
     opacity: 0.4;
     left: -2%;
   }
-  0.9% {
-    clip-path: polygon(0% 32%, 100% 29%, 0% 20%, 0% 9%);
+  0.2% {
+    clip-path: polygon(0% 19%, 100% 7%, 0% 10%, 0% 12%);
     opacity: 0.1;
+    left: 0%;
+  }
+  0.25% {
+    clip-path: polygon(0% 21%, 100% 8%, 0% 25%, 0% 16%);
+    opacity: 0.6;
+    left: -3%;
+  }
+  0.3% {
+    clip-path: polygon(0% 26%, 100% 9%, 0% 24%, 0% 29%);
+    opacity: 0.9;
+    left: -3%;
+  }
+  0.35% {
+    clip-path: polygon(0% 14%, 100% 33%, 0% 13%, 0% 26%);
+    opacity: 0.2;
+    left: -3%;
+  }
+  0.4% {
+    clip-path: polygon(0% 9%, 100% 21%, 0% 17%, 0% 6%);
+    opacity: 0.1;
+    left: 0%;
+  }
+  0.45% {
+    clip-path: polygon(0% 35%, 100% 13%, 0% 6%, 0% 22%);
+    opacity: 0.3;
+    left: -2%;
+  }
+  0.5% {
+    clip-path: polygon(0% 25%, 100% 19%, 0% 18%, 0% 32%);
+    opacity: 1;
+    left: -1%;
+  }
+  0.55% {
+    clip-path: polygon(0% 13%, 100% 9%, 0% 21%, 0% 21%);
+    opacity: 1;
+    left: 0%;
+  }
+  0.6% {
+    clip-path: polygon(0% 24%, 100% 6%, 0% 16%, 0% 30%);
+    opacity: 0.3;
+    left: 0%;
+  }
+  0.65% {
+    clip-path: polygon(0% 19%, 100% 16%, 0% 9%, 0% 34%);
+    opacity: 0.5;
+    left: -1%;
+  }
+  0.7% {
+    clip-path: polygon(0% 18%, 100% 27%, 0% 26%, 0% 25%);
+    opacity: 0.6;
+    left: 0%;
+  }
+  0.75% {
+    clip-path: polygon(0% 13%, 100% 19%, 0% 33%, 0% 14%);
+    opacity: 0.7;
+    left: -2%;
+  }
+  0.8% {
+    clip-path: polygon(0% 18%, 100% 14%, 0% 7%, 0% 21%);
+    opacity: 0.3;
+    left: -2%;
+  }
+  0.85% {
+    clip-path: polygon(0% 13%, 100% 21%, 0% 27%, 0% 13%);
+    opacity: 0.1;
+    left: 0%;
+  }
+  0.9% {
+    clip-path: polygon(0% 25%, 100% 11%, 0% 16%, 0% 34%);
+    opacity: 0.8;
     left: -1%;
   }
   0.95% {
-    clip-path: polygon(0% 30%, 100% 32%, 0% 21%, 0% 27%);
-    opacity: 0.7;
-    left: 0%;
+    clip-path: polygon(0% 16%, 100% 13%, 0% 8%, 0% 19%);
+    opacity: 0.3;
+    left: -2%;
   }
   1% {
-    clip-path: polygon(0% 22%, 100% 28%, 0% 19%, 0% 11%);
-    opacity: 1;
-    left: 0%;
+    clip-path: polygon(0% 14%, 100% 17%, 0% 33%, 0% 34%);
+    opacity: 0.3;
+    left: -2%;
   }
 }
 @keyframes glitch-animation-2 {}
