@@ -31,19 +31,20 @@
     flex-direction: column;
     justify-content: center;
 
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(large) {
       top: 50%;
       left: 50%;
-      height: 80%;
-      width: 80%;
+      height: 550px;
+      width: 850px;
       transform: translate3d(-50%, -50%, 0);
       flex-direction: row;
       align-items: center;
+      justify-content: space-evenly;
     }
 
     @include breakpoint-up(xlarge) {
-      // play with this value a bit more -- in the 60-75 range; can also adjust min-width of socials section
-      width: 60%;
+      max-height: 600px;
+      max-width: 900px;
     }
   }
 
@@ -51,11 +52,10 @@
     order: 2;
     margin-top: 4rem;
 
-    @include breakpoint-up(medium) {
-      min-width: 30%;
+    @include breakpoint-up(large) {
+      max-width: 200px;
       order: 1;
       display: flex;
-      padding-left: 3rem;
       margin-top: revert;
     }
 
@@ -65,10 +65,22 @@
       justify-content: space-between;
       gap: 3rem;
 
+      @include breakpoint-up(xsmall) {
+        justify-content: initial;
+      }
+
       @include breakpoint-up(medium) {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 0 0 1rem;
+        justify-content: start;
+      }
+
+      @include breakpoint-up(large) {
+        // max-width: 200px;
+        padding: 0;
         flex-direction: column;
         gap: 6rem;
-        padding: revert;
       }
     }
 
@@ -110,7 +122,7 @@
   &__form {
     order: 1;
 
-    @include breakpoint-up(medium) {
+    @include breakpoint-up(large) {
       order: 2;
     }
   }

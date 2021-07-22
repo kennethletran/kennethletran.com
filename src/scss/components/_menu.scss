@@ -43,13 +43,14 @@
   &.menu--open {
     transform: translate3d(-3px, -3px, 0);
 
-    @include breakpoint-up(medium) {
-      top: 12%;
-      right: 12%;
+    @include breakpoint-up(large) {
+      top: 50%;
+      left: 50%;
+      transform: translate3d(365px, -267px, 0);
     }
 
     @include breakpoint-up(xlarge) {
-      right: 21%;
+      transform: translate3d(385px, -287px, 0);
     }
 
     span {
