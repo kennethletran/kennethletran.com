@@ -130,7 +130,7 @@ button {
     content: "";
     left: 0%;
     height: 40%;
-    width: 110%;
+    width: 111%;
     border: 1px solid var(--primary-color);
     z-index: -2;
   }
@@ -141,7 +141,7 @@ button {
     transform: translateX(-5%) translateY(-10%);
   }
   &::after {
-    bottom: -10%;
+    bottom: -14%;
     border-top: 0;
     transform: translateX(-5%) translateY(10%);
   }

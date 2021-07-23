@@ -49,10 +49,6 @@
       transform: translate3d(365px, -267px, 0);
     }
 
-    @include breakpoint-up(xlarge) {
-      transform: translate3d(385px, -287px, 0);
-    }
-
     span {
       &:nth-of-type(1) {
         // TODO: optimize these transforms?

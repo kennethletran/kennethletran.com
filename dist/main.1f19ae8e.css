@@ -1006,7 +1006,7 @@ button {
   content: "";
   left: 0%;
   height: 40%;
-  width: 110%;
+  width: 111%;
   border: 1px solid var(--primary-color);
   z-index: -2;
 }
@@ -1016,7 +1016,7 @@ button {
   transform: translateX(-5%) translateY(-10%);
 }
 .project__button::after {
-  bottom: -10%;
+  bottom: -14%;
   border-top: 0;
   transform: translateX(-5%) translateY(10%);
 }
@@ -1231,11 +1231,6 @@ html {
     transform: translate3d(365px, -267px, 0);
   }
 }
-@media only screen and (min-width: 75em) {
-  .menu__button.menu--open {
-    transform: translate3d(385px, -287px, 0);
-  }
-}
 .menu__button.menu--open span:nth-of-type(1) {
   transform: rotate(-135deg) translate3d(-7px, -9.5px, 0);
 }
@@ -1356,6 +1351,14 @@ form {
   width: 100%;
 }
 
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: grid;
+  place-items: center;
+}
+
 .glitch-picture:not(.back) {
   position: absolute;
   top: 0;
@@ -1395,109 +1398,109 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 22%, 100% 32%, 0% 6%, 0% 21%);
-    opacity: 0.2;
-    left: -1%;
+    clip-path: polygon(0% 7%, 100% 9%, 0% 16%, 0% 33%);
+    opacity: 0.5;
+    left: -3%;
   }
   0.05% {
-    clip-path: polygon(0% 13%, 100% 20%, 0% 22%, 0% 24%);
+    clip-path: polygon(0% 21%, 100% 20%, 0% 22%, 0% 14%);
+    opacity: 0.9;
+    left: 0%;
+  }
+  0.1% {
+    clip-path: polygon(0% 26%, 100% 29%, 0% 20%, 0% 7%);
+    opacity: 0.4;
+    left: 0%;
+  }
+  0.15% {
+    clip-path: polygon(0% 7%, 100% 28%, 0% 19%, 0% 15%);
+    opacity: 0.7;
+    left: 0%;
+  }
+  0.2% {
+    clip-path: polygon(0% 29%, 100% 8%, 0% 33%, 0% 6%);
     opacity: 0.7;
     left: -3%;
   }
-  0.1% {
-    clip-path: polygon(0% 32%, 100% 11%, 0% 24%, 0% 30%);
-    opacity: 0.2;
-    left: -2%;
-  }
-  0.15% {
-    clip-path: polygon(0% 11%, 100% 33%, 0% 32%, 0% 25%);
-    opacity: 0.9;
-    left: -2%;
-  }
-  0.2% {
-    clip-path: polygon(0% 25%, 100% 28%, 0% 28%, 0% 29%);
-    opacity: 0.8;
-    left: -2%;
-  }
   0.25% {
-    clip-path: polygon(0% 28%, 100% 8%, 0% 24%, 0% 14%);
+    clip-path: polygon(0% 24%, 100% 26%, 0% 29%, 0% 13%);
     opacity: 0.6;
     left: -2%;
   }
   0.3% {
-    clip-path: polygon(0% 18%, 100% 7%, 0% 28%, 0% 9%);
-    opacity: 0.5;
+    clip-path: polygon(0% 6%, 100% 29%, 0% 28%, 0% 16%);
+    opacity: 0.1;
     left: -1%;
   }
   0.35% {
-    clip-path: polygon(0% 21%, 100% 11%, 0% 10%, 0% 17%);
-    opacity: 0.4;
-    left: -3%;
+    clip-path: polygon(0% 7%, 100% 7%, 0% 11%, 0% 17%);
+    opacity: 0.9;
+    left: -2%;
   }
   0.4% {
-    clip-path: polygon(0% 21%, 100% 27%, 0% 24%, 0% 24%);
-    opacity: 0.8;
+    clip-path: polygon(0% 10%, 100% 9%, 0% 34%, 0% 26%);
+    opacity: 0.1;
     left: -2%;
   }
   0.45% {
-    clip-path: polygon(0% 14%, 100% 12%, 0% 12%, 0% 15%);
-    opacity: 0.7;
-    left: -3%;
-  }
-  0.5% {
-    clip-path: polygon(0% 35%, 100% 31%, 0% 27%, 0% 10%);
-    opacity: 0.8;
-    left: -3%;
-  }
-  0.55% {
-    clip-path: polygon(0% 17%, 100% 17%, 0% 25%, 0% 12%);
-    opacity: 0.6;
-    left: -3%;
-  }
-  0.6% {
-    clip-path: polygon(0% 14%, 100% 8%, 0% 17%, 0% 9%);
-    opacity: 0.1;
-    left: -3%;
-  }
-  0.65% {
-    clip-path: polygon(0% 10%, 100% 22%, 0% 23%, 0% 34%);
-    opacity: 0.7;
-    left: -2%;
-  }
-  0.7% {
-    clip-path: polygon(0% 17%, 100% 6%, 0% 16%, 0% 28%);
+    clip-path: polygon(0% 7%, 100% 18%, 0% 8%, 0% 32%);
     opacity: 0.4;
     left: 0%;
   }
-  0.75% {
-    clip-path: polygon(0% 9%, 100% 6%, 0% 21%, 0% 27%);
+  0.5% {
+    clip-path: polygon(0% 10%, 100% 9%, 0% 14%, 0% 19%);
+    opacity: 0.3;
+    left: -2%;
+  }
+  0.55% {
+    clip-path: polygon(0% 7%, 100% 18%, 0% 8%, 0% 35%);
+    opacity: 0.2;
+    left: -1%;
+  }
+  0.6% {
+    clip-path: polygon(0% 31%, 100% 35%, 0% 25%, 0% 32%);
+    opacity: 0.1;
+    left: -2%;
+  }
+  0.65% {
+    clip-path: polygon(0% 10%, 100% 25%, 0% 15%, 0% 21%);
     opacity: 0.5;
     left: -3%;
   }
-  0.8% {
-    clip-path: polygon(0% 7%, 100% 8%, 0% 30%, 0% 31%);
-    opacity: 0.4;
-    left: -1%;
+  0.7% {
+    clip-path: polygon(0% 34%, 100% 23%, 0% 13%, 0% 12%);
+    opacity: 0.7;
+    left: 0%;
   }
-  0.85% {
-    clip-path: polygon(0% 16%, 100% 18%, 0% 14%, 0% 10%);
-    opacity: 0.6;
+  0.75% {
+    clip-path: polygon(0% 26%, 100% 34%, 0% 10%, 0% 27%);
+    opacity: 1;
     left: -3%;
   }
+  0.8% {
+    clip-path: polygon(0% 23%, 100% 29%, 0% 24%, 0% 14%);
+    opacity: 0.3;
+    left: 0%;
+  }
+  0.85% {
+    clip-path: polygon(0% 20%, 100% 22%, 0% 25%, 0% 25%);
+    opacity: 1;
+    left: -1%;
+  }
   0.9% {
-    clip-path: polygon(0% 35%, 100% 22%, 0% 29%, 0% 29%);
+    clip-path: polygon(0% 22%, 100% 28%, 0% 23%, 0% 12%);
     opacity: 0.5;
     left: -1%;
   }
   0.95% {
-    clip-path: polygon(0% 9%, 100% 21%, 0% 6%, 0% 10%);
-    opacity: 0.8;
-    left: -2%;
+    clip-path: polygon(0% 24%, 100% 23%, 0% 27%, 0% 12%);
+    opacity: 0.1;
+    left: -3%;
   }
   1% {
-    clip-path: polygon(0% 11%, 100% 17%, 0% 8%, 0% 20%);
-    opacity: 0.3;
-    left: -1%;
+    clip-path: polygon(0% 20%, 100% 15%, 0% 18%, 0% 6%);
+    opacity: 0.7;
+    left: -3%;
   }
 }
 @keyframes glitch-animation-2 {}
