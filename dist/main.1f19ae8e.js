@@ -195,12 +195,20 @@ module.hot.accept(reloadCSS);
 require("./scss/main.scss");
 
 // TODO: refactor into modules if code gets cluttered
-// Get DOM elements
+// DOM elements
 var menu = document.querySelector('.menu__button');
 var menuModalInner = document.querySelector('.menu__modal--inner');
 var menuModalOuter = document.querySelector('.menu__modal--outer');
 var heroBtn = document.querySelector('.hero__button');
-var body = document.body; // Store scroll position when menu is clicked
+var body = document.body; // Preloader
+
+var tl = gsap.timeline({
+  ease: 'power4.in'
+});
+tl.to('.preloader', {
+  opacity: 0
+}, 4.5); // TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
+// Store scroll position when menu is clicked
 
 function keepScrollPosition() {
   body.classList.add('prevent-scroll');
@@ -221,13 +229,35 @@ function returnToScrollPosition() {
 function handleMenuClick() {
   if (menu.classList.contains('menu--open')) {
     menu.classList.remove('menu--open');
-    menuModalInner.classList.remove('modal--open');
     menuModalOuter.classList.remove('modal--open');
+    menuModalInner.classList.remove('modal--open'); // GSAP for Modals
+
+    gsap.to('.menu__modal--outer', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
+    gsap.to('.menu__modal--inner', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
     returnToScrollPosition();
   } else {
     menu.classList.add('menu--open');
-    menuModalInner.classList.add('modal--open');
     menuModalOuter.classList.add('modal--open');
+    menuModalInner.classList.add('modal--open'); // GSAP for Modals
+
+    gsap.to('.menu__modal--outer', {
+      duration: .15,
+      opacity: 1,
+      ease: 'power4.in'
+    });
+    gsap.to('.menu__modal--inner', {
+      duration: .15,
+      opacity: 1,
+      ease: 'power4.in'
+    });
     keepScrollPosition();
   }
 } // Open/close modal when menu is clicked
@@ -243,6 +273,16 @@ menuModalOuter.addEventListener('click', function (e) {
     menu.classList.remove('menu--open');
     menuModalOuter.classList.remove('modal--open');
     menuModalInner.classList.remove('modal--open');
+    gsap.to('.menu__modal--outer', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
+    gsap.to('.menu__modal--inner', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
     returnToScrollPosition();
   }
 });
@@ -251,6 +291,16 @@ window.addEventListener("keydown", function (e) {
     menu.classList.remove('menu--open');
     menuModalOuter.classList.remove('modal--open');
     menuModalInner.classList.remove('modal--open');
+    gsap.to('.menu__modal--outer', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
+    gsap.to('.menu__modal--inner', {
+      duration: .8,
+      opacity: 0,
+      ease: 'power4.out'
+    });
     returnToScrollPosition();
   }
 }); // Keep track of window scroll position
@@ -286,7 +336,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44971" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36681" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

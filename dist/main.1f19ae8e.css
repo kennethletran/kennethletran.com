@@ -169,6 +169,7 @@ h3 {
 
 :root {
   --bg-color: hsl(210, 39%, 16%);
+  --preloader-bg-color: hsl(207, 40%, 15%);
   --container-bg-color: hsl(188, 50%, 20%);
   --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
@@ -288,8 +289,7 @@ body::before {
     grid-template-rows: auto;
     grid-template-areas: "headline image" "info image" "info2 image" "info3 image" "info4 image" "button image";
     grid-gap: 1em 3em;
-    grid-gap: 1.5em 3em;
-    margin-top: 12rem;
+    margin-top: 8rem;
   }
 }
 .hero__picture__container {
@@ -299,7 +299,6 @@ body::before {
 }
 @media only screen and (min-width: 48em) {
   .hero__picture__container {
-    margin-bottom: 0;
     place-self: center;
   }
 }
@@ -335,7 +334,6 @@ body::before {
 @media only screen and (min-width: 48em) {
   .hero__introduction:nth-of-type(1) {
     margin-top: 1rem;
-    margin-top: 3rem;
   }
 }
 .hero__introduction:nth-of-type(2) {
@@ -510,7 +508,6 @@ body::before {
   pointer-events: none;
 }
 .menu__modal--inner.modal--open, .menu__modal--outer.modal--open {
-  opacity: 1;
   pointer-events: initial;
 }
 .menu__modal--outer {
@@ -519,8 +516,8 @@ body::before {
 }
 .menu__modal--inner {
   background-color: var(--container-bg-color);
-  opacity: 0;
   z-index: 900;
+  opacity: 0;
   pointer-events: none;
   transition: all var(--duration-short) var(--basic-timing);
   display: flex;
@@ -696,7 +693,7 @@ body.prevent-scroll {
 }
 @media only screen and (min-width: 48em) {
   .deco__cross {
-    top: -5rem;
+    top: 6rem;
     left: 50%;
     transform: translateX(-47%) scale(0.8);
     opacity: 0.3;
@@ -1200,8 +1197,8 @@ html {
 }
 @media only screen and (min-width: 48em) {
   .menu__button {
-    top: 3rem;
-    right: 4rem;
+    top: 2rem;
+    right: 3rem;
   }
 }
 .menu__button:hover span, .menu__button:focus-within span, .menu__button:active span {
@@ -1352,11 +1349,22 @@ form {
 }
 
 .preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
   width: 100vw;
   height: 100vh;
-  background-color: var(--bg-color);
+  background-color: #172836;
+  background-color: var(--preloader-bg-color);
   display: grid;
   place-items: center;
+  pointer-events: none;
+}
+@media only screen and (min-width: 48em) {
+  .preloader__img {
+    width: 500px;
+  }
 }
 
 .glitch-picture:not(.back) {
@@ -1398,109 +1406,109 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 7%, 100% 9%, 0% 16%, 0% 33%);
-    opacity: 0.5;
-    left: -3%;
+    clip-path: polygon(0% 18%, 100% 15%, 0% 13%, 0% 33%);
+    opacity: 0.1;
+    left: -2%;
   }
   0.05% {
-    clip-path: polygon(0% 21%, 100% 20%, 0% 22%, 0% 14%);
-    opacity: 0.9;
+    clip-path: polygon(0% 9%, 100% 22%, 0% 6%, 0% 11%);
+    opacity: 0.6;
     left: 0%;
   }
   0.1% {
-    clip-path: polygon(0% 26%, 100% 29%, 0% 20%, 0% 7%);
-    opacity: 0.4;
+    clip-path: polygon(0% 12%, 100% 27%, 0% 33%, 0% 19%);
+    opacity: 0.8;
     left: 0%;
   }
   0.15% {
-    clip-path: polygon(0% 7%, 100% 28%, 0% 19%, 0% 15%);
-    opacity: 0.7;
-    left: 0%;
+    clip-path: polygon(0% 26%, 100% 31%, 0% 15%, 0% 11%);
+    opacity: 0.5;
+    left: -1%;
   }
   0.2% {
-    clip-path: polygon(0% 29%, 100% 8%, 0% 33%, 0% 6%);
-    opacity: 0.7;
+    clip-path: polygon(0% 24%, 100% 20%, 0% 31%, 0% 7%);
+    opacity: 0.6;
     left: -3%;
   }
   0.25% {
-    clip-path: polygon(0% 24%, 100% 26%, 0% 29%, 0% 13%);
-    opacity: 0.6;
+    clip-path: polygon(0% 14%, 100% 13%, 0% 19%, 0% 6%);
+    opacity: 1;
     left: -2%;
   }
   0.3% {
-    clip-path: polygon(0% 6%, 100% 29%, 0% 28%, 0% 16%);
+    clip-path: polygon(0% 28%, 100% 31%, 0% 33%, 0% 16%);
+    opacity: 0.4;
+    left: -2%;
+  }
+  0.35% {
+    clip-path: polygon(0% 22%, 100% 8%, 0% 9%, 0% 28%);
     opacity: 0.1;
     left: -1%;
   }
-  0.35% {
-    clip-path: polygon(0% 7%, 100% 7%, 0% 11%, 0% 17%);
-    opacity: 0.9;
-    left: -2%;
-  }
   0.4% {
-    clip-path: polygon(0% 10%, 100% 9%, 0% 34%, 0% 26%);
-    opacity: 0.1;
-    left: -2%;
-  }
-  0.45% {
-    clip-path: polygon(0% 7%, 100% 18%, 0% 8%, 0% 32%);
-    opacity: 0.4;
+    clip-path: polygon(0% 16%, 100% 25%, 0% 23%, 0% 25%);
+    opacity: 0.2;
     left: 0%;
   }
+  0.45% {
+    clip-path: polygon(0% 28%, 100% 8%, 0% 27%, 0% 26%);
+    opacity: 0.1;
+    left: -3%;
+  }
   0.5% {
-    clip-path: polygon(0% 10%, 100% 9%, 0% 14%, 0% 19%);
-    opacity: 0.3;
-    left: -2%;
+    clip-path: polygon(0% 21%, 100% 26%, 0% 16%, 0% 35%);
+    opacity: 0.5;
+    left: -3%;
   }
   0.55% {
-    clip-path: polygon(0% 7%, 100% 18%, 0% 8%, 0% 35%);
-    opacity: 0.2;
+    clip-path: polygon(0% 18%, 100% 6%, 0% 28%, 0% 24%);
+    opacity: 0.7;
     left: -1%;
   }
   0.6% {
-    clip-path: polygon(0% 31%, 100% 35%, 0% 25%, 0% 32%);
-    opacity: 0.1;
-    left: -2%;
+    clip-path: polygon(0% 28%, 100% 30%, 0% 12%, 0% 17%);
+    opacity: 0.4;
+    left: -1%;
   }
   0.65% {
-    clip-path: polygon(0% 10%, 100% 25%, 0% 15%, 0% 21%);
-    opacity: 0.5;
+    clip-path: polygon(0% 31%, 100% 6%, 0% 27%, 0% 9%);
+    opacity: 0.2;
     left: -3%;
   }
   0.7% {
-    clip-path: polygon(0% 34%, 100% 23%, 0% 13%, 0% 12%);
-    opacity: 0.7;
-    left: 0%;
+    clip-path: polygon(0% 14%, 100% 34%, 0% 32%, 0% 19%);
+    opacity: 0.2;
+    left: -1%;
   }
   0.75% {
-    clip-path: polygon(0% 26%, 100% 34%, 0% 10%, 0% 27%);
-    opacity: 1;
-    left: -3%;
+    clip-path: polygon(0% 28%, 100% 20%, 0% 22%, 0% 31%);
+    opacity: 0.8;
+    left: -2%;
   }
   0.8% {
-    clip-path: polygon(0% 23%, 100% 29%, 0% 24%, 0% 14%);
-    opacity: 0.3;
-    left: 0%;
+    clip-path: polygon(0% 15%, 100% 19%, 0% 9%, 0% 15%);
+    opacity: 0.9;
+    left: -2%;
   }
   0.85% {
-    clip-path: polygon(0% 20%, 100% 22%, 0% 25%, 0% 25%);
-    opacity: 1;
-    left: -1%;
+    clip-path: polygon(0% 15%, 100% 34%, 0% 11%, 0% 25%);
+    opacity: 0.1;
+    left: 0%;
   }
   0.9% {
-    clip-path: polygon(0% 22%, 100% 28%, 0% 23%, 0% 12%);
-    opacity: 0.5;
-    left: -1%;
+    clip-path: polygon(0% 23%, 100% 32%, 0% 35%, 0% 31%);
+    opacity: 0.6;
+    left: 0%;
   }
   0.95% {
-    clip-path: polygon(0% 24%, 100% 23%, 0% 27%, 0% 12%);
-    opacity: 0.1;
-    left: -3%;
+    clip-path: polygon(0% 21%, 100% 7%, 0% 10%, 0% 15%);
+    opacity: 0.8;
+    left: -1%;
   }
   1% {
-    clip-path: polygon(0% 20%, 100% 15%, 0% 18%, 0% 6%);
-    opacity: 0.7;
-    left: -3%;
+    clip-path: polygon(0% 18%, 100% 17%, 0% 7%, 0% 21%);
+    opacity: 0.9;
+    left: -1%;
   }
 }
 @keyframes glitch-animation-2 {}

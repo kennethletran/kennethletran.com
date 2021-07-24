@@ -1,12 +1,20 @@
 import './scss/main.scss';
 
 // TODO: refactor into modules if code gets cluttered
-// Get DOM elements
+// DOM elements
 const menu = document.querySelector('.menu__button');
 const menuModalInner = document.querySelector('.menu__modal--inner');
 const menuModalOuter = document.querySelector('.menu__modal--outer');
 const heroBtn = document.querySelector('.hero__button');
 const body = document.body;
+
+// Preloader
+let tl = gsap.timeline({ease: 'power4.in'});
+tl.to('.preloader', {opacity: 0}, 4.5)
+
+
+// TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
+
 
 // Store scroll position when menu is clicked
 function keepScrollPosition() {
@@ -28,13 +36,20 @@ function returnToScrollPosition() {
 function handleMenuClick() {
   if(menu.classList.contains('menu--open')) {
     menu.classList.remove('menu--open');
-    menuModalInner.classList.remove('modal--open');
     menuModalOuter.classList.remove('modal--open');
+    menuModalInner.classList.remove('modal--open');
+    // GSAP for Modals
+    gsap.to('.menu__modal--outer', { duration: .8, opacity: 0, ease: 'power4.out'});
+    gsap.to('.menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
     returnToScrollPosition();
   } else {
     menu.classList.add('menu--open');
-    menuModalInner.classList.add('modal--open');
     menuModalOuter.classList.add('modal--open');
+    menuModalInner.classList.add('modal--open');
+    // GSAP for Modals
+    gsap.to('.menu__modal--outer', { duration: .15, opacity: 1, ease: 'power4.in'});
+    gsap.to('.menu__modal--inner', { duration: .15, opacity: 1, ease: 'power4.in'});
+
     keepScrollPosition();
   }
 }
@@ -50,6 +65,8 @@ menuModalOuter.addEventListener('click', function (e) {
     menu.classList.remove('menu--open');
     menuModalOuter.classList.remove('modal--open');
     menuModalInner.classList.remove('modal--open');
+    gsap.to('.menu__modal--outer', { duration: .8, opacity: 0, ease: 'power4.out'});
+    gsap.to('.menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
     returnToScrollPosition();
   }
 });
@@ -58,6 +75,8 @@ window.addEventListener("keydown", (e) => {
     menu.classList.remove('menu--open');
     menuModalOuter.classList.remove('modal--open');
     menuModalInner.classList.remove('modal--open');
+    gsap.to('.menu__modal--outer', { duration: .8, opacity: 0, ease: 'power4.out'});
+    gsap.to('.menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
     returnToScrollPosition();
   }
 });
@@ -66,3 +85,4 @@ window.addEventListener("keydown", (e) => {
 window.addEventListener('scroll', () => {
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
 });
+

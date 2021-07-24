@@ -15,8 +15,8 @@
   cursor: pointer;
 
   @include breakpoint-up(medium) {
-    top: 3rem;
-    right: 4rem;
+    top: 2rem;
+    right: 3rem;
   }
 
   &:hover span,

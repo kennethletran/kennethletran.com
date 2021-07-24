@@ -26,9 +26,9 @@
   <body>
     <header>
       <div class="menu__button" aria-label="menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span class="menu__button__line--1"></span>
+        <span class="menu__button__line--2"></span>
+        <span class="menu__button__line--3"></span>
       </div>
       <nav class="menu__modal menu__modal--outer">
         <nav class="menu__modal menu__modal--inner">
@@ -195,7 +195,13 @@
         </nav>
       </nav>
     </header>
-    <div class="preloader"></div>
+    <div class="preloader">
+      <img
+        src="assets/loading-kenneth.gif"
+        alt="preloader"
+        class="preloader__img"
+      />
+    </div>
     <main>
       <section class="hero section-container side-spacer">
         <svg
@@ -254,8 +260,9 @@
           their brand's visual identity on the internet.
         </p>
         <p class="hero__introduction">
-          At the intersection of UX/UI design and front end development, I build
-          compelling stories in the form of websites.
+          My passion for the web lies at the intersection of UX/UI design and
+          front end development, I build compelling stories in the form of
+          websites.
         </p>
         <p class="hero__introduction">
           I strive to blend your brand's vision with impactful design resulting
@@ -682,5 +689,10 @@
     </main>
 
     <script src="main.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"
+      integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

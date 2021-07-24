@@ -12,8 +12,6 @@
 
     &--inner.modal--open,
     &--outer.modal--open {
-      opacity: 1;
-      // transform: translate3d(0, 100%, 0);
       pointer-events: initial;
     }
   }
@@ -23,8 +21,8 @@
   }
   &__modal--inner {
     background-color: var(--container-bg-color);
-    opacity: 0;
     z-index: 900;
+    opacity: 0;
     pointer-events: none;
     transition: all var(--duration-short) var(--basic-timing);
     display: flex;
