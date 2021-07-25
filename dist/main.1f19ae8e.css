@@ -174,14 +174,14 @@ h3 {
   --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
-  --selection-color: hsl(336, 100%, 50%);
+  --selection-color: hsl(336, 80%, 50%);
   --scrollbar-hover-color: hsl(168, 100%, 30%);
   --fallback-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Robot",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   --basic-timing: ease-in-out;
   --duration-short: 250ms;
-  --duration-medium: 450ms;
+  --duration-medium: 400ms;
   font-size: 10px;
 }
 
@@ -1013,7 +1013,7 @@ button {
   transform: translateX(-5%) translateY(-10%);
 }
 .project__button::after {
-  bottom: -14%;
+  bottom: -11%;
   border-top: 0;
   transform: translateX(-5%) translateY(10%);
 }
@@ -1312,11 +1312,12 @@ form {
 }
 .contact__form input::placeholder,
 .contact__form textarea::placeholder {
-  color: var(--bg-color);
+  color: var(--text-color);
   opacity: 1;
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 1px;
+  transition: color var(--duration-medium) var(--basic-timing);
 }
 .contact__form input:focus-within,
 .contact__form input:focus-within::placeholder,
@@ -1331,7 +1332,7 @@ form {
   height: 0.2rem;
   width: 100%;
   margin-top: -2rem;
-  background-color: var(--bg-color);
+  background-color: var(--text-color);
   transition: all var(--duration-medium) var(--basic-timing);
 }
 .contact__form__border::before {
@@ -1406,109 +1407,109 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 18%, 100% 15%, 0% 13%, 0% 33%);
-    opacity: 0.1;
-    left: -2%;
-  }
-  0.05% {
-    clip-path: polygon(0% 9%, 100% 22%, 0% 6%, 0% 11%);
-    opacity: 0.6;
-    left: 0%;
-  }
-  0.1% {
-    clip-path: polygon(0% 12%, 100% 27%, 0% 33%, 0% 19%);
+    clip-path: polygon(0% 15%, 100% 32%, 0% 33%, 0% 21%);
     opacity: 0.8;
     left: 0%;
   }
-  0.15% {
-    clip-path: polygon(0% 26%, 100% 31%, 0% 15%, 0% 11%);
-    opacity: 0.5;
+  0.05% {
+    clip-path: polygon(0% 14%, 100% 22%, 0% 8%, 0% 25%);
+    opacity: 0.3;
     left: -1%;
   }
-  0.2% {
-    clip-path: polygon(0% 24%, 100% 20%, 0% 31%, 0% 7%);
-    opacity: 0.6;
+  0.1% {
+    clip-path: polygon(0% 27%, 100% 30%, 0% 22%, 0% 9%);
+    opacity: 1;
     left: -3%;
   }
+  0.15% {
+    clip-path: polygon(0% 27%, 100% 27%, 0% 9%, 0% 18%);
+    opacity: 0.9;
+    left: -3%;
+  }
+  0.2% {
+    clip-path: polygon(0% 21%, 100% 29%, 0% 27%, 0% 8%);
+    opacity: 0.8;
+    left: 0%;
+  }
   0.25% {
-    clip-path: polygon(0% 14%, 100% 13%, 0% 19%, 0% 6%);
-    opacity: 1;
-    left: -2%;
+    clip-path: polygon(0% 8%, 100% 12%, 0% 17%, 0% 19%);
+    opacity: 0.4;
+    left: -3%;
   }
   0.3% {
-    clip-path: polygon(0% 28%, 100% 31%, 0% 33%, 0% 16%);
-    opacity: 0.4;
-    left: -2%;
+    clip-path: polygon(0% 29%, 100% 30%, 0% 20%, 0% 25%);
+    opacity: 0.1;
+    left: -3%;
   }
   0.35% {
-    clip-path: polygon(0% 22%, 100% 8%, 0% 9%, 0% 28%);
-    opacity: 0.1;
-    left: -1%;
+    clip-path: polygon(0% 11%, 100% 19%, 0% 14%, 0% 12%);
+    opacity: 0.8;
+    left: -2%;
   }
   0.4% {
-    clip-path: polygon(0% 16%, 100% 25%, 0% 23%, 0% 25%);
-    opacity: 0.2;
+    clip-path: polygon(0% 7%, 100% 18%, 0% 26%, 0% 19%);
+    opacity: 0.9;
     left: 0%;
   }
   0.45% {
-    clip-path: polygon(0% 28%, 100% 8%, 0% 27%, 0% 26%);
-    opacity: 0.1;
-    left: -3%;
+    clip-path: polygon(0% 32%, 100% 6%, 0% 30%, 0% 11%);
+    opacity: 0.5;
+    left: -2%;
   }
   0.5% {
-    clip-path: polygon(0% 21%, 100% 26%, 0% 16%, 0% 35%);
-    opacity: 0.5;
-    left: -3%;
+    clip-path: polygon(0% 33%, 100% 17%, 0% 8%, 0% 16%);
+    opacity: 0.6;
+    left: -1%;
   }
   0.55% {
-    clip-path: polygon(0% 18%, 100% 6%, 0% 28%, 0% 24%);
-    opacity: 0.7;
+    clip-path: polygon(0% 34%, 100% 25%, 0% 15%, 0% 7%);
+    opacity: 1;
     left: -1%;
   }
   0.6% {
-    clip-path: polygon(0% 28%, 100% 30%, 0% 12%, 0% 17%);
-    opacity: 0.4;
-    left: -1%;
+    clip-path: polygon(0% 27%, 100% 22%, 0% 23%, 0% 32%);
+    opacity: 1;
+    left: 0%;
   }
   0.65% {
-    clip-path: polygon(0% 31%, 100% 6%, 0% 27%, 0% 9%);
-    opacity: 0.2;
-    left: -3%;
+    clip-path: polygon(0% 26%, 100% 13%, 0% 16%, 0% 22%);
+    opacity: 0.8;
+    left: 0%;
   }
   0.7% {
-    clip-path: polygon(0% 14%, 100% 34%, 0% 32%, 0% 19%);
-    opacity: 0.2;
+    clip-path: polygon(0% 33%, 100% 16%, 0% 32%, 0% 8%);
+    opacity: 0.1;
     left: -1%;
   }
   0.75% {
-    clip-path: polygon(0% 28%, 100% 20%, 0% 22%, 0% 31%);
-    opacity: 0.8;
-    left: -2%;
+    clip-path: polygon(0% 33%, 100% 14%, 0% 9%, 0% 28%);
+    opacity: 0.3;
+    left: -1%;
   }
   0.8% {
-    clip-path: polygon(0% 15%, 100% 19%, 0% 9%, 0% 15%);
-    opacity: 0.9;
-    left: -2%;
+    clip-path: polygon(0% 11%, 100% 13%, 0% 9%, 0% 27%);
+    opacity: 0.4;
+    left: -3%;
   }
   0.85% {
-    clip-path: polygon(0% 15%, 100% 34%, 0% 11%, 0% 25%);
-    opacity: 0.1;
-    left: 0%;
+    clip-path: polygon(0% 16%, 100% 19%, 0% 18%, 0% 23%);
+    opacity: 0.4;
+    left: -1%;
   }
   0.9% {
-    clip-path: polygon(0% 23%, 100% 32%, 0% 35%, 0% 31%);
+    clip-path: polygon(0% 35%, 100% 24%, 0% 17%, 0% 31%);
+    opacity: 0.1;
+    left: -1%;
+  }
+  0.95% {
+    clip-path: polygon(0% 7%, 100% 34%, 0% 32%, 0% 10%);
     opacity: 0.6;
     left: 0%;
   }
-  0.95% {
-    clip-path: polygon(0% 21%, 100% 7%, 0% 10%, 0% 15%);
-    opacity: 0.8;
-    left: -1%;
-  }
   1% {
-    clip-path: polygon(0% 18%, 100% 17%, 0% 7%, 0% 21%);
-    opacity: 0.9;
-    left: -1%;
+    clip-path: polygon(0% 7%, 100% 31%, 0% 18%, 0% 12%);
+    opacity: 0.8;
+    left: 0%;
   }
 }
 @keyframes glitch-animation-2 {}

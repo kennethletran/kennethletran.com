@@ -8,7 +8,7 @@
   --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
-  --selection-color: hsl(336, 100%, 50%);
+  --selection-color: hsl(336, 80%, 50%);
   --scrollbar-hover-color: hsl(168, 100%, 30%);
 
   // Fallback fonts
@@ -20,7 +20,7 @@
   // look into cubic beziers for custom timings
   --basic-timing: ease-in-out;
   --duration-short: 250ms;
-  --duration-medium: 450ms;
+  --duration-medium: 400ms;
 
   font-size: 10px;
 }

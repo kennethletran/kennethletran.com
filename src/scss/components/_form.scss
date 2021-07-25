@@ -77,11 +77,12 @@ form {
 
   input::placeholder,
   textarea::placeholder {
-    color: var(--bg-color);
+    color: var(--text-color);
     opacity: 1;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 1px;
+    transition: color var(--duration-medium) var(--basic-timing);
   }
 
   input:focus-within,
@@ -98,7 +99,7 @@ form {
     height: 0.2rem;
     width: 100%;
     margin-top: -2rem;
-    background-color: var(--bg-color);
+    background-color: var(--text-color);
     transition: all var(--duration-medium) var(--basic-timing);
 
     &::before {
