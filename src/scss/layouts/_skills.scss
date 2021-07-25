@@ -9,10 +9,8 @@
     @include breakpoint-up(medium) {
       &:nth-of-type(1) {
         margin-right: auto;
-        margin-left: 2rem;
       }
       &:nth-of-type(2) {
-        margin-right: 2rem;
         margin-left: auto;
       }
     }
