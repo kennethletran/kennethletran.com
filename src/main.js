@@ -8,30 +8,24 @@ const menuModalOuter = document.querySelector('.menu__modal--outer');
 const heroBtn = document.querySelector('.hero__button');
 const body = document.body;
 
-
-
-// TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
-
 // GSAP Animations
 var headline = CSSRulePlugin.getRule(".headline-reveal::after");
-
 var landingAnim = gsap.timeline();
 
 landingAnim.to('.preloader', {opacity: 0, ease: 'power4.in'}, 4)
 .from('.hero__picture', {duration: 1, scaleX: .95, scaleY: .95, opacity: 0, ease: "slow"})
 .to(headline, {duration: 1.2, cssRule: {scaleY: 0}}, "-=1")
-.from('.menu__button', {duration: .75, opacity: 0, ease: "slow"}, "-=0.5")
+.from('.menu__button', {duration: .75, opacity: 0, y: 5, ease: "slow"}, "-=0.5")
 .from('.hero__introduction', {duration: 1, opacity: 0, y: 50, stagger: .2}, "-=.75");
+
 
 
 // Modal
 function modalFadeIn() {
-  gsap.to('.menu__modal--outer', { duration: .15, opacity: 1, ease: 'power4.in'});
-  gsap.to('.menu__modal--inner', { duration: .15, opacity: 1, ease: 'power4.in'});
+  gsap.to('.menu__modal--outer, .menu__modal--inner', { duration: .15, opacity: 1, ease: 'power4.in'});
 }
 function modalFadeOut() {
-  gsap.to('.menu__modal--outer', { duration: .8, opacity: 0, ease: 'power4.out'});
-  gsap.to('.menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
+  gsap.to('.menu__modal--outer, .menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
 }
 
 // Store scroll position when menu is clicked

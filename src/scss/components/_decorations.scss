@@ -64,7 +64,7 @@
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {
-      top: 228rem;
+      top: 229rem;
       left: 15%;
       transform: translateX(-50%);
     }
@@ -102,7 +102,7 @@
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {
-      bottom: 11%;
+      bottom: 33rem;
       left: 15%;
       transform: translateX(-50%);
     }

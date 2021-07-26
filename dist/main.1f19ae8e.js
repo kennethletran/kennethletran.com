@@ -200,8 +200,7 @@ var menu = document.querySelector('.menu__button');
 var menuModalInner = document.querySelector('.menu__modal--inner');
 var menuModalOuter = document.querySelector('.menu__modal--outer');
 var heroBtn = document.querySelector('.hero__button');
-var body = document.body; // TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
-// GSAP Animations
+var body = document.body; // GSAP Animations
 
 var headline = CSSRulePlugin.getRule(".headline-reveal::after");
 var landingAnim = gsap.timeline();
@@ -222,6 +221,7 @@ landingAnim.to('.preloader', {
 }, "-=1").from('.menu__button', {
   duration: .75,
   opacity: 0,
+  y: 5,
   ease: "slow"
 }, "-=0.5").from('.hero__introduction', {
   duration: 1,
@@ -231,12 +231,7 @@ landingAnim.to('.preloader', {
 }, "-=.75"); // Modal
 
 function modalFadeIn() {
-  gsap.to('.menu__modal--outer', {
-    duration: .15,
-    opacity: 1,
-    ease: 'power4.in'
-  });
-  gsap.to('.menu__modal--inner', {
+  gsap.to('.menu__modal--outer, .menu__modal--inner', {
     duration: .15,
     opacity: 1,
     ease: 'power4.in'
@@ -244,12 +239,7 @@ function modalFadeIn() {
 }
 
 function modalFadeOut() {
-  gsap.to('.menu__modal--outer', {
-    duration: .8,
-    opacity: 0,
-    ease: 'power4.out'
-  });
-  gsap.to('.menu__modal--inner', {
+  gsap.to('.menu__modal--outer, .menu__modal--inner', {
     duration: .8,
     opacity: 0,
     ease: 'power4.out'
@@ -363,7 +353,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46597" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36689" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

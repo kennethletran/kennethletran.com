@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
   background-color: var(--bg-color);
   width: 0.5rem;
+  // width: 0;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
@@ -11,7 +12,7 @@
 }
 
 html {
-  // approximately 7.5px
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--bg-color);
+  // scrollbar-width: none;
 }
