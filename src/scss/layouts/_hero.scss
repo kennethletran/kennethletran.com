@@ -21,27 +21,27 @@
 
   &__picture__container {
     position: relative;
-    margin-bottom: 4rem;
     grid-area: image;
+    margin-bottom: 3rem;
 
     @include breakpoint-up(medium) {
+      margin-bottom: 4rem;
       place-self: center;
     }
   }
 
-  // &__picture {
-  //   width: 639px;
-  //   width: 100%;
-  // }
+  &__picture {
+    transform: scale(1);
+  }
 
   &__headline {
     line-height: 1;
     grid-area: headline;
+    position: relative;
 
     &--headline {
       margin: 0.25rem 0 0 -0.4rem;
       font-size: 5rem;
-      display: block;
 
       &:last-of-type {
         margin: 0 0 2rem -0.4rem;
@@ -53,7 +53,6 @@
     }
 
     &--subheadline {
-      display: block;
       font-size: 1.8rem;
       font-family: "Kanit", var(--fallback-font);
       font-weight: 800;
@@ -62,6 +61,7 @@
       text-transform: uppercase;
     }
   }
+
   &__introduction {
     &:nth-of-type(1) {
       grid-area: info;
@@ -97,5 +97,20 @@
         margin: 2rem 0 0 2rem;
       }
     }
+  }
+}
+// GSAP reveal animation
+.headline-reveal {
+  display: block;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: 100% 0;
+    background: #192939;
   }
 }

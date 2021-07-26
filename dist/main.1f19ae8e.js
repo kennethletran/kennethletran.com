@@ -202,14 +202,33 @@ var menuModalOuter = document.querySelector('.menu__modal--outer');
 var heroBtn = document.querySelector('.hero__button');
 var body = document.body; // TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
 // GSAP Animations
-// Preloader
 
-var tl = gsap.timeline({
+var headline = CSSRulePlugin.getRule(".headline-reveal::after");
+var landingAnim = gsap.timeline();
+landingAnim.to('.preloader', {
+  opacity: 0,
   ease: 'power4.in'
-});
-tl.to('.preloader', {
-  opacity: 0
-}, 4.5); // Modal
+}, 4).from('.hero__picture', {
+  duration: 1,
+  scaleX: .95,
+  scaleY: .95,
+  opacity: 0,
+  ease: "slow"
+}).to(headline, {
+  duration: 1.2,
+  cssRule: {
+    scaleY: 0
+  }
+}, "-=1").from('.menu__button', {
+  duration: .75,
+  opacity: 0,
+  ease: "slow"
+}, "-=0.5").from('.hero__introduction', {
+  duration: 1,
+  opacity: 0,
+  y: 50,
+  stagger: .2
+}, "-=.75"); // Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer', {
@@ -344,7 +363,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40519" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46597" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

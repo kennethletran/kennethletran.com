@@ -13,10 +13,16 @@ const body = document.body;
 // TODO: look into placing onComplete() method to chain animation of landing page content after preloader finishes - zoom in while text animates up and pic comes in from the right
 
 // GSAP Animations
+var headline = CSSRulePlugin.getRule(".headline-reveal::after");
 
-// Preloader
-let tl = gsap.timeline({ease: 'power4.in'});
-tl.to('.preloader', {opacity: 0}, 4.5)
+var landingAnim = gsap.timeline();
+
+landingAnim.to('.preloader', {opacity: 0, ease: 'power4.in'}, 4)
+.from('.hero__picture', {duration: 1, scaleX: .95, scaleY: .95, opacity: 0, ease: "slow"})
+.to(headline, {duration: 1.2, cssRule: {scaleY: 0}}, "-=1")
+.from('.menu__button', {duration: .75, opacity: 0, ease: "slow"}, "-=0.5")
+.from('.hero__introduction', {duration: 1, opacity: 0, y: 50, stagger: .2}, "-=.75");
+
 
 // Modal
 function modalFadeIn() {
