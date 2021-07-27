@@ -277,6 +277,11 @@ body::before {
     max-width: min(900px, 100%);
   }
 }
+@media only screen and (min-width: 64em) {
+  .section-container {
+    max-width: min(1100px, 100%);
+  }
+}
 
 .hero {
   display: flex;
@@ -289,13 +294,18 @@ body::before {
     grid-template-rows: auto;
     grid-template-areas: "headline image" "info image" "info2 image" "info3 image" "info4 image" "button image";
     grid-gap: 1em 3em;
-    margin-top: 8rem;
+    margin-top: 10rem;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .hero {
+    grid-gap: 1em 7em;
   }
 }
 .hero__picture__container {
   position: relative;
   grid-area: image;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 @media only screen and (min-width: 48em) {
   .hero__picture__container {
@@ -304,7 +314,7 @@ body::before {
   }
 }
 .hero__picture {
-  transform: scale(1);
+  object-fit: cover;
 }
 .hero__headline {
   line-height: 1;
@@ -367,6 +377,11 @@ body::before {
     margin: 2rem 0 0 2rem;
   }
 }
+@media (min-width: 66.875em) {
+  .hero__button button {
+    margin: 2rem 0 -0.5rem 2rem;
+  }
+}
 
 .headline-reveal {
   display: block;
@@ -389,11 +404,21 @@ body::before {
   padding: 2rem 0 2rem 2rem;
 }
 @media only screen and (min-width: 48em) {
-  .skills__container:nth-of-type(1) {
+  .skills__container {
+    padding: 2rem 1rem 2rem 3rem;
+  }
+  .skills__container--proficient {
+    margin-left: 4rem;
     margin-right: auto;
   }
-  .skills__container:nth-of-type(2) {
+  .skills__container--learning {
     margin-left: auto;
+    margin-right: 4rem;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .skills__container {
+    padding: 4rem 4rem 4rem 6rem;
   }
 }
 .skills__container__headline {
@@ -439,15 +464,6 @@ body::before {
     grid-template-areas: "card title" "card info" "card link" "card .";
     grid-gap: 0 1em;
   }
-  .projects__container:nth-of-type(2n) {
-    grid-template-areas: "title card" "info card" "link card" ". card";
-  }
-  .projects__container:nth-of-type(2n) .projects__card {
-    transform: scaleX(-1);
-  }
-  .projects__container:nth-of-type(2n) .projects__card .projects__card__screenshot {
-    transform: scaleX(-1);
-  }
 }
 @media only screen and (min-width: 64em) {
   .projects__container {
@@ -456,6 +472,7 @@ body::before {
 }
 .projects__card {
   grid-area: card;
+  transform-origin: left;
 }
 .projects__card a {
   display: grid;
@@ -478,10 +495,15 @@ body::before {
   }
 }
 .projects__links {
-  grid-area: link;
-  grid-row: span 2;
-  align-self: end;
+  grid-area: icon;
   margin: 0 0 1rem 0.5rem;
+}
+@media only screen and (min-width: 48em) {
+  .projects__links {
+    grid-area: link;
+    grid-row: span 2;
+    align-self: end;
+  }
 }
 .projects__links .project__button:nth-of-type(2) {
   margin-left: 4rem;
@@ -639,6 +661,7 @@ body::before {
 
 body.prevent-scroll {
   padding-right: 0.4rem;
+  overflow: hidden;
 }
 @-moz-document url-prefix() {
   body.prevent-scroll {
@@ -708,7 +731,7 @@ body.prevent-scroll {
 }
 @media only screen and (min-width: 48em) {
   .deco__cross {
-    top: 6rem;
+    top: 2rem;
     left: 50%;
     transform: translateX(-47%) scale(0.8);
     opacity: 0.3;
@@ -733,7 +756,7 @@ body.prevent-scroll {
 }
 @media only screen and (min-width: 48em) {
   .deco__spoon--hero {
-    top: 28%;
+    top: 73rem;
     left: 50%;
   }
 }
@@ -743,7 +766,7 @@ body.prevent-scroll {
 }
 @media only screen and (min-width: 48em) {
   .deco__spoon--skills {
-    top: 79%;
+    bottom: 60rem;
     right: 50%;
     opacity: 1;
     transform: scale(-1);
@@ -778,7 +801,7 @@ body.prevent-scroll {
 }
 @media only screen and (min-width: 48em) {
   .deco__notch--skills {
-    top: 67%;
+    top: 170rem;
   }
 }
 .deco__diamond {
@@ -897,9 +920,9 @@ body.prevent-scroll {
   position: relative;
   margin: 0 -1rem;
 }
-@media only screen and (min-width: 48em) {
+@media only screen and (min-width: 64em) {
   .button-container {
-    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -1034,15 +1057,15 @@ button {
 }
 .project__button--hover {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background: var(--primary-color);
   transform: scaleY(0);
   transition: transform var(--duration-short) var(--basic-timing);
   transition: transform 150ms var(--basic-timing);
-  z-index: -1;
+  z-index: -10;
 }
 .project__button:hover {
   color: var(--bg-color);
@@ -1157,7 +1180,12 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .skills__container--proficient::before {
-    box-shadow: 0 217px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 217px 0 var(--primary-color);
+    box-shadow: 0 217px 0 var(--primary-color), 302px 0 var(--primary-color), 302px 217px 0 var(--primary-color);
+  }
+}
+@media only screen and (min-width: 64em) {
+  .skills__container--proficient::before {
+    box-shadow: 0 257px 0 var(--primary-color), 362px 0 var(--primary-color), 362px 257px 0 var(--primary-color);
   }
 }
 .skills__container--learning::before {
@@ -1166,7 +1194,12 @@ button {
 }
 @media only screen and (min-width: 48em) {
   .skills__container--learning::before {
-    box-shadow: 0 142px 0 var(--primary-color), 282px 0 var(--primary-color), 282px 142px 0 var(--primary-color);
+    box-shadow: 0 142px 0 var(--primary-color), 302px 0 var(--primary-color), 302px 142px 0 var(--primary-color);
+  }
+}
+@media only screen and (min-width: 64em) {
+  .skills__container--learning::before {
+    box-shadow: 0 182px 0 var(--primary-color), 362px 0 var(--primary-color), 362px 182px 0 var(--primary-color);
   }
 }
 .skills__container--learning .skills__container__headline::after {
@@ -1240,7 +1273,7 @@ html {
   .menu__button.menu--open {
     top: 50%;
     left: 50%;
-    transform: translate3d(365px, -267px, 0);
+    transform: translate3d(365px, -267px, 0) !important;
   }
 }
 .menu__button.menu--open span:nth-of-type(1) {
@@ -1375,6 +1408,7 @@ form {
   display: grid;
   place-items: center;
   pointer-events: none;
+  overflow: hidden;
 }
 @media only screen and (min-width: 48em) {
   .preloader__img {
@@ -1421,107 +1455,107 @@ form {
 
 @keyframes glitch-animation-3 {
   0% {
-    clip-path: polygon(0% 6%, 100% 7%, 0% 24%, 0% 8%);
-    opacity: 0.4;
-    left: -2%;
-  }
-  0.05% {
-    clip-path: polygon(0% 17%, 100% 25%, 0% 13%, 0% 34%);
-    opacity: 0.1;
-    left: -1%;
-  }
-  0.1% {
-    clip-path: polygon(0% 31%, 100% 6%, 0% 17%, 0% 20%);
-    opacity: 0.2;
+    clip-path: polygon(0% 18%, 100% 32%, 0% 9%, 0% 23%);
+    opacity: 0.7;
     left: -3%;
   }
-  0.15% {
-    clip-path: polygon(0% 8%, 100% 35%, 0% 21%, 0% 28%);
-    opacity: 0.3;
-    left: 0%;
-  }
-  0.2% {
-    clip-path: polygon(0% 19%, 100% 13%, 0% 6%, 0% 24%);
-    opacity: 0.7;
+  0.05% {
+    clip-path: polygon(0% 32%, 100% 20%, 0% 34%, 0% 35%);
+    opacity: 0.6;
     left: -2%;
   }
-  0.25% {
-    clip-path: polygon(0% 31%, 100% 31%, 0% 20%, 0% 17%);
+  0.1% {
+    clip-path: polygon(0% 30%, 100% 33%, 0% 28%, 0% 13%);
     opacity: 0.8;
     left: -2%;
   }
-  0.3% {
-    clip-path: polygon(0% 22%, 100% 22%, 0% 21%, 0% 26%);
-    opacity: 0.5;
-    left: -1%;
+  0.15% {
+    clip-path: polygon(0% 32%, 100% 17%, 0% 24%, 0% 29%);
+    opacity: 0.9;
+    left: -2%;
   }
-  0.35% {
-    clip-path: polygon(0% 18%, 100% 28%, 0% 9%, 0% 19%);
+  0.2% {
+    clip-path: polygon(0% 17%, 100% 35%, 0% 14%, 0% 34%);
     opacity: 0.1;
-    left: -1%;
-  }
-  0.4% {
-    clip-path: polygon(0% 14%, 100% 14%, 0% 11%, 0% 21%);
-    opacity: 0.7;
     left: 0%;
   }
+  0.25% {
+    clip-path: polygon(0% 24%, 100% 23%, 0% 35%, 0% 12%);
+    opacity: 0.1;
+    left: -2%;
+  }
+  0.3% {
+    clip-path: polygon(0% 34%, 100% 13%, 0% 21%, 0% 6%);
+    opacity: 0.9;
+    left: -3%;
+  }
+  0.35% {
+    clip-path: polygon(0% 11%, 100% 21%, 0% 23%, 0% 29%);
+    opacity: 0.3;
+    left: 0%;
+  }
+  0.4% {
+    clip-path: polygon(0% 6%, 100% 28%, 0% 19%, 0% 16%);
+    opacity: 0.2;
+    left: -2%;
+  }
   0.45% {
-    clip-path: polygon(0% 11%, 100% 16%, 0% 35%, 0% 9%);
+    clip-path: polygon(0% 24%, 100% 12%, 0% 12%, 0% 31%);
     opacity: 0.6;
     left: -3%;
   }
   0.5% {
-    clip-path: polygon(0% 18%, 100% 25%, 0% 14%, 0% 9%);
-    opacity: 0.9;
-    left: -1%;
-  }
-  0.55% {
-    clip-path: polygon(0% 26%, 100% 8%, 0% 14%, 0% 12%);
-    opacity: 0.1;
+    clip-path: polygon(0% 25%, 100% 10%, 0% 30%, 0% 21%);
+    opacity: 1;
     left: -3%;
   }
+  0.55% {
+    clip-path: polygon(0% 12%, 100% 28%, 0% 17%, 0% 10%);
+    opacity: 0.3;
+    left: -2%;
+  }
   0.6% {
-    clip-path: polygon(0% 14%, 100% 19%, 0% 24%, 0% 14%);
-    opacity: 0.2;
-    left: -1%;
+    clip-path: polygon(0% 30%, 100% 14%, 0% 12%, 0% 17%);
+    opacity: 0.4;
+    left: -2%;
   }
   0.65% {
-    clip-path: polygon(0% 7%, 100% 34%, 0% 7%, 0% 25%);
-    opacity: 0.7;
+    clip-path: polygon(0% 20%, 100% 34%, 0% 7%, 0% 28%);
+    opacity: 0.1;
     left: 0%;
   }
   0.7% {
-    clip-path: polygon(0% 7%, 100% 8%, 0% 26%, 0% 8%);
-    opacity: 0.6;
-    left: -1%;
+    clip-path: polygon(0% 19%, 100% 11%, 0% 30%, 0% 12%);
+    opacity: 0.8;
+    left: -3%;
   }
   0.75% {
-    clip-path: polygon(0% 33%, 100% 7%, 0% 27%, 0% 16%);
-    opacity: 0.5;
-    left: -1%;
-  }
-  0.8% {
-    clip-path: polygon(0% 31%, 100% 19%, 0% 8%, 0% 34%);
+    clip-path: polygon(0% 9%, 100% 18%, 0% 14%, 0% 12%);
     opacity: 0.1;
     left: -3%;
   }
+  0.8% {
+    clip-path: polygon(0% 24%, 100% 13%, 0% 11%, 0% 29%);
+    opacity: 0.5;
+    left: -1%;
+  }
   0.85% {
-    clip-path: polygon(0% 6%, 100% 31%, 0% 28%, 0% 23%);
-    opacity: 0.4;
+    clip-path: polygon(0% 11%, 100% 22%, 0% 17%, 0% 9%);
+    opacity: 0.8;
     left: -1%;
   }
   0.9% {
-    clip-path: polygon(0% 10%, 100% 11%, 0% 21%, 0% 17%);
-    opacity: 0.9;
+    clip-path: polygon(0% 33%, 100% 29%, 0% 18%, 0% 28%);
+    opacity: 0.5;
     left: -1%;
   }
   0.95% {
-    clip-path: polygon(0% 7%, 100% 28%, 0% 17%, 0% 23%);
-    opacity: 1;
-    left: -2%;
+    clip-path: polygon(0% 23%, 100% 30%, 0% 21%, 0% 19%);
+    opacity: 0.9;
+    left: -3%;
   }
   1% {
-    clip-path: polygon(0% 11%, 100% 9%, 0% 18%, 0% 20%);
+    clip-path: polygon(0% 8%, 100% 6%, 0% 19%, 0% 9%);
     opacity: 0.7;
     left: -3%;
   }

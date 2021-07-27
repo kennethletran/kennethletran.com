@@ -24,8 +24,13 @@
         282px 206px 0 var(--primary-color);
 
       @include breakpoint-up(medium) {
-        box-shadow: 0 217px 0 var(--primary-color), 282px 0 var(--primary-color),
-          282px 217px 0 var(--primary-color);
+        box-shadow: 0 217px 0 var(--primary-color), 302px 0 var(--primary-color),
+          302px 217px 0 var(--primary-color);
+      }
+
+      @include breakpoint-up(large) {
+        box-shadow: 0 257px 0 var(--primary-color), 362px 0 var(--primary-color),
+          362px 257px 0 var(--primary-color);
       }
     }
   }
@@ -37,8 +42,13 @@
         282px 134px 0 var(--primary-color);
 
       @include breakpoint-up(medium) {
-        box-shadow: 0 142px 0 var(--primary-color), 282px 0 var(--primary-color),
-          282px 142px 0 var(--primary-color);
+        box-shadow: 0 142px 0 var(--primary-color), 302px 0 var(--primary-color),
+          302px 142px 0 var(--primary-color);
+      }
+
+      @include breakpoint-up(large) {
+        box-shadow: 0 182px 0 var(--primary-color), 362px 0 var(--primary-color),
+          362px 182px 0 var(--primary-color);
       }
     }
     .skills__container__headline {

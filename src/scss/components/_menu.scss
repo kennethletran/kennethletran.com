@@ -46,7 +46,7 @@
     @include breakpoint-up(large) {
       top: 50%;
       left: 50%;
-      transform: translate3d(365px, -267px, 0);
+      transform: translate3d(365px, -267px, 0) !important;
     }
 
     span {

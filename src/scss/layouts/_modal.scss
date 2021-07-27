@@ -128,6 +128,7 @@
 
 body.prevent-scroll {
   padding-right: 0.4rem;
+  overflow: hidden;
 
   @-moz-document url-prefix() {
     padding-right: 0.75rem;

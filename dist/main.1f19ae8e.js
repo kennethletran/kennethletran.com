@@ -202,33 +202,114 @@ var menuModalOuter = document.querySelector('.menu__modal--outer');
 var heroBtn = document.querySelector('.hero__button');
 var body = document.body; // GSAP Animations
 
-var headline = CSSRulePlugin.getRule(".headline-reveal::after");
+var headline = CSSRulePlugin.getRule('.headline-reveal::after');
 var landingAnim = gsap.timeline();
 landingAnim.to('.preloader', {
   opacity: 0,
   ease: 'power4.in'
 }, 4).from('.hero__picture', {
-  duration: 1,
-  scaleX: .95,
-  scaleY: .95,
   opacity: 0,
-  ease: "slow"
+  yPercent: 30,
+  scale: 1.2,
+  duration: 1.75
 }).to(headline, {
-  duration: 1.2,
   cssRule: {
     scaleY: 0
-  }
-}, "-=1").from('.menu__button', {
-  duration: .75,
+  },
+  duration: 1.2
+}, '-=1.25').from('.menu__button', {
   opacity: 0,
-  y: 5,
-  ease: "slow"
-}, "-=0.5").from('.hero__introduction', {
-  duration: 1,
+  xPercent: 25,
+  ease: 'slow',
+  duration: 1.5
+}, '-=0.5').from('.hero__introduction', {
   opacity: 0,
-  y: 50,
-  stagger: .2
-}, "-=.75"); // Modal
+  yPercent: 25,
+  stagger: 0.3,
+  duration: 1.25
+}, '-=0.75').from('.hero__button', {
+  opacity: 0,
+  duration: 1.25,
+  yPercent: 10
+}, '-=0.75');
+var sectionHeadlines = gsap.utils.toArray('.section-headline');
+sectionHeadlines.forEach(function (el) {
+  gsap.from(el, {
+    opacity: 0,
+    yPercent: 20,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: el,
+      start: 'top 75%',
+      end: '+=500px',
+      toggleActions: 'play pause resume pause'
+    }
+  });
+}); // var projectSection = gsap.utils.toArray('.projects__card');
+// projectSection.forEach((el) => {
+//   var projectEl = gsap.timeline({
+//     defaults: {
+//       opacity: 0,
+//       ease: 'power4.inOut'
+//     },
+//     scrollTrigger: {
+//       trigger: el,
+//       start: 'top center',
+//       end: 'top 100px',
+//       toggleActions: "play complete resume pause",
+//     }
+//   });
+// });
+// projectEl.from(el, {
+//   scaleX: 0,
+//   duration: .75
+// })
+// .from('.projects__card__screenshot', {
+//   duration: 1,
+//   scale: 1.3
+// })
+// .from('.projects__title', {
+//   yPercent: 25,
+//   duration: 1.25
+// })
+// .from('.projects__info', {
+//   yPercent: 25,
+//   duration: 1
+// })
+// .from('.projects__links', {
+//   yPercent: 10,
+//   duration: .75
+// });
+// projectSection.from('.projects__card', {
+//   xPercent: 25,
+//   scaleX: 0,
+//   duration: 2,
+// })
+// projectSection.from('.projects__card__screenshot', {
+//   duration: 1,
+//   scale: 1.2
+// })
+// projectSection.from('.projects__title', {
+//   yPercent: 25,
+//   duration: 1.5
+// })
+// projectSection.from('.projects__info', {
+//   yPercent: 25,
+//   duration: 1.25
+// })
+// projectSection.from('.projects__links', {
+//   yPercent: 10,
+//   duration: 1
+// })
+// let skillContainers = gsap.utils.toArray('.skills__container');
+// skillContainers.forEach((el) => {
+//   gsap.from(el, {
+//     scaleY: 0,
+//     duration: 1.5,
+//     ease: 'power4.in'
+//   });
+// });
+// Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
@@ -277,8 +358,15 @@ function handleMenuClick() {
     modalFadeIn();
     keepScrollPosition();
   }
-} // Open/close modal when menu is clicked
+} // Prevent scroll during preloader
 
+
+window.addEventListener('load', function () {
+  body.classList.add('prevent-scroll');
+  setTimeout(function () {
+    body.classList.remove('prevent-scroll');
+  }, 4500);
+}); // Open/close modal when menu is clicked
 
 menu.addEventListener('click', handleMenuClick);
 heroBtn.addEventListener('click', handleMenuClick); // Allow users to close modal by clicking outside of modal or by pressing ESC key
@@ -303,8 +391,8 @@ menuModalOuter.addEventListener('click', function (e) {
     returnToScrollPosition();
   }
 });
-window.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
     menu.classList.remove('menu--open');
     menuModalOuter.classList.remove('modal--open');
     menuModalInner.classList.remove('modal--open');
@@ -353,7 +441,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39349" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39689" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

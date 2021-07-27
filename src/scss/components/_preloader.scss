@@ -11,6 +11,7 @@
   display: grid;
   place-items: center;
   pointer-events: none;
+  overflow: hidden;
 
   &__img {
     @include breakpoint-up(medium) {

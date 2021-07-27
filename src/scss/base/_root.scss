@@ -113,4 +113,8 @@ body {
     margin-bottom: 16rem;
     max-width: min(900px, 100%);
   }
+
+  @include breakpoint-up(large) {
+    max-width: min(1100px, 100%);
+  }
 }

@@ -9,7 +9,7 @@
     opacity: 0;
 
     @include breakpoint-up(medium) {
-      top: 6rem;
+      top: 2rem;
       left: 50%;
       transform: translateX(-47%) scale(0.8);
       opacity: 0.3;
@@ -31,7 +31,7 @@
       top: 38%;
     }
     @include breakpoint-up(medium) {
-      top: 28%;
+      top: 73rem;
       left: 50%;
     }
   }
@@ -41,7 +41,7 @@
     stroke: var(--decoration-color);
 
     @include breakpoint-up(medium) {
-      top: 79%;
+      bottom: 60rem;
       right: 50%;
       opacity: 1;
       transform: scale(-1);
@@ -74,7 +74,7 @@
     }
 
     @include breakpoint-up(medium) {
-      top: 67%;
+      top: 170rem;
     }
   }
 
