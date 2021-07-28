@@ -31,7 +31,6 @@ let projectSection = gsap.timeline({
     trigger: '.projects',
     start: 'top 70%',
     end: 'center top',
-    markers: true,
     toggleActions: 'play pause resume pause'
   }
 });
@@ -46,7 +45,7 @@ projectSection.from('.projects__headline', {
 .from('.em__card', {
   scaleX: 0,
   duration: .75
-})
+}, '-=1')
 .from('.em__card__screenshot', {
   scale: 1.3,
   xPercent: -10,

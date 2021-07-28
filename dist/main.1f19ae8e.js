@@ -257,7 +257,7 @@ projectSection.from('.projects__headline', {
 }, '-=0.5').from('.em__card', {
   scaleX: 0,
   duration: .75
-}).from('.em__card__screenshot', {
+}, '-=1').from('.em__card__screenshot', {
   scale: 1.3,
   xPercent: -10,
   duration: 1
@@ -426,7 +426,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41547" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43565" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
