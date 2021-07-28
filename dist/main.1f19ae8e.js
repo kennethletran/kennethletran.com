@@ -201,6 +201,7 @@ var menuModalInner = document.querySelector('.menu__modal--inner');
 var menuModalOuter = document.querySelector('.menu__modal--outer');
 var heroBtn = document.querySelector('.hero__button');
 var body = document.body; // GSAP Animations
+// Landing Timeline
 
 var headline = CSSRulePlugin.getRule('.headline-reveal::after');
 var landingAnim = gsap.timeline();
@@ -210,7 +211,7 @@ landingAnim.to('.preloader', {
 }, 4).from('.hero__picture', {
   opacity: 0,
   yPercent: 30,
-  scale: 1.2,
+  scale: 1.3,
   duration: 1.75
 }).to(headline, {
   cssRule: {
@@ -231,77 +232,61 @@ landingAnim.to('.preloader', {
   opacity: 0,
   duration: 1.25,
   yPercent: 10
-}, '-=0.75');
-var sectionHeadlines = gsap.utils.toArray('.section-headline');
-sectionHeadlines.forEach(function (el) {
-  gsap.from(el, {
+}, '-=0.75'); // Project Timeline
+// TODO: wrap the card elem in div block with overflow hidden to create effect similar to headline -- current effect shows blurriness from box-shadow
+
+var projectSection = gsap.timeline({
+  defaults: {
     opacity: 0,
-    yPercent: 20,
-    duration: 1.5,
-    scrollTrigger: {
-      trigger: el,
-      start: 'top 75%',
-      end: '+=500px',
-      toggleActions: 'play pause resume pause'
-    }
-  });
-}); // var projectSection = gsap.utils.toArray('.projects__card');
-// projectSection.forEach((el) => {
-//   var projectEl = gsap.timeline({
-//     defaults: {
-//       opacity: 0,
-//       ease: 'power4.inOut'
-//     },
-//     scrollTrigger: {
-//       trigger: el,
-//       start: 'top center',
-//       end: 'top 100px',
-//       toggleActions: "play complete resume pause",
-//     }
-//   });
-// });
-// projectEl.from(el, {
-//   scaleX: 0,
-//   duration: .75
-// })
-// .from('.projects__card__screenshot', {
-//   duration: 1,
-//   scale: 1.3
-// })
-// .from('.projects__title', {
-//   yPercent: 25,
-//   duration: 1.25
-// })
-// .from('.projects__info', {
-//   yPercent: 25,
-//   duration: 1
-// })
-// .from('.projects__links', {
-//   yPercent: 10,
-//   duration: .75
-// });
-// projectSection.from('.projects__card', {
-//   xPercent: 25,
-//   scaleX: 0,
-//   duration: 2,
-// })
-// projectSection.from('.projects__card__screenshot', {
-//   duration: 1,
-//   scale: 1.2
-// })
-// projectSection.from('.projects__title', {
-//   yPercent: 25,
-//   duration: 1.5
-// })
-// projectSection.from('.projects__info', {
-//   yPercent: 25,
-//   duration: 1.25
-// })
-// projectSection.from('.projects__links', {
-//   yPercent: 10,
-//   duration: 1
-// })
-// let skillContainers = gsap.utils.toArray('.skills__container');
+    ease: 'power4.inOut'
+  },
+  scrollTrigger: {
+    trigger: '.projects',
+    start: 'top 70%',
+    end: 'center top',
+    markers: true,
+    toggleActions: 'play pause resume pause'
+  }
+});
+projectSection.from('.projects__headline', {
+  yPercent: 20,
+  duration: 1
+}).from('.projects__subheadline', {
+  yPercent: 20,
+  duration: 0.9
+}, '-=0.5').from('.em__card', {
+  scaleX: 0,
+  duration: .75
+}).from('.em__card__screenshot', {
+  scale: 1.3,
+  xPercent: -10,
+  duration: 1
+}, '-=0.5').from('.em__card__title', {
+  yPercent: 20,
+  duration: 1
+}, '-=0.2').from('.em__card__info', {
+  yPercent: 10,
+  duration: 1.25
+}, '-=0.5').from('.em__card__links', {
+  yPercent: 10,
+  duration: 0.75
+}, '-=0.25').from('.hch__card', {
+  scaleX: 0,
+  duration: 0.75
+}).from('.hch__card__screenshot', {
+  scale: 1.3,
+  xPercent: -10,
+  duration: 1
+}, '-=0.5').from('.hch__card__title', {
+  yPercent: 20,
+  duration: 1
+}, '-=0.2').from('.hch__card__info', {
+  yPercent: 10,
+  duration: 1.25
+}, '-=0.5').from('.hch__card__links', {
+  yPercent: 10,
+  duration: 0.75
+}, '-=0.25'); // let skillContainers = gsap.utils.toArray('.skills__container');
 // skillContainers.forEach((el) => {
 //   gsap.from(el, {
 //     scaleY: 0,
@@ -441,7 +426,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39689" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41547" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
