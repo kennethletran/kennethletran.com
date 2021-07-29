@@ -10,16 +10,13 @@
   &__headline {
     line-height: 1;
     letter-spacing: 0.1rem;
+    position: relative;
 
     &--subheadline {
       font-size: 2rem;
       font-size: 1.8rem;
       font-weight: 600;
       color: var(--text-color);
-    }
-
-    &--headline {
-      display: block;
     }
   }
   &__info {
@@ -57,5 +54,21 @@
       font-size: 1.6rem;
       margin-bottom: 4rem;
     }
+  }
+}
+// GSAP reveal animation
+.footer-reveal {
+  display: block;
+  overflow: hidden;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transform-origin: 0 0;
+    background: #192939;
   }
 }

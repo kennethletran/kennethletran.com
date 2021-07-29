@@ -203,7 +203,7 @@ var heroBtn = document.querySelector('.hero__button');
 var body = document.body; // GSAP Animations
 // Landing Timeline
 
-var headline = CSSRulePlugin.getRule('.headline-reveal::after');
+var heroHeadline = CSSRulePlugin.getRule('.headline-reveal::after');
 var landingAnim = gsap.timeline();
 landingAnim.to('.preloader', {
   opacity: 0,
@@ -213,7 +213,7 @@ landingAnim.to('.preloader', {
   yPercent: 30,
   scale: 1.3,
   duration: 1.75
-}).to(headline, {
+}).to(heroHeadline, {
   cssRule: {
     scaleY: 0
   },
@@ -226,75 +226,136 @@ landingAnim.to('.preloader', {
 }, '-=0.5').from('.hero__introduction', {
   opacity: 0,
   yPercent: 25,
-  stagger: 0.3,
-  duration: 1.25
-}, '-=0.75').from('.hero__button', {
+  stagger: 0.2,
+  duration: 1
+}, '-=1.25').from('.hero__button', {
   opacity: 0,
   duration: 1.25,
   yPercent: 10
-}, '-=0.75'); // Project Timeline
-// TODO: wrap the card elem in div block with overflow hidden to create effect similar to headline -- current effect shows blurriness from box-shadow
+}, '-=0.75'); // Projects Section Timeline
 
+var projectCard = CSSRulePlugin.getRule('.project-reveal-em::after');
+var projectCardTwo = CSSRulePlugin.getRule('.project-reveal-hch::after');
 var projectSection = gsap.timeline({
   defaults: {
-    opacity: 0,
     ease: 'power4.inOut'
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 70%',
+    start: 'top 80%',
     end: 'center top',
-    markers: true,
-    toggleActions: 'play pause resume pause'
+    toggleActions: 'play none none pause'
   }
 });
 projectSection.from('.projects__headline', {
-  yPercent: 20,
+  opacity: 0,
+  yPercent: -20,
   duration: 1
 }).from('.projects__subheadline', {
-  yPercent: 20,
+  opacity: 0,
+  yPercent: -20,
   duration: 0.9
-}, '-=0.5').from('.em__card', {
-  scaleX: 0,
-  duration: .75
-}).from('.em__card__screenshot', {
-  scale: 1.3,
-  xPercent: -10,
-  duration: 1
+}, '-=0.5').to(projectCard, {
+  cssRule: {
+    scaleX: 0
+  },
+  duration: 0.65
+}, '-=0.5').from('.em__card__screenshot', {
+  opacity: 0,
+  scale: 1.4,
+  duration: 1.4
 }, '-=0.5').from('.em__card__title', {
+  opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.2').from('.em__card__info', {
+}, '-=0.8').from('.em__card__info', {
+  opacity: 0,
   yPercent: 10,
-  duration: 1.25
+  duration: 1
 }, '-=0.5').from('.em__card__links', {
-  yPercent: 10,
+  opacity: 0,
   duration: 0.75
-}, '-=0.25').from('.hch__card', {
-  scaleX: 0,
-  duration: 0.75
+}, '-=0.35').to(projectCardTwo, {
+  cssRule: {
+    scaleX: 0
+  },
+  duration: 0.65
 }).from('.hch__card__screenshot', {
-  scale: 1.3,
-  xPercent: -10,
-  duration: 1
+  opacity: 0,
+  scale: 1.4,
+  duration: 1.4
 }, '-=0.5').from('.hch__card__title', {
+  opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.2').from('.hch__card__info', {
+}, '-=0.8').from('.hch__card__info', {
+  opacity: 0,
   yPercent: 10,
-  duration: 1.25
+  duration: 1
 }, '-=0.5').from('.hch__card__links', {
-  yPercent: 10,
+  opacity: 0,
   duration: 0.75
-}, '-=0.25'); // let skillContainers = gsap.utils.toArray('.skills__container');
-// skillContainers.forEach((el) => {
-//   gsap.from(el, {
-//     scaleY: 0,
-//     duration: 1.5,
-//     ease: 'power4.in'
-//   });
-// });
-// Modal
+}, '-=0.35'); // Skills Section Timeline
+
+var skillSection = gsap.timeline({
+  defaults: {
+    ease: 'power4.inOut'
+  },
+  scrollTrigger: {
+    trigger: '.skills',
+    start: 'top 80%',
+    end: 'center top',
+    toggleActions: 'play none none pause'
+  }
+});
+skillSection.from('.skills__headline', {
+  opacity: 0,
+  yPercent: -20,
+  duration: 1
+}).from('.skills__subheadline', {
+  opacity: 0,
+  yPercent: -20,
+  duration: 0.9
+}, '-=0.5');
+var skillTitle = CSSRulePlugin.getRule('.skills__container__headline::after');
+var typeWriter = gsap.timeline({
+  repeat: -1,
+  repeatDelay: 0.5
+});
+typeWriter.fromTo(skillTitle, {
+  opacity: 0
+}, {
+  opacity: 1,
+  duration: .25,
+  ease: 'none'
+}); // Footer Section Timeline
+
+var footerHeadline = CSSRulePlugin.getRule('.footer-reveal::after');
+var footerSection = gsap.timeline({
+  defaults: {
+    ease: 'power4.inOut'
+  },
+  scrollTrigger: {
+    trigger: '.footer'
+  }
+});
+footerSection.to(footerHeadline, {
+  cssRule: {
+    scaleY: 0
+  },
+  duration: 2.5
+});
+footerSection.from('.footer__info', {
+  opacity: 0,
+  yPercent: 20,
+  duration: 1
+}, '-=0.5').from('.footer__socials', {
+  opacity: 0,
+  duration: 1
+}, '-=0.3').from('.footer__copyright', {
+  opacity: 0,
+  duration: 1.25
+}, '-=0.25'); // Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
@@ -426,7 +487,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41547" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35937" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
