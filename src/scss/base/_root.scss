@@ -93,6 +93,10 @@ body {
   @include breakpoint-up(medium) {
     margin-bottom: 8rem;
   }
+
+  @include breakpoint-up(large) {
+    margin-bottom: 10rem;
+  }
 }
 
 .headline-spacer {
@@ -115,6 +119,10 @@ body {
   }
 
   @include breakpoint-up(large) {
+    max-width: min(1000px, 100%);
+  }
+
+  @include breakpoint-up(xlarge) {
     max-width: min(1100px, 100%);
   }
 }

@@ -6,6 +6,7 @@
   flex-direction: column;
   position: relative;
   place-self: center;
+  transform-origin: center center;
 
   &::before {
     content: "";
@@ -24,8 +25,8 @@
         282px 206px 0 var(--primary-color);
 
       @include breakpoint-up(medium) {
-        box-shadow: 0 217px 0 var(--primary-color), 302px 0 var(--primary-color),
-          302px 217px 0 var(--primary-color);
+        box-shadow: 0 217px 0 var(--primary-color), 303px 0 var(--primary-color),
+          303px 217px 0 var(--primary-color);
       }
 
       @include breakpoint-up(large) {

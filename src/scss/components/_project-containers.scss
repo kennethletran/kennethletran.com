@@ -4,45 +4,71 @@
   &__card {
     height: 200px;
     margin-bottom: 2rem;
-
-    @include breakpoint-up(xsmall) {
-      height: 250px;
-    }
-
-    @include breakpoint-up(medium) {
-      height: 270px;
-      width: 450px;
-      margin-bottom: 0;
-    }
-
     position: relative;
     -webkit-clip-path: polygon(
-      100% 0%,
       0% 0%,
-      0% 52%,
-      1% 55%,
+      0% 15%,
+      1% 18%,
       1% 85%,
       0% 88%,
       0% 100%,
-      93% 100%,
-      100% 91%
+      100% 100%,
+      100% 88%,
+      99% 85%,
+      99% 18%,
+      100% 15%,
+      100% 0%
     );
     clip-path: polygon(
-      100% 0%,
       0% 0%,
-      0% 52%,
-      1% 55%,
+      0% 15%,
+      1% 18%,
       1% 85%,
       0% 88%,
       0% 100%,
-      93% 100%,
-      100% 91%
+      100% 100%,
+      100% 88%,
+      99% 85%,
+      99% 18%,
+      100% 15%,
+      100% 0%
     );
     background-color: var(--container-bg-color);
     place-self: center;
     display: flex;
     justify-content: center;
     padding: 0 2rem;
+
+    // 500px - card container becomes flexible w/ size
+    @media (min-width: 31.25em) {
+      clip-path: polygon(
+        0% 0%,
+        0% 15%,
+        1% 18%,
+        1% 85%,
+        0% 88%,
+        0% 100%,
+        100% 100%,
+        100% 0%
+      );
+    }
+
+    @include breakpoint-up(small) {
+      clip-path: polygon(
+        0% 0%,
+        0% 15%,
+        1% 18%,
+        1% 85%,
+        0% 88%,
+        0% 100%,
+        100% 100%,
+        100% 88%,
+        99% 85%,
+        99% 18%,
+        100% 15%,
+        100% 0%
+      );
+    }
 
     &::before {
       content: "";
@@ -52,56 +78,84 @@
       height: 100%;
       width: 4%;
       background-color: var(--primary-color);
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      right: 8px;
-      bottom: -10%;
-      height: 26%;
-      width: 4%;
-      transform: rotate(49.5deg);
-      background-color: var(--primary-color);
+      box-shadow: 288px 0 0 var(--primary-color);
 
-      // 405px viewport
-      @media (min-width: 25.3125em) {
-        transform: rotate(53deg);
-      }
-
-      // 440px
-      @media (min-width: 27.5em) {
-        transform: rotate(55deg);
-      }
-
-      // 480px
-      @include breakpoint-up(xsmall) {
-        transform: rotate(47deg);
-      }
-
-      // 500px
       @media (min-width: 31.25em) {
-        transform: rotate(49deg);
+        box-shadow: none;
       }
 
-      // 535px
-      @media (min-width: 33.4375em) {
-        transform: rotate(51deg);
+      @include breakpoint-up(small) {
+        box-shadow: 499px 0 0 var(--primary-color);
       }
 
-      // 600px
-      @media (min-width: 37.5em) {
-        transform: rotate(54deg);
-      }
-
-      // 635px
-      @media (min-width: 39.6875em) {
-        transform: rotate(56deg);
-      }
-
-      // 768px
       @include breakpoint-up(medium) {
-        transform: rotate(51deg);
+        box-shadow: 432px 0 0 var(--primary-color);
       }
     }
+
+    @include breakpoint-up(xsmall) {
+      height: 250px;
+    }
+
+    @include breakpoint-up(small) {
+      height: 265px;
+    }
+
+    @include breakpoint-up(medium) {
+      height: 270px;
+      width: 450px;
+      margin-bottom: 0;
+    }
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: 8px;
+    //   bottom: -10%;
+    //   height: 26%;
+    //   width: 4%;
+    //   transform: rotate(49.5deg);
+    //   background-color: var(--primary-color);
+
+    //   // 405px viewport
+    //   @media (min-width: 25.3125em) {
+    //     transform: rotate(53deg);
+    //   }
+
+    //   // 440px
+    //   @media (min-width: 27.5em) {
+    //     transform: rotate(55deg);
+    //   }
+
+    //   // 480px
+    //   @include breakpoint-up(xsmall) {
+    //     transform: rotate(47deg);
+    //   }
+
+    //   // 500px
+    //   @media (min-width: 31.25em) {
+    //     transform: rotate(49deg);
+    //   }
+
+    //   // 535px
+    //   @media (min-width: 33.4375em) {
+    //     transform: rotate(51deg);
+    //   }
+
+    //   // 600px
+    //   @media (min-width: 37.5em) {
+    //     transform: rotate(54deg);
+    //   }
+
+    //   // 635px
+    //   @media (min-width: 39.6875em) {
+    //     transform: rotate(56deg);
+    //   }
+
+    //   // 768px
+    //   @include breakpoint-up(medium) {
+    //     transform: rotate(51deg);
+    //   }
+    // }
   }
 }

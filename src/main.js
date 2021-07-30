@@ -11,88 +11,176 @@ const body = document.body;
 // GSAP Animations
 
 // Landing Timeline
-let headline = CSSRulePlugin.getRule('.headline-reveal::after');
+let heroHeadline = CSSRulePlugin.getRule('.headline-reveal::after');
 let landingAnim = gsap.timeline();
-landingAnim.to('.preloader', {opacity: 0, ease: 'power4.in'}, 4)
-.from('.hero__picture', {opacity: 0, yPercent: 30, scale: 1.3, duration: 1.75})
-.to(headline, {cssRule: {scaleY: 0}, duration: 1.2}, '-=1.25')
-.from('.menu__button', {opacity: 0, xPercent: 25, ease: 'slow', duration: 1.5}, '-=0.5')
-.from('.hero__introduction', {opacity: 0, yPercent: 25, stagger: 0.3, duration: 1.25}, '-=0.75')
-.from('.hero__button', {opacity: 0, duration: 1.25, yPercent: 10}, '-=0.75');
+landingAnim.to('.preloader', {
+  opacity: 0, 
+  ease: 'power4.in'
+}, 4)
+.from('.hero__picture', {
+  opacity: 0, 
+  yPercent: 30, 
+  scale: 1.3, 
+  duration: 1.75
+})
+.to(heroHeadline, {
+  cssRule: {scaleY: 0}, 
+  duration: 1.2
+}, '-=1.25')
+.from('.menu__button', {
+  opacity: 0, 
+  xPercent: 25, 
+  ease: 'slow', 
+  duration: 1.5
+}, '-=0.5')
+.from('.hero__introduction', {
+  opacity: 0, 
+  yPercent: 25, 
+  stagger: 0.2, 
+  duration: 1
+}, '-=1.25')
+.from('.hero__button', {
+  opacity: 0, 
+  duration: 1.25, 
+  yPercent: 10
+}, '-=0.75');
 
-// Project Timeline
-// TODO: wrap the card elem in div block with overflow hidden to create effect similar to headline -- current effect shows blurriness from box-shadow
+// Projects Section Timeline
+let projectCard = CSSRulePlugin.getRule('.project-reveal-em::after');
+let projectCardTwo = CSSRulePlugin.getRule('.project-reveal-hch::after');
 let projectSection = gsap.timeline({
   defaults: {
-    opacity: 0,
     ease: 'power4.inOut'
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 70%',
+    start: 'top 80%',
     end: 'center top',
+<<<<<<< HEAD
     toggleActions: 'play pause resume pause'
+=======
+    toggleActions: 'play none none pause'
+>>>>>>> working
   }
 });
 projectSection.from('.projects__headline', {
-  yPercent: 20,
+  opacity: 0,
+  yPercent: -20,
   duration: 1
 })
 .from('.projects__subheadline', {
-  yPercent: 20,
+  opacity: 0,
+  yPercent: -20,
   duration: 0.9
 }, '-=0.5')
+<<<<<<< HEAD
 .from('.em__card', {
   scaleX: 0,
   duration: .75
 }, '-=1')
+=======
+.to(projectCard, {
+  cssRule: {scaleX: 0}, 
+  duration: 0.65
+}, '-=0.5')
+>>>>>>> working
 .from('.em__card__screenshot', {
-  scale: 1.3,
-  xPercent: -10,
-  duration: 1,
+  opacity: 0,
+  scale: 1.4,
+  duration: 1.4,
 }, '-=0.5')
 .from('.em__card__title', {
+  opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.2')
+}, '-=0.8')
 .from('.em__card__info', {
+  opacity: 0,
   yPercent: 10,
-  duration: 1.25,
-}, '-=0.5')
-.from('.em__card__links', {
-  yPercent: 10,
-  duration: 0.75
-}, '-=0.25')
-.from('.hch__card', {
-  scaleX: 0,
-  duration: 0.75
-})
-.from('.hch__card__screenshot', {
-  scale: 1.3,
-  xPercent: -10,
   duration: 1,
 }, '-=0.5')
+.from('.em__card__links', {
+  opacity: 0,
+  duration: 0.75
+}, '-=0.35')
+.to(projectCardTwo, {
+  cssRule: {scaleX: 0}, 
+  duration: 0.65
+})
+.from('.hch__card__screenshot', {
+  opacity: 0,
+  scale: 1.4,
+  duration: 1.4,
+}, '-=0.5')
 .from('.hch__card__title', {
+  opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.2')
+}, '-=0.8')
 .from('.hch__card__info', {
+  opacity: 0,
   yPercent: 10,
-  duration: 1.25,
+  duration: 1,
 }, '-=0.5')
 .from('.hch__card__links', {
-  yPercent: 10,
+  opacity: 0,
   duration: 0.75
-}, '-=0.25')
+}, '-=0.35');
 
-// let skillContainers = gsap.utils.toArray('.skills__container');
-// skillContainers.forEach((el) => {
-//   gsap.from(el, {
-//     scaleY: 0,
-//     duration: 1.5,
-//     ease: 'power4.in'
-//   });
-// });
+// Skills Section Timeline
+let skillSection = gsap.timeline({
+  defaults: {
+    ease: 'power4.inOut'
+  },
+  scrollTrigger: {
+    trigger: '.skills',
+    start: 'top 80%',
+    end: 'center top',
+    toggleActions: 'play none none pause'
+  }
+});
+skillSection.from('.skills__headline', {
+  opacity: 0,
+  yPercent: -20,
+  duration: 1
+})
+.from('.skills__subheadline', {
+  opacity: 0,
+  yPercent: -20,
+  duration: 0.9
+}, '-=0.5');
+
+let skillTitle = CSSRulePlugin.getRule('.skills__container__headline::after')
+let typeWriter = gsap.timeline({repeat: -1, repeatDelay: 0.5});
+typeWriter.fromTo(skillTitle, {opacity: 0}, {opacity: 1, duration: .25, ease: 'none'});
+
+// Footer Section Timeline
+let footerHeadline = CSSRulePlugin.getRule('.footer-reveal::after');
+let footerSection = gsap.timeline({
+  defaults: {
+    ease: 'power4.inOut',
+  },
+  scrollTrigger: {
+    trigger: '.footer'
+  }
+});
+footerSection.to(footerHeadline, {
+  cssRule: {scaleY: 0}, 
+  duration: 2.5
+})
+footerSection.from('.footer__info', {
+  opacity: 0,
+  yPercent: 20,
+  duration: 1
+}, '-=0.5')
+.from('.footer__socials', {
+  opacity: 0,
+  duration: 1
+}, '-=0.3')
+.from('.footer__copyright', {
+  opacity: 0,
+  duration: 1.25
+}, '-=0.25');
 
 // Modal
 function modalFadeIn() {

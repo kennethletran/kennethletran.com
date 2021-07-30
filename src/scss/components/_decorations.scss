@@ -152,7 +152,7 @@
     &::before {
       content: "";
       position: fixed;
-      z-index: -99;
+      z-index: -999;
       background-color: var(--decoration-color);
       height: 100%;
       width: 2px;
@@ -168,7 +168,7 @@
     &::after {
       content: "";
       position: fixed;
-      z-index: -99;
+      z-index: -999;
       background-color: var(--decoration-color);
       height: 100%;
       width: 2px;
