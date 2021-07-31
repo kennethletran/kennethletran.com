@@ -56,7 +56,7 @@
             <p class="form__headline--subheadline subheadline--italic">
               For potential projects, freelance inquiries, or to simply chat.
             </p>
-            <form class="contact__form" action="" method="POST" name="contact" id="contact" aria-label="send a message">
+            <form class="contact__form" method="POST" data-netlify="true" name="Contact" id="contact" aria-labelledby="send a message">
               <input class="contact__form__name" id="name" type="text" name="name" autocomplete="name" autocorrect="off" placeholder="Name">
               <span class="contact__form__border" aria-hidden="true"></span>
               <input class="contact__form__email" id="email" type="email" name="email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Email" required="" aria-required="true">
@@ -88,11 +88,11 @@
           <span class="hero__headline--headline headline-reveal">Le-Tran</span>
         </h1>
         <div class="hero__picture__container glitch" role="img" aria-describedby="picture of the left side of Kenneth Le-Tran from the shoulder up. Kenneth Le-Tran has a manbun hairstyle and is wearing a black shirt with a necklace">
-          <div class="glitch__img"></div>
-          <div class="glitch__img" aria-hidden="true"></div>
-          <div class="glitch__img" aria-hidden="true"></div>
-          <div class="glitch__img" aria-hidden="true"></div>
-          <div class="glitch__img" aria-hidden="true"></div>
+          <div class="glitch__img glitch__img"></div>
+          <div class="glitch__img glitch__img" aria-hidden="true"></div>
+          <div class="glitch__img glitch__img" aria-hidden="true"></div>
+          <div class="glitch__img glitch__img" aria-hidden="true"></div>
+          <div class="glitch__img glitch__img" aria-hidden="true"></div>
         </div>
         <p class="hero__introduction">
           Hi, I'm Kenneth, a front end developer, on a mission to help brands
@@ -137,9 +137,8 @@
           A selection of web experiences, ranging from client work to personal
           projects
         </p>
-        <!-- TODO: add glitch effect on hover to project container -->
         <article class="projects__container element-spacer">
-          <div class="projects__card em__card project-reveal-em">
+          <div class="projects__card em__card project-reveal-em" role="img" aria-labelledby="landing page screenshot of elizaphotography.netlify.app">
             <a href="https://elizaphotography.netlify.app/" target="_blank" rel="noopener">
               <img class="projects__card__screenshot em__card__screenshot" src="/em-screenshot.69997cb8.jpg" loading="lazy" alt="screenshot of Eliza Meadows Photography landing page">
             </a>
@@ -164,7 +163,7 @@
           </div>
         </article>
         <article class="projects__container element-spacer">
-          <div class="projects__card hch__card project-reveal-hch">
+          <div class="projects__card hch__card project-reveal-hch" role="img" aria-labelledby="landing page screenshot of homecleanhouston.com">
             <a href="http://homecleanhouston.com" target="_blank" rel="noopener">
               <img class="projects__card__screenshot hch__card__screenshot" src="/hch-screenshot.d0848217.jpg" loading="lazy" alt="screenshot of Home Clean Housekeeping landing page">
             </a>

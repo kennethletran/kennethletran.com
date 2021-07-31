@@ -8,6 +8,7 @@
   --decoration-color: hsl(209, 39%, 19%);
   --primary-color: hsl(168, 100%, 50%);
   --text-color: hsl(38, 22%, 90%);
+  --text-darker-color: hsla(38, 22%, 90%, 0.8);
   --selection-color: hsl(336, 80%, 50%);
   --scrollbar-hover-color: hsl(168, 100%, 30%);
 
@@ -17,7 +18,6 @@
     sans-serif;
 
   // Transitions and Animations
-  // look into cubic beziers for custom timings
   --basic-timing: ease-in-out;
   --duration-short: 250ms;
   --duration-medium: 400ms;

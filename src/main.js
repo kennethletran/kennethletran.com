@@ -9,7 +9,6 @@ const heroBtn = document.querySelector('.hero__button');
 const body = document.body;
 
 // GSAP Animations
-
 // Landing Timeline
 let heroHeadline = CSSRulePlugin.getRule('.headline-reveal::after');
 let landingAnim = gsap.timeline();
@@ -156,7 +155,7 @@ let footerSection = gsap.timeline({
 footerSection.to(footerHeadline, {
   cssRule: {scaleY: 0}, 
   duration: 2
-}, '-=5')
+}, '-=1')
 .from('.footer__info', {
   opacity: 0,
   yPercent: 20,
@@ -173,10 +172,18 @@ footerSection.to(footerHeadline, {
 
 // Modal
 function modalFadeIn() {
-  gsap.to('.menu__modal--outer, .menu__modal--inner', { duration: .15, opacity: 1, ease: 'power4.in'});
+  gsap.to('.menu__modal--outer, .menu__modal--inner', {
+    duration: .15, 
+    opacity: 1, 
+    ease: 'power4.in'
+    });
 }
 function modalFadeOut() {
-  gsap.to('.menu__modal--outer, .menu__modal--inner', { duration: .8, opacity: 0, ease: 'power4.out'});
+  gsap.to('.menu__modal--outer, .menu__modal--inner', { 
+    duration: .5,
+    opacity: 0,
+    ease: 'power4.out'
+  });
 }
 
 // Store scroll position when menu is clicked

@@ -344,18 +344,17 @@ footerSection.to(footerHeadline, {
     scaleY: 0
   },
   duration: 2
-}, '-=5');
-footerSection.from('.footer__info', {
+}, '-=1').from('.footer__info', {
   opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=4.5').from('.footer__socials', {
+}, '-=0.5').from('.footer__socials', {
   opacity: 0,
   duration: 1
-}, '-=4.3').from('.footer__copyright', {
+}, '-=0.3').from('.footer__copyright', {
   opacity: 0,
   duration: 1.25
-}, '-=4.25'); // Modal
+}, '-=0.25'); // Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
@@ -367,7 +366,7 @@ function modalFadeIn() {
 
 function modalFadeOut() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
-    duration: .8,
+    duration: .5,
     opacity: 0,
     ease: 'power4.out'
   });
@@ -487,7 +486,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43573" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "45605" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

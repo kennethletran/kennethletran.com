@@ -18,24 +18,7 @@
         "card info"
         "card link"
         "card .";
-
       grid-gap: 0 1em;
-
-      // &:nth-of-type(2n) {
-      //   grid-template-areas:
-      //     "title card"
-      //     "info card"
-      //     "link card"
-      //     ". card";
-
-      //   & .projects__card {
-      //     transform: scaleX(-1);
-
-      //     & .projects__card__screenshot {
-      //       transform: scaleX(-1);
-      //     }
-      //   }
-      // }
     }
 
     @include breakpoint-up(large) {
