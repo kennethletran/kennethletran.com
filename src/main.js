@@ -17,7 +17,7 @@ landingAnim.to('.preloader', {
   opacity: 0, 
   ease: 'power4.in'
 }, 4)
-.from('.hero__picture', {
+.from('.hero__picture__container', {
   opacity: 0, 
   yPercent: 30, 
   scale: 1.3, 
@@ -54,7 +54,7 @@ let projectSection = gsap.timeline({
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 80%',
+    start: 'top 75%',
     end: 'center top',
     toggleActions: 'play none none pause'
   }
@@ -67,7 +67,7 @@ projectSection.from('.projects__headline', {
 .from('.projects__subheadline', {
   opacity: 0,
   yPercent: -20,
-  duration: 0.9
+  duration: 1
 }, '-=0.5')
 .to(projectCard, {
   cssRule: {scaleX: 0}, 
@@ -77,7 +77,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   scale: 1.4,
   duration: 1.4,
-}, '-=0.5')
+}, '-=0.75')
 .from('.em__card__title', {
   opacity: 0,
   yPercent: 20,
@@ -87,7 +87,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   yPercent: 10,
   duration: 1,
-}, '-=0.5')
+}, '-=0.75')
 .from('.em__card__links', {
   opacity: 0,
   duration: 0.75
@@ -95,12 +95,12 @@ projectSection.from('.projects__headline', {
 .to(projectCardTwo, {
   cssRule: {scaleX: 0}, 
   duration: 0.65
-})
+}, '-=0.35')
 .from('.hch__card__screenshot', {
   opacity: 0,
   scale: 1.4,
   duration: 1.4,
-}, '-=0.5')
+}, '-=0.75')
 .from('.hch__card__title', {
   opacity: 0,
   yPercent: 20,
@@ -110,7 +110,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   yPercent: 10,
   duration: 1,
-}, '-=0.5')
+}, '-=0.75')
 .from('.hch__card__links', {
   opacity: 0,
   duration: 0.75
@@ -137,7 +137,7 @@ skillSection.from('.skills__headline', {
   opacity: 0,
   yPercent: -20,
   duration: 0.9
-}, '-=0.5');
+}, '-=0.7');
 
 let skillTitle = CSSRulePlugin.getRule('.skills__container__headline::after')
 let typeWriter = gsap.timeline({repeat: -1, repeatDelay: 0.5});
@@ -155,21 +155,21 @@ let footerSection = gsap.timeline({
 });
 footerSection.to(footerHeadline, {
   cssRule: {scaleY: 0}, 
-  duration: 2.5
-})
+  duration: 2
+}, '-=5')
 footerSection.from('.footer__info', {
   opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.5')
+}, '-=4.5')
 .from('.footer__socials', {
   opacity: 0,
   duration: 1
-}, '-=0.3')
+}, '-=4.3')
 .from('.footer__copyright', {
   opacity: 0,
   duration: 1.25
-}, '-=0.25');
+}, '-=4.25');
 
 // Modal
 function modalFadeIn() {

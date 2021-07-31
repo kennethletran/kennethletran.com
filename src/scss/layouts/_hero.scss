@@ -21,10 +21,10 @@
 
   @include breakpoint-up(large) {
     grid-gap: 1em 7em;
+    margin-top: 16rem;
   }
 
   &__picture__container {
-    position: relative;
     grid-area: image;
     margin-bottom: 4rem;
 
@@ -94,17 +94,14 @@
   }
   &__button {
     grid-area: button;
+    width: max-content;
+
     button {
       margin: 5rem 0 0 2rem;
 
       @include breakpoint-up(medium) {
         margin: 2rem 0 0 2rem;
       }
-
-      // 1070px
-      // @media (min-width: 66.875em) {
-      //   margin: 2rem 0 -0.5rem 2rem;
-      // }
 
       @include breakpoint-up(xlarge) {
         margin: 2rem 0 -0.5rem 2rem;
@@ -115,8 +112,6 @@
 // GSAP reveal animation
 .headline-reveal {
   display: block;
-
-  // transform-origin: 100% 0 with scaleX:0 will reveal from left to right
 
   &:after {
     content: " ";

@@ -3,12 +3,13 @@
 
 // Breakpoints for Media Queries
 $breakpoints: (
-  // 480px, 640px, 768px, 1024px, 1200px
+  // 480px, 640px, 768px, 1024px, 1200px, 1400px
   xsmall: 30em,
   small: 40em,
   medium: 48em,
   large: 64em,
-  xlarge: 75em
+  xlarge: 75em,
+  xxlarge: 87.5em
 );
 
 @mixin breakpoint-up($size) {

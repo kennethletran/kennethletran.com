@@ -9,7 +9,7 @@
     opacity: 0;
 
     @include breakpoint-up(medium) {
-      top: 2rem;
+      top: -6rem;
       left: 50%;
       transform: translateX(-47%) scale(0.8);
       opacity: 0.3;

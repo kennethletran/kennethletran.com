@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kenneth Le-Tran" email="kenneth.letran@gmail.com">
     <meta name="description" content="Kenneth Le-Tran is a front end developer building creative, custom user experiences that represent a brand's visual identity.">
-    <link rel="shortcut icon" href="/893f776526c8894bef4fd705df682a99.ico" type="image/x-icon" sizes="32x32">
+    <link rel="shortcut icon" href="/favicon.df682a99.ico" type="image/x-icon" sizes="32x32">
 
     <title>Kenneth Le-Tran | Front End Developer</title>
-  </head>
+  <link rel="stylesheet" href="/main.1f19ae8e.css"></head>
 
   <body>
     <header>
-      <div class="menu__button" aria-label="menu">
+      <div class="menu__button" role="button" aria-label="menu">
         <span></span>
         <span></span>
         <span></span>
@@ -47,7 +47,7 @@
                 </a>
               </li>
               <li class="menu__socials__items">
-                <a href="/96734249eea171391af0fe98df1003e0.pdf" target="_blank" rel="noopener">Resume</a>
+                <a href="/assets/Kenneth Le-Tran Resume.pdf" target="_blank" rel="noopener">Resume</a>
               </li>
             </ul>
           </div>
@@ -59,9 +59,9 @@
             <form class="contact__form" action="" method="POST" name="contact" id="contact" aria-label="send a message">
               <input class="contact__form__name" id="name" type="text" name="name" autocomplete="name" autocorrect="off" placeholder="Name">
               <span class="contact__form__border" aria-hidden="true"></span>
-              <input class="contact__form__email" id="email" type="email" name="email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Email" required="">
+              <input class="contact__form__email" id="email" type="email" name="email address" autocomplete="email" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Email" required="" aria-required="true">
               <span class="contact__form__border" aria-hidden="true"></span>
-              <textarea class="contact__form__message" name="message" form="contact" cols="20" rows="3" placeholder="Message" required=""></textarea>
+              <textarea class="contact__form__message" name="message" form="contact" cols="20" rows="3" placeholder="Message" required="" aria-required="true"></textarea>
               <span class="contact__form__border" aria-hidden="true"></span>
               <div class="contact__form__button button-container">
                 <button class="cta" type="submit">Send</button>
@@ -74,7 +74,7 @@
       </nav>
     </header>
     <div class="preloader">
-      <img src="/d0b7e291e5db924999bd13e86d7d7699.gif" alt="preloader" class="preloader__img">
+      <img src="/loading-kenneth.6d7d7699.gif" alt="preloader" class="preloader__img">
     </div>
     <main>
       <section class="hero section-container side-spacer">
@@ -87,11 +87,13 @@
           <span class="hero__headline--headline headline-reveal">Kenneth</span>
           <span class="hero__headline--headline headline-reveal">Le-Tran</span>
         </h1>
-        <div class="hero__picture__container">
-          <img class="hero__picture glitch-picture back" src="/befb52736ec0500261460579c4b9f23b.png" alt="picture of Kenneth Le-Tran">
-          <img class="hero__picture glitch-picture front-3" src="/befb52736ec0500261460579c4b9f23b.png" alt="picture of Kenneth Le-Tran">
-          <img class="hero__picture glitch-picture front-2" src="/befb52736ec0500261460579c4b9f23b.png" alt="picture of Kenneth Le-Tran">
-          <img class="hero__picture glitch-picture front" src="/befb52736ec0500261460579c4b9f23b.png" alt="picture of Kenneth Le-Tran">
+        <!-- TODO: create aria labels or alt for these divs -->
+        <div class="hero__picture__container glitch">
+          <div class="glitch__img"></div>
+          <div class="glitch__img"></div>
+          <div class="glitch__img"></div>
+          <div class="glitch__img"></div>
+          <div class="glitch__img"></div>
         </div>
         <p class="hero__introduction">
           Hi, I'm Kenneth, a front end developer, on a mission to help brands
@@ -139,7 +141,7 @@
         <article class="projects__container element-spacer">
           <div class="projects__card em__card project-reveal-em">
             <a href="https://elizaphotography.netlify.app/" target="_blank" rel="noopener">
-              <img class="projects__card__screenshot em__card__screenshot" src="/175872401cd466e1bc7dcb4869997cb8.jpg" loading="lazy" alt="screenshot of Eliza Meadows Photography landing page">
+              <img class="projects__card__screenshot em__card__screenshot" src="/em-screenshot.69997cb8.jpg" loading="lazy" alt="screenshot of Eliza Meadows Photography landing page">
             </a>
           </div>
           <h3 class="projects__title headline-spacer em__card__title">
@@ -164,7 +166,7 @@
         <article class="projects__container element-spacer">
           <div class="projects__card hch__card project-reveal-hch">
             <a href="http://homecleanhouston.com" target="_blank" rel="noopener">
-              <img class="projects__card__screenshot hch__card__screenshot" src="/a4ab6e94e73f09f46dc93b86d0848217.jpg" loading="lazy" alt="screenshot of Home Clean Housekeeping landing page">
+              <img class="projects__card__screenshot hch__card__screenshot" src="/hch-screenshot.d0848217.jpg" loading="lazy" alt="screenshot of Home Clean Housekeeping landing page">
             </a>
           </div>
           <h3 class="projects__title headline-spacer hch__card__title">
@@ -337,7 +339,7 @@
       </div>
     </main>
 
-    <script src="/7a9076d6d94e62c13d641aa71f19ae8e.js" defer=""></script>
+    <script src="/main.1f19ae8e.js" defer=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js" integrity="sha384-qvCpZRx6XHsdywV3EzK3NsnJrhNRt93DpAhT8cjE7UUJWOT0ucBWbMLiHMgxeDUF" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/CSSRulePlugin.min.js" integrity="sha384-c9gmJ0ltXV0b2OAfLlAkL9I9v7CrwmgsDtqbw9KUqaMLwA+gNladlEA2SfQozNyu" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js" integrity="sha384-Q9RyycFNlU3ooCbMH/jb5vIgInwfXAsxkZbSq4qiKEPi74WivRKQMQAmFq139LLa" crossorigin="anonymous"></script>

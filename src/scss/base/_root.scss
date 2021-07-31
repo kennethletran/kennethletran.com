@@ -109,6 +109,7 @@ body {
 
 // Sizing
 
+// Margin bottom can be experimented with
 .section-container {
   margin: 8rem auto;
   max-width: min(640px, 100%);
@@ -119,10 +120,12 @@ body {
   }
 
   @include breakpoint-up(large) {
+    margin-bottom: 20rem;
     max-width: min(1000px, 100%);
   }
 
   @include breakpoint-up(xlarge) {
+    margin-bottom: 24rem;
     max-width: min(1100px, 100%);
   }
 }

@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"/home/kennethletran/coding/personal-portfolio/src/fonts/Michroma.woff2":[["Michroma.ad970fe9.woff2","fonts/Michroma.woff2"],"fonts/Michroma.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Regular.woff2":[["Kanit-Regular.bd443b65.woff2","fonts/Kanit-Regular.woff2"],"fonts/Kanit-Regular.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Medium.woff2":[["Kanit-Medium.a1e94fce.woff2","fonts/Kanit-Medium.woff2"],"fonts/Kanit-Medium.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-SemiBold.woff2":[["Kanit-SemiBold.efe2e742.woff2","fonts/Kanit-SemiBold.woff2"],"fonts/Kanit-SemiBold.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-ExtraBold.woff2":[["Kanit-ExtraBold.735b573b.woff2","fonts/Kanit-ExtraBold.woff2"],"fonts/Kanit-ExtraBold.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Black.woff2":[["Kanit-Black.3005afa1.woff2","fonts/Kanit-Black.woff2"],"fonts/Kanit-Black.woff2"],"/home/kennethletran/coding/personal-portfolio/src/assets/background.gif":[["background.57b7224e.gif","assets/background.gif"],"assets/background.gif"],"_css_loader":"../../../.nvm/versions/node/v12.18.3/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
+},{"/home/kennethletran/coding/personal-portfolio/src/fonts/Michroma.woff2":[["Michroma.ad970fe9.woff2","fonts/Michroma.woff2"],"fonts/Michroma.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Regular.woff2":[["Kanit-Regular.bd443b65.woff2","fonts/Kanit-Regular.woff2"],"fonts/Kanit-Regular.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Medium.woff2":[["Kanit-Medium.a1e94fce.woff2","fonts/Kanit-Medium.woff2"],"fonts/Kanit-Medium.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-SemiBold.woff2":[["Kanit-SemiBold.efe2e742.woff2","fonts/Kanit-SemiBold.woff2"],"fonts/Kanit-SemiBold.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-ExtraBold.woff2":[["Kanit-ExtraBold.735b573b.woff2","fonts/Kanit-ExtraBold.woff2"],"fonts/Kanit-ExtraBold.woff2"],"/home/kennethletran/coding/personal-portfolio/src/fonts/Kanit-Black.woff2":[["Kanit-Black.3005afa1.woff2","fonts/Kanit-Black.woff2"],"fonts/Kanit-Black.woff2"],"/home/kennethletran/coding/personal-portfolio/src/assets/background.gif":[["background.57b7224e.gif","assets/background.gif"],"assets/background.gif"],"/home/kennethletran/coding/personal-portfolio/src/assets/personal-image.png":[["personal-image.c4b9f23b.png","assets/personal-image.png"],"assets/personal-image.png"],"_css_loader":"../../../.nvm/versions/node/v12.18.3/lib/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"main.js":[function(require,module,exports) {
 "use strict";
 
 require("./scss/main.scss");
@@ -208,7 +208,7 @@ var landingAnim = gsap.timeline();
 landingAnim.to('.preloader', {
   opacity: 0,
   ease: 'power4.in'
-}, 4).from('.hero__picture', {
+}, 4).from('.hero__picture__container', {
   opacity: 0,
   yPercent: 30,
   scale: 1.3,
@@ -242,7 +242,7 @@ var projectSection = gsap.timeline({
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 80%',
+    start: 'top 75%',
     end: 'center top',
     toggleActions: 'play none none pause'
   }
@@ -254,16 +254,7 @@ projectSection.from('.projects__headline', {
 }).from('.projects__subheadline', {
   opacity: 0,
   yPercent: -20,
-  duration: 0.9
-<<<<<<< HEAD
-}, '-=0.5').from('.em__card', {
-  scaleX: 0,
-  duration: .75
-}, '-=1').from('.em__card__screenshot', {
-  scale: 1.3,
-  xPercent: -10,
   duration: 1
-=======
 }, '-=0.5').to(projectCard, {
   cssRule: {
     scaleX: 0
@@ -273,8 +264,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   scale: 1.4,
   duration: 1.4
->>>>>>> working
-}, '-=0.5').from('.em__card__title', {
+}, '-=0.75').from('.em__card__title', {
   opacity: 0,
   yPercent: 20,
   duration: 1
@@ -282,7 +272,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   yPercent: 10,
   duration: 1
-}, '-=0.5').from('.em__card__links', {
+}, '-=0.75').from('.em__card__links', {
   opacity: 0,
   duration: 0.75
 }, '-=0.35').to(projectCardTwo, {
@@ -290,11 +280,11 @@ projectSection.from('.projects__headline', {
     scaleX: 0
   },
   duration: 0.65
-}).from('.hch__card__screenshot', {
+}, '-=0.35').from('.hch__card__screenshot', {
   opacity: 0,
   scale: 1.4,
   duration: 1.4
-}, '-=0.5').from('.hch__card__title', {
+}, '-=0.75').from('.hch__card__title', {
   opacity: 0,
   yPercent: 20,
   duration: 1
@@ -302,7 +292,7 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   yPercent: 10,
   duration: 1
-}, '-=0.5').from('.hch__card__links', {
+}, '-=0.75').from('.hch__card__links', {
   opacity: 0,
   duration: 0.75
 }, '-=0.35'); // Skills Section Timeline
@@ -326,7 +316,7 @@ skillSection.from('.skills__headline', {
   opacity: 0,
   yPercent: -20,
   duration: 0.9
-}, '-=0.5');
+}, '-=0.7');
 var skillTitle = CSSRulePlugin.getRule('.skills__container__headline::after');
 var typeWriter = gsap.timeline({
   repeat: -1,
@@ -353,19 +343,19 @@ footerSection.to(footerHeadline, {
   cssRule: {
     scaleY: 0
   },
-  duration: 2.5
-});
+  duration: 2
+}, '-=5');
 footerSection.from('.footer__info', {
   opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=0.5').from('.footer__socials', {
+}, '-=4.5').from('.footer__socials', {
   opacity: 0,
   duration: 1
-}, '-=0.3').from('.footer__copyright', {
+}, '-=4.3').from('.footer__copyright', {
   opacity: 0,
   duration: 1.25
-}, '-=0.25'); // Modal
+}, '-=4.25'); // Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
@@ -497,11 +487,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43565" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35937" + '/');
->>>>>>> working
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46069" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

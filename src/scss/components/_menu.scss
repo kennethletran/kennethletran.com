@@ -19,6 +19,11 @@
     right: 3rem;
   }
 
+  @include breakpoint-up(large) {
+    top: 4rem;
+    right: 5rem;
+  }
+
   &:hover span,
   &:focus-within span,
   &:active span {
