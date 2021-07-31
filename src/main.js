@@ -157,19 +157,19 @@ footerSection.to(footerHeadline, {
   cssRule: {scaleY: 0}, 
   duration: 2
 }, '-=5')
-footerSection.from('.footer__info', {
+.from('.footer__info', {
   opacity: 0,
   yPercent: 20,
   duration: 1
-}, '-=4.5')
+}, '-=0.5')
 .from('.footer__socials', {
   opacity: 0,
   duration: 1
-}, '-=4.3')
+}, '-=0.3')
 .from('.footer__copyright', {
   opacity: 0,
   duration: 1.25
-}, '-=4.25');
+}, '-=0.25');
 
 // Modal
 function modalFadeIn() {
