@@ -294,6 +294,12 @@ body::before {
     max-width: min(1100px, 100%);
   }
 }
+@media only screen and (min-width: 87.5em) {
+  .section-container {
+    margin-bottom: 24rem;
+    max-width: min(1300px, 100%);
+  }
+}
 
 .hero {
   display: flex;
@@ -323,6 +329,11 @@ body::before {
   .hero__picture__container {
     margin-bottom: 4rem;
     place-self: center;
+  }
+}
+@media only screen and (min-width: 64em) {
+  .hero__picture__container {
+    margin-bottom: initial;
   }
 }
 .hero__picture {
@@ -677,6 +688,7 @@ body::before {
 }
 .menu__socials__items:not(:last-of-type) {
   font-size: 0;
+  width: min-content;
 }
 .menu__socials__items:last-of-type a {
   font-family: "Kanit", var(--fallback-font);
@@ -1085,6 +1097,16 @@ button {
   bottom: 10px;
   left: -5px;
 }
+@media only screen and (min-width: 75em) {
+  .corners.bottom-block {
+    bottom: -12px;
+  }
+}
+@media only screen and (min-width: 87.5em) {
+  .corners.bottom-block {
+    bottom: 2px;
+  }
+}
 
 .project__button {
   position: relative;
@@ -1394,6 +1416,7 @@ form {
 }
 .contact__form__corners.bottom-block {
   left: -8px;
+  bottom: -8px !important;
 }
 .contact__form__corners, .contact__form__corners::before {
   background-color: var(--container-bg-color);
@@ -1485,7 +1508,6 @@ form {
   height: 400px;
   height: 450px;
   width: 100%;
-  justify-self: end;
   z-index: 10;
   --gap-horizontal: 50px;
   --gap-vertical: 70px;
@@ -1517,6 +1539,18 @@ form {
   .glitch {
     height: calc(40vmax * 1.25);
     width: 35vmax;
+  }
+}
+@media only screen and (min-width: 75em) {
+  .glitch {
+    height: 600px;
+    width: 415px;
+  }
+}
+@media only screen and (min-width: 87.5em) {
+  .glitch {
+    height: 625px;
+    width: 450px;
   }
 }
 

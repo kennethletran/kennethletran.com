@@ -93,6 +93,7 @@
 
     &__items:not(:last-of-type) {
       font-size: 0;
+      width: min-content;
     }
     &__items:last-of-type a {
       font-family: "Kanit", var(--fallback-font);

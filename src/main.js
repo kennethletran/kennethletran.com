@@ -54,7 +54,7 @@ let projectSection = gsap.timeline({
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 75%',
+    start: 'top 80%',
     end: 'center top',
     toggleActions: 'play none none pause'
   }

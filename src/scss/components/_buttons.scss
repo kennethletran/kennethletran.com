@@ -107,6 +107,14 @@ button {
       bottom: 10px;
       left: -5px;
     }
+
+    @include breakpoint-up(xlarge) {
+      bottom: -12px;
+    }
+
+    @include breakpoint-up(xxlarge) {
+      bottom: 2px;
+    }
   }
 }
 

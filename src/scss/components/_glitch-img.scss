@@ -6,7 +6,6 @@
   height: 400px;
   height: 450px;
   width: 100%;
-  justify-self: end;
   z-index: 10;
 
   @include breakpoint-up(xsmall) {
@@ -26,6 +25,16 @@
   @include breakpoint-up(large) {
     height: calc(40vmax * 1.25);
     width: 35vmax;
+  }
+
+  @include breakpoint-up(xlarge) {
+    height: 600px;
+    width: 415px;
+  }
+
+  @include breakpoint-up(xxlarge) {
+    height: 625px;
+    width: 450px;
   }
 
   --gap-horizontal: 50px;

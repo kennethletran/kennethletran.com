@@ -32,6 +32,10 @@
       margin-bottom: 4rem;
       place-self: center;
     }
+
+    @include breakpoint-up(large) {
+      margin-bottom: initial;
+    }
   }
 
   &__picture {

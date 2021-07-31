@@ -242,7 +242,7 @@ var projectSection = gsap.timeline({
   },
   scrollTrigger: {
     trigger: '.projects',
-    start: 'top 75%',
+    start: 'top 80%',
     end: 'center top',
     toggleActions: 'play none none pause'
   }
@@ -487,7 +487,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46069" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

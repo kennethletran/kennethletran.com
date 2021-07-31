@@ -128,4 +128,9 @@ body {
     margin-bottom: 24rem;
     max-width: min(1100px, 100%);
   }
+
+  @include breakpoint-up(xxlarge) {
+    margin-bottom: 24rem;
+    max-width: min(1300px, 100%);
+  }
 }
