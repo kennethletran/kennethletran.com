@@ -815,7 +815,7 @@ body.prevent-scroll {
   }
 }
 .deco__spoon--hero {
-  top: 110rem;
+  top: 112rem;
   left: 9rem;
   opacity: 1;
   stroke: var(--decoration-color);
@@ -861,7 +861,7 @@ body.prevent-scroll {
   }
 }
 .deco__notch--skills {
-  top: 221rem;
+  top: 226rem;
   left: 7.8rem;
 }
 @media only screen and (min-width: 30em) {
@@ -1179,6 +1179,16 @@ button {
   width: 4%;
   background-color: var(--primary-color);
   box-shadow: 288px 0 0 var(--primary-color);
+}
+@media (min-width: 23.4375em) {
+  .projects__card::before {
+    box-shadow: 302px 0 0 var(--primary-color);
+  }
+}
+@media (min-width: 25.6875em) {
+  .projects__card::before {
+    box-shadow: 337px 0 0 var(--primary-color);
+  }
 }
 @media (min-width: 31.25em) {
   .projects__card::before {

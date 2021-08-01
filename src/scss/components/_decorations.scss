@@ -17,7 +17,7 @@
   }
 
   &__spoon--hero {
-    top: 110rem;
+    top: 112rem;
     left: 9rem;
     opacity: 1;
     stroke: var(--decoration-color);
@@ -60,7 +60,7 @@
   }
 
   &__notch--skills {
-    top: 221rem;
+    top: 226rem;
     left: 7.8rem;
 
     @include breakpoint-up(xsmall) {

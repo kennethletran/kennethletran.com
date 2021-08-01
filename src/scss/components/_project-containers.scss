@@ -80,6 +80,14 @@
       background-color: var(--primary-color);
       box-shadow: 288px 0 0 var(--primary-color);
 
+      @media (min-width: 23.4375em) {
+        box-shadow: 302px 0 0 var(--primary-color);
+      }
+
+      @media (min-width: 25.6875em) {
+        box-shadow: 337px 0 0 var(--primary-color);
+      }
+
       @media (min-width: 31.25em) {
         box-shadow: none;
       }
