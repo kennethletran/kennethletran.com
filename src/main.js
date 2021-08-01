@@ -1,7 +1,5 @@
 import './scss/main.scss';
 
-// TODO: refactor into modules if code gets cluttered
-// DOM elements
 const menu = document.querySelector('.menu__button');
 const menuModalInner = document.querySelector('.menu__modal--inner');
 const menuModalOuter = document.querySelector('.menu__modal--outer');
@@ -170,7 +168,7 @@ footerSection.to(footerHeadline, {
   duration: 1.25
 }, '-=0.25');
 
-// Modal
+// GSAP for Modal
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
     duration: .15, 
@@ -220,7 +218,7 @@ function handleMenuClick() {
   }
 }
 
-// Prevent scroll during preloader
+// Prevent scroll & hide scrollbar while preloader plays
 window.addEventListener('load', () => {
   body.classList.add('prevent-scroll');
   setTimeout(() => {
@@ -232,7 +230,7 @@ window.addEventListener('load', () => {
 menu.addEventListener('click', handleMenuClick);
 heroBtn.addEventListener('click', handleMenuClick);
 
-// Allow users to close modal by clicking outside of modal or by pressing ESC key
+// Allow users to close modal by clicking outside of modal or pressing ESC key
 menuModalOuter.addEventListener('click', function (e) {
   const clickOutside = !e.target.closest('.menu__modal--inner');
   if (clickOutside) {

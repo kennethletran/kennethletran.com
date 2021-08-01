@@ -194,8 +194,6 @@ module.hot.accept(reloadCSS);
 
 require("./scss/main.scss");
 
-// TODO: refactor into modules if code gets cluttered
-// DOM elements
 var menu = document.querySelector('.menu__button');
 var menuModalInner = document.querySelector('.menu__modal--inner');
 var menuModalOuter = document.querySelector('.menu__modal--outer');
@@ -354,7 +352,7 @@ footerSection.to(footerHeadline, {
 }, '-=0.3').from('.footer__copyright', {
   opacity: 0,
   duration: 1.25
-}, '-=0.25'); // Modal
+}, '-=0.25'); // GSAP for Modal
 
 function modalFadeIn() {
   gsap.to('.menu__modal--outer, .menu__modal--inner', {
@@ -403,7 +401,7 @@ function handleMenuClick() {
     modalFadeIn();
     keepScrollPosition();
   }
-} // Prevent scroll during preloader
+} // Prevent scroll & hide scrollbar while preloader plays
 
 
 window.addEventListener('load', function () {
@@ -414,7 +412,7 @@ window.addEventListener('load', function () {
 }); // Open/close modal when menu is clicked
 
 menu.addEventListener('click', handleMenuClick);
-heroBtn.addEventListener('click', handleMenuClick); // Allow users to close modal by clicking outside of modal or by pressing ESC key
+heroBtn.addEventListener('click', handleMenuClick); // Allow users to close modal by clicking outside of modal or pressing ESC key
 
 menuModalOuter.addEventListener('click', function (e) {
   var clickOutside = !e.target.closest('.menu__modal--inner');
@@ -486,7 +484,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35411" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41357" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

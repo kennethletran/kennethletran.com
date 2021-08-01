@@ -1,7 +1,7 @@
+// Google Chrome
 ::-webkit-scrollbar {
   background-color: var(--bg-color);
   width: 0.5rem;
-  // width: 0;
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
@@ -11,8 +11,8 @@
   }
 }
 
+// Firefox
 html {
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--bg-color);
-  // scrollbar-width: none;
 }

@@ -76,6 +76,10 @@
     @include breakpoint-up(medium) {
       top: 170rem;
     }
+
+    @include breakpoint-up(large) {
+      top: 58%;
+    }
   }
 
   &__diamond {
@@ -116,22 +120,7 @@
     }
   }
 }
-.reversed {
-  transform: scaleX(-1);
-}
-.transparent {
-  font-size: 10rem;
-  font-weight: 900;
-  letter-spacing: 1.5rem;
-  text-transform: uppercase;
-  -webkit-text-stroke-width: 0.15rem;
-  -webkit-text-stroke-color: var(--decoration-color);
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  display: none;
-}
+
 .decorations {
   height: 100%;
   width: 100%;

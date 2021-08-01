@@ -13,10 +13,6 @@
     width: calc(100% +3rem);
   }
 
-  @include breakpoint-up(small) {
-    height: 700px;
-  }
-
   @include breakpoint-up(medium) {
     height: calc(34vmax * 1.25);
     width: 30vmax;

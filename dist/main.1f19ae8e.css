@@ -881,6 +881,11 @@ body.prevent-scroll {
     top: 170rem;
   }
 }
+@media only screen and (min-width: 64em) {
+  .deco__notch--skills {
+    top: 58%;
+  }
+}
 .deco__diamond {
   bottom: 32rem;
   left: 7rem;
@@ -922,24 +927,6 @@ body.prevent-scroll {
   .deco__diamond-notch {
     bottom: 12.7%;
   }
-}
-
-.reversed {
-  transform: scaleX(-1);
-}
-
-.transparent {
-  font-size: 10rem;
-  font-weight: 900;
-  letter-spacing: 1.5rem;
-  text-transform: uppercase;
-  -webkit-text-stroke-width: 0.15rem;
-  -webkit-text-stroke-color: var(--decoration-color);
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  left: 0;
-  z-index: -1;
-  display: none;
 }
 
 .decorations {
@@ -1526,11 +1513,6 @@ form {
   .glitch {
     height: 600px;
     width: calc(100% +3rem);
-  }
-}
-@media only screen and (min-width: 40em) {
-  .glitch {
-    height: 700px;
   }
 }
 @media only screen and (min-width: 48em) {
