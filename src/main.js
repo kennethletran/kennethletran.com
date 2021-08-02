@@ -66,15 +66,19 @@ projectSection.from('.projects__headline', {
   yPercent: -20,
   duration: 1
 }, '-=0.5')
+.to('.em__card', {
+  opacity: 1, 
+  duration: 0.1
+})
 .to(projectCard, {
-  cssRule: {scaleX: 0}, 
-  duration: 0.65
-}, '-=0.5')
+  cssRule: {scaleX: 0},
+  duration: 1
+}, '-=0.1')
 .from('.em__card__screenshot', {
   opacity: 0,
-  scale: 1.4,
+  scale: 1.3,
   duration: 1.4,
-}, '-=0.75')
+}, '-=0.85')
 .from('.em__card__title', {
   opacity: 0,
   yPercent: 20,
@@ -89,15 +93,19 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   duration: 0.75
 }, '-=0.35')
+.to('.hch__card', {
+  opacity: 1,
+  duration: 0.1
+})
 .to(projectCardTwo, {
   cssRule: {scaleX: 0}, 
-  duration: 0.65
-}, '-=0.35')
+  duration: 1
+}, '-=0.1')
 .from('.hch__card__screenshot', {
   opacity: 0,
-  scale: 1.4,
+  scale: 1.3,
   duration: 1.4,
-}, '-=0.75')
+}, '-=0.85')
 .from('.hch__card__title', {
   opacity: 0,
   yPercent: 20,

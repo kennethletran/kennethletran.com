@@ -253,16 +253,19 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   yPercent: -20,
   duration: 1
-}, '-=0.5').to(projectCard, {
+}, '-=0.5').to('.em__card', {
+  opacity: 1,
+  duration: 0.1
+}).to(projectCard, {
   cssRule: {
     scaleX: 0
   },
-  duration: 0.65
-}, '-=0.5').from('.em__card__screenshot', {
+  duration: 1
+}, '-=0.1').from('.em__card__screenshot', {
   opacity: 0,
-  scale: 1.4,
+  scale: 1.3,
   duration: 1.4
-}, '-=0.75').from('.em__card__title', {
+}, '-=0.85').from('.em__card__title', {
   opacity: 0,
   yPercent: 20,
   duration: 1
@@ -273,16 +276,19 @@ projectSection.from('.projects__headline', {
 }, '-=0.75').from('.em__card__links', {
   opacity: 0,
   duration: 0.75
-}, '-=0.35').to(projectCardTwo, {
+}, '-=0.35').to('.hch__card', {
+  opacity: 1,
+  duration: 0.1
+}).to(projectCardTwo, {
   cssRule: {
     scaleX: 0
   },
-  duration: 0.65
-}, '-=0.35').from('.hch__card__screenshot', {
+  duration: 1
+}, '-=0.1').from('.hch__card__screenshot', {
   opacity: 0,
-  scale: 1.4,
+  scale: 1.3,
   duration: 1.4
-}, '-=0.75').from('.hch__card__title', {
+}, '-=0.85').from('.hch__card__title', {
   opacity: 0,
   yPercent: 20,
   duration: 1
@@ -484,7 +490,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33567" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46263" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

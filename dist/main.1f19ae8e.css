@@ -574,7 +574,7 @@ body::before {
   position: absolute;
   display: block;
   left: 0;
-  width: 110%;
+  width: 150%;
   height: 110%;
   z-index: 1;
   transform-origin: 100% 0;
@@ -1221,6 +1221,11 @@ button {
     width: 450px;
     margin-bottom: 0;
   }
+}
+
+.em__card,
+.hch__card {
+  opacity: 0;
 }
 
 .skills__container {
