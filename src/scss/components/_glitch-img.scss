@@ -14,8 +14,8 @@
   }
 
   @include breakpoint-up(medium) {
-    height: calc(34vmax * 1.25);
-    width: 30vmax;
+    height: calc(34vmax * 1.5);
+    width: 38vmax;
   }
 
   @include breakpoint-up(large) {

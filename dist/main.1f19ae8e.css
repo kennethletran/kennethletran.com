@@ -1092,7 +1092,7 @@ button {
 }
 @media only screen and (min-width: 87.5em) {
   .corners.bottom-block {
-    bottom: 2px;
+    bottom: -8px;
   }
 }
 
@@ -1532,8 +1532,8 @@ form {
 }
 @media only screen and (min-width: 48em) {
   .glitch {
-    height: calc(34vmax * 1.25);
-    width: 30vmax;
+    height: calc(34vmax * 1.5);
+    width: 38vmax;
   }
 }
 @media only screen and (min-width: 64em) {
