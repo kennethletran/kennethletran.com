@@ -54,23 +54,23 @@ body {
 
 // Hiding content on viewports smaller than tablet
 .hide-mobile {
-  display: none;
+  display: none !important;
   @include breakpoint-up(medium) {
-    display: initial;
+    display: initial !important;
   }
 }
 
 .hide-desktop {
   @include breakpoint-up(large) {
-    display: none;
+    display: none !important;
   }
 }
 
 // Showing content on viewports larger than tablet
 .show-desktop {
-  display: none;
+  display: none !important;
   @include breakpoint-up(large) {
-    display: initial;
+    display: initial !important;
   }
 }
 

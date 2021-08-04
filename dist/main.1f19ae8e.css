@@ -213,26 +213,26 @@ body::before {
 }
 
 .hide-mobile {
-  display: none;
+  display: none !important;
 }
 @media only screen and (min-width: 48em) {
   .hide-mobile {
-    display: initial;
+    display: initial !important;
   }
 }
 
 @media only screen and (min-width: 64em) {
   .hide-desktop {
-    display: none;
+    display: none !important;
   }
 }
 
 .show-desktop {
-  display: none;
+  display: none !important;
 }
 @media only screen and (min-width: 64em) {
   .show-desktop {
-    display: initial;
+    display: initial !important;
   }
 }
 
@@ -479,17 +479,18 @@ body::before {
   display: grid;
   grid-template-columns: 1fr 3rem;
   grid-template-rows: auto;
-  grid-template-areas: "card card" "title icon" "info .";
+  grid-template-areas: "card card" "title icon" "info ." "link .";
 }
 @media only screen and (min-width: 48em) {
   .projects__container {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "card title" "card info" "card link" "card .";
+    grid-template-areas: "card title icon" "card info ." "card . ." "card link .";
     grid-gap: 0 1em;
   }
 }
 @media only screen and (min-width: 64em) {
   .projects__container {
+    grid-template-areas: "card title" "card info" "card link" "card .";
     grid-gap: 0 3em;
   }
 }
@@ -519,18 +520,17 @@ body::before {
 }
 .projects__links {
   grid-area: icon;
-  margin: 0 0 1rem 0.5rem;
+  margin: 0 0 0 0.5rem;
 }
 @media only screen and (min-width: 48em) {
   .projects__links {
-    grid-area: link;
-    grid-row: span 2;
     align-self: end;
-    margin: 0 0 -1rem 0.5rem;
   }
 }
 @media only screen and (min-width: 64em) {
   .projects__links {
+    grid-area: link;
+    grid-row: span 2;
     margin: 0 0 1rem 0.5rem;
   }
 }
@@ -545,7 +545,6 @@ body::before {
 @media only screen and (min-width: 48em) {
   .projects__link {
     grid-area: link;
-    grid-row: span 2;
     align-self: end;
   }
 }
@@ -560,8 +559,20 @@ body::before {
   width: 2.5rem;
   height: 3rem;
 }
+.projects__link--mobile {
+  grid-area: link;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: flex;
+  align-self: flex-end;
+  gap: 1rem;
+}
+.projects__link--mobile svg {
+  align-self: center;
+}
 .projects__info {
   grid-area: info;
+  margin-top: 0.75rem;
 }
 
 .project-reveal-em {

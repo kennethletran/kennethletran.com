@@ -276,7 +276,10 @@ projectSection.from('.projects__headline', {
 }, '-=0.75').from('.em__card__links', {
   opacity: 0,
   duration: 0.75
-}, '-=0.35').to('.hch__card', {
+}, '-=0.35').from('.em__card__link--mobile', {
+  opacity: 0,
+  duration: 0.75
+}, "-=0.2").to('.hch__card', {
   opacity: 1,
   duration: 0.1
 }).to(projectCardTwo, {
@@ -299,7 +302,24 @@ projectSection.from('.projects__headline', {
 }, '-=0.75').from('.hch__card__links', {
   opacity: 0,
   duration: 0.75
-}, '-=0.35'); // Skills Section Timeline
+}, '-=0.35').from('.hch__card__link--mobile', {
+  opacity: 0,
+  duration: 0.75
+}, "-=0.2");
+var arrowJiggle = gsap.timeline({
+  repeat: -1,
+  repeatDelay: 1,
+  ease: 'power1.inOut'
+});
+arrowJiggle.to('.jiggle', {
+  xPercent: 20,
+  duration: 1,
+  yoyo: true
+}).to('.jiggle', {
+  xPercent: 0,
+  duration: 1,
+  yoyo: true
+}); // Skills Section Timeline
 
 var skillSection = gsap.timeline({
   defaults: {
@@ -330,7 +350,7 @@ typeWriter.fromTo(skillTitle, {
   opacity: 0
 }, {
   opacity: 1,
-  duration: .25,
+  duration: 0.25,
   ease: 'none'
 }); // Footer Section Timeline
 
@@ -490,7 +510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46275" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46557" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

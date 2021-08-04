@@ -93,6 +93,10 @@ projectSection.from('.projects__headline', {
   opacity: 0,
   duration: 0.75
 }, '-=0.35')
+.from('.em__card__link--mobile', {
+  opacity: 0,
+  duration: 0.75
+}, "-=0.2")
 .to('.hch__card', {
   opacity: 1,
   duration: 0.1
@@ -119,7 +123,15 @@ projectSection.from('.projects__headline', {
 .from('.hch__card__links', {
   opacity: 0,
   duration: 0.75
-}, '-=0.35');
+}, '-=0.35')
+.from('.hch__card__link--mobile', {
+  opacity: 0,
+  duration: 0.75
+}, "-=0.2");
+
+let arrowJiggle = gsap.timeline({repeat: -1, repeatDelay: 1, ease: 'power1.inOut'});
+arrowJiggle.to('.jiggle',{xPercent: 20, duration: 1, yoyo: true})
+.to('.jiggle', {xPercent: 0, duration: 1, yoyo: true});
 
 // Skills Section Timeline
 let skillSection = gsap.timeline({
@@ -146,7 +158,7 @@ skillSection.from('.skills__headline', {
 
 let skillTitle = CSSRulePlugin.getRule('.skills__container__headline::after')
 let typeWriter = gsap.timeline({repeat: -1, repeatDelay: 0.5});
-typeWriter.fromTo(skillTitle, {opacity: 0}, {opacity: 1, duration: .25, ease: 'none'});
+typeWriter.fromTo(skillTitle, {opacity: 0}, {opacity: 1, duration: 0.25, ease: 'none'});
 
 // Footer Section Timeline
 let footerHeadline = CSSRulePlugin.getRule('.footer-reveal::after');
