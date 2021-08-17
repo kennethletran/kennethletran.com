@@ -54,7 +54,6 @@
 
   &__title {
     grid-area: title;
-    grid-column: 1 / span 2;
 
     @include breakpoint-up(medium) {
       grid-column: initial;
